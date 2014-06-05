@@ -1,0 +1,38 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form.advance" xmlns:p2="urn:import:id.co.gpsc.common.client.form">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+					
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel defaultLabel="Group Code" ui:field="txtGroupCode" mandatory="true"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel defaultLabel="Group Name" ui:field="txtGroupName" mandatory="true"/></td>
+			</tr>
+			<tr>
+				<td><p2:ExtendedLabel configuredText="Super User"/></td>
+				<td><p2:ExtendedLabel configuredText=":"/></td>
+				<td><p2:ExtendedCheckBox ui:field="chkSuperUser"/></td>
+			</tr>
+			<tr>
+				<td><p2:ExtendedLabel configuredText="Active"/></td>
+				<td><p2:ExtendedLabel configuredText=":"/></td>
+				<td><p2:ExtendedCheckBox ui:field="chkActive"/></td>
+			</tr>
+		</table>
+		<g:HorizontalPanel>
+			<p2:ExtendedButton ui:field="btnAdd" i18Key="security.common.button.label.add">Add Group</p2:ExtendedButton>
+			<p2:ExtendedButton ui:field="btnCancel" i18Key="security.common.button.label.cancel">Cancel</p2:ExtendedButton>
+		</g:HorizontalPanel>
+		<g:SimplePanel ui:field="panelTabMenus"/>
+		<g:Hidden name="Hidden name" ui:field="txtUserGroupId"/>			
+	</g:HTMLPanel>
+</ui:UiBinder> 

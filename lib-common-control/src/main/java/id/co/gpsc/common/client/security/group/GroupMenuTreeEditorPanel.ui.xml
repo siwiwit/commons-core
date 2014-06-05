@@ -1,0 +1,14 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"  
+	xmlns:p2="urn:import:id.co.gpsc.common.client.form" 
+	xmlns:p3="urn:import:id.co.gpsc.common.client.security.control">
+	<ui:style>
+	</ui:style>
+	<g:HTMLPanel>
+		<p3:CheckBoxMenuTree ui:field="menuTree"/>
+		<hr></hr>
+		<p2:ExtendedButton ui:field="btnApply" i18Key="security.common.button.apply" text="Apply"/>
+		<p2:ExtendedButton ui:field="btnFinish" text="Finish Edit" i18Key="security.common.button.finishedit"/>
+	</g:HTMLPanel>
+</ui:UiBinder> 

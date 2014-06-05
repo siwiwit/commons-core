@@ -1,0 +1,46 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:p1="urn:import:id.co.gpsc.common.client.form.advance" 
+	xmlns:p2="urn:import:id.co.gpsc.common.client.security.lookup" 
+	xmlns:p3="urn:import:id.co.gpsc.common.client.form">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<g:Hidden name="Hidden name" ui:field="txtBranchId"/>
+		<g:Hidden name="Hidden name" ui:field="txtBranchParentId"/>		
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel mandatory="true" defaultLabel="Branch Code" width="250px" ui:field="txtBranchCode"/></td>
+			</tr>
+			<tr>
+				<td><p3:ExtendedLabel configuredText="Parent Branch Code"/></td>
+				<td>:</td>
+				<td><p2:BrowseLookupBranch ui:field="txtParentCode" width="250px"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel mandatory="true" defaultLabel="Branch Name" width="250px" ui:field="txtBranchName"/></td>
+			</tr>
+			<tr>
+				<td valign="top"><p3:ExtendedLabel configuredText="Branch Address"/></td>
+				<td valign="top">:</td>
+				<td><p3:ExtendedTextArea height="72px" width="250px" ui:field="txtBranchAddress"/></td>
+			</tr>
+			<tr>
+				<td valign="top"><p3:ExtendedLabel configuredText="Branch Description"/></td>
+				<td valign="top">:</td>
+				<td><p3:ExtendedTextArea width="250px" height="72px" ui:field="txtBranchDescription"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:CheckBoxWithLabel defaultLabel="Status" ui:field="txtStatus"/></td>
+			</tr>
+		</table>													
+	</g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form.advance"
+	xmlns:p2="urn:import:id.co.gpsc.common.client.security.lookup">
+	<ui:style>
+	</ui:style>
+	<g:HTMLPanel>
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel ui:field="txtMenuCode" defaultLabel="Menu Code" domId="MASTER_MENU_SECURITY_EDITOR_TXT_MENU_CODE" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel ui:field="txtMenuLabel" defaultLabel="Menu Label" domId="MASTER_MENU_SECURITY_EDITOR_TXT_MENU_LABEL" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p2:BrowseLookupPageDefinition ui:field="browsePageDef" /></td>
+			</tr>
+		</table>
+	</g:HTMLPanel>
+</ui:UiBinder> 

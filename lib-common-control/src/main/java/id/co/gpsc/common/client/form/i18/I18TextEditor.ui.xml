@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+	
+	
+	<table>
+		<tr valign="top">
+			<td>Text Key</td>
+			<td>:</td>
+			<td><g:Label text="some key ..." ui:field="textKeyLabel"/><p1:ExtendedTextBox ui:field="textKeyTxt"/></td>
+		</tr>
+			<tr valign="top">
+			<td>Group Id</td>
+			<td>:</td>
+			<td><p1:LOVCapabledComboBox ui:field="groupCmb"/></td>
+		</tr>
+	
+	</table>
+	<hr width="80%"/>
+	<g:FlexTable ui:field="langEntryContainer"/>
+	
+	
+	
+	</g:HTMLPanel>
+</ui:UiBinder> 

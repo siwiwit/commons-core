@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form">	
+	<g:HTMLPanel>
+		<table width="100%" cellspacing="3" cellpadding="1">
+			<tr>
+				<td width="5%"><p1:ExtendedLabel configuredText="Group" text="Group"/></td>				
+				<td width="93%"><p1:LOVCapabledComboBox ui:field="cmbGroup" width="223px" height="26"/></td>
+			</tr>
+			<tr>
+				<td><p1:ExtendedLabel configuredText="Key" text="Key"/></td>				
+				<td><p1:ExtendedTextBox ui:field="txtKey" width="221px"/></td>
+			</tr>
+			<tr>
+				<td><p1:ExtendedLabel configuredText="Locale" text="Locale"/></td>				
+				<td><p1:LOVCapabledComboBox ui:field="cmbLocale" width="223px" height="26" parameterId="APP_CONFIG_LOCALES"/></td>
+			</tr>
+			<tr>				
+				<td>&nbsp;</td>
+				<td><g:Button ui:field="btnSearch">search</g:Button></td>
+			</tr>
+		</table>
+		<g:SimplePanel ui:field="spGridPanel"/>
+		<g:HorizontalPanel>
+			<g:Button ui:field="btnEdit" enabled="false">Edit</g:Button>
+			<g:Button ui:field="btnAdd">Add</g:Button>
+		</g:HorizontalPanel>								
+	</g:HTMLPanel>		
+</ui:UiBinder> 

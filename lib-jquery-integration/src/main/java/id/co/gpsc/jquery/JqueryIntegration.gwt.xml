@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.4.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.4.0/distro-source/core/src/gwt-module.dtd">
+<module>
+	<inherits name="com.google.gwt.user.User" />
+	
+	<inherits name="com.google.gwt.json.JSON" />
+	<inherits name="id.co.sigma.common.LibCommon"/>
+	<source path="client"/>
+	<!-- jquery ui -->
+	<script src="jquery-ui-1.10.1/jquery-1.9.1.js"></script> 
+	<script src="jquery-ui-1.10.1/jquery-ui-1.10.1.custom.min.js"></script> 
+	<script src="jquery-ui-1.10.1/jquery.ui.menubar.js"></script>
+	<script src="js/jquery.blockUI.js"></script> 
+	
+	<stylesheet src="jquery-ui-1.10.1/jquery.ui.menubar.css"/>
+	
+	
+	
+	<!-- berikut ini bagian jqgrid-->
+	<script src="jqgrid-4.4.4/jquery.jqGrid.min.js"></script> 
+	<stylesheet src="jqgrid-4.4.4/css/ui.jqgrid.css"/>
+	<!--  ini untuk tweak css -->
+	
+	
+	<stylesheet src="styles/jquery-additional.css"/>
+	
+	
+	<entry-point class="id.co.sigma.jquery.client.JQueryStartupNotifierApp"/>
+	
+</module>

@@ -1,0 +1,56 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:ga="urn:import:id.co.gpsc.common.client.form.advance" xmlns:p1="urn:import:id.co.gpsc.common.client.form">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		
+	
+	<table>
+		<tr valign="top">
+			<td colspan="3"><g:HTML wordWrap="true" ui:field="lblEditorTitle"><h3>Approval</h3></g:HTML></td>
+		</tr>
+		<tr valign="top">
+			<td width="100px"></td>
+			<td></td>
+			<td><ga:TextBoxWithLabel 
+				ui:field="txtRequestor" 
+				i18Key="dualcontrol.multipleapprovareditor.requestor" 
+				defaultLabel="Requestor" domId="DUAL_CONTROL_APPROVER-REQUESTOR" ></ga:TextBoxWithLabel> </td>
+		</tr>
+		<tr valign="top">
+			<td></td>
+			<td></td>
+			<td><ga:TextBoxWithLabel 
+				
+				i18Key="dualcontrol.multipleapprovareditor.requestTime" 
+				defaultLabel="Request Time" domId="DUAL_CONTROL_APPROVER-REQUEST-TIME" ui:field="txtRequestTime" ></ga:TextBoxWithLabel></td>
+		</tr>
+		
+			<tr valign="top">
+			<td></td>
+			<td></td>
+			<td><ga:TextBoxAreaWithLabel ui:field="txtLatestRemark" defaultLabel="Latest Remark" characterWidth="40" i18Key="DUAL_CONTROL_APPROVER-LATEST_REMARK" domId="DUAL_CONTROL_APPROVER-LATEST_REMARK" visibleLines="4"/></td>
+		</tr>
+		
+		<tr valign="top">
+			<td colspan="3"><g:SimplePanel ui:field="gridContainerPanel"/>	
+			
+			</td>
+			
+		</tr>
+		
+		
+		<tr valign="top">
+			<td colspan="3"><p1:ExtendedButton ui:field="btnApprove">Approve</p1:ExtendedButton>&nbsp;<p1:ExtendedButton ui:field="btnReject">Reject</p1:ExtendedButton>&nbsp;<p1:ExtendedButton ui:field="btnClose">Close</p1:ExtendedButton></td>
+			
+		</tr>
+	
+	</table>
+	
+	
+	
+	</g:HTMLPanel>
+</ui:UiBinder> 

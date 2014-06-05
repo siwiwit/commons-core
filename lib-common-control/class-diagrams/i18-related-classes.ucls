@@ -1,0 +1,47 @@
+<class-diagram version="1.0.10" icons="true" automaticImage="PNG" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="id.co.sigma.common.client.form.ExtendedLabel" 
+    project="lib-bc-shared-control" 
+    file="/lib-bc-shared-control/src/main/java/id/co/sigma/common/client/form/ExtendedLabel.java" binary="false">    
+    <position height="-1" width="-1" x="393" y="445"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <interface id="2" corner="BOTTOM_RIGHT" language="java" 
+    name="id.co.sigma.common.client.control.OnScreenConfigurableControl" project="lib-bc-shared-control" 
+    file="/lib-bc-shared-control/src/main/java/id/co/sigma/common/client/control/OnScreenConfigurableControl.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="400" y="-21"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <interface id="3" corner="BOTTOM_RIGHT" language="java" 
+    name="id.co.sigma.common.client.form.SelfRegisterEnableResourceBundleConfigurableLabel" 
+    project="lib-bc-shared-control" 
+    file="/lib-bc-shared-control/src/main/java/id/co/sigma/common/client/form/SelfRegisterEnableResourceBundleConfigurableLabel.java" 
+    binary="false">    
+    <position height="129" width="329" x="542" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </interface>  
+  <realization id="4">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="5">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

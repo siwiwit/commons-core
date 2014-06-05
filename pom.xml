@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>id.co.gpsc.commonlib</groupId>
+  <artifactId>commons-lib-group</artifactId>
+  <version>1.5</version>
+  <packaging>pom</packaging>
+  
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <gwt.version>2.6.1</gwt.version>
+        <gwt.maven.plugin.version>2.6.1</gwt.maven.plugin.version>
+        <spring.version>4.0.5.RELEASE</spring.version>
+        <spring.security.version>3.2.4.RELEASE</spring.security.version>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <spring.batch.version>3.0.0.RELEASE</spring.batch.version>
+        <maven.compiler.plugin.version>3.1</maven.compiler.plugin.version> 
+		<maven.compiler.source>1.7</maven.compiler.source> 
+		<maven.compiler.target>1.7</maven.compiler.target> 
+		<mybatis.version>3.2.7</mybatis.version>
+		<spring.mybatis.version>1.2.2</spring.mybatis.version>
+		<poi.version>3.10.FINAL</poi.version>
+		<gson.version>2.2.4</gson.version>	
+		<lib.junit.version>4.11</lib.junit.version>
+		<lib.javax.validation.api>1.1.0.Final</lib.javax.validation.api>
+		<lib.javaxpersistence.artifactid>hibernate-jpa-2.1-api</lib.javaxpersistence.artifactid>
+		<lib.javaxpersistence.version>1.0.0.Final</lib.javaxpersistence.version>
+		<hibernate.core.version>4.3.5.Final</hibernate.core.version>
+		<log4j.version>1.2.17</log4j.version>
+		<aspectj.version>1.8.0</aspectj.version>
+		<slf4j.version>1.7.7</slf4j.version>
+		<commons.io.version>2.4</commons.io.version>
+    </properties>
+    
+    <dependencies>
+    	<dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+    	<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${lib.junit.version}</version>
+        </dependency>
+    </dependencies>
+    
+  <modules>
+  	<module>lib-common</module>
+	<module>lib-common-shared</module>
+  	<module>lib-jquery-integration</module>
+  	<module>lib-common-control</module>
+	<module>lib-base-server</module>
+	
+  </modules>
+</project>

@@ -1,0 +1,23 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form" xmlns:p2="urn:import:id.co.gpsc.common.client.security.lookup" xmlns:p3="urn:import:id.co.gpsc.common.client.form.advance">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<g:Hidden name="Hidden name" ui:field="txtUserId"/>		
+		<table>
+			<tr>
+				<td><p1:ExtendedLabel configuredText="Username"/></td>
+				<td>:</td>
+				<td><p2:BrowseLookupUser ui:field="browseUsername"/></td>
+			</tr>			
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p3:TextBoxWithLabel readOnly="true" defaultLabel="Fullname" ui:field="txtFullname"/></td>
+			</tr>
+		</table>		
+		<g:SimplePanel ui:field="panelGrid" width="446px"/>						
+	</g:HTMLPanel>
+</ui:UiBinder> 

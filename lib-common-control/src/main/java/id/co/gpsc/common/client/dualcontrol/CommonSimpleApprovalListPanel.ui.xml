@@ -1,0 +1,33 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form.advance" xmlns:p2="urn:import:id.co.gpsc.common.client.form" xmlns:p3="urn:import:id.co.gpsc.common.client.dualcontrol">
+	<ui:style>
+	</ui:style>
+	<g:HTMLPanel>
+		<h2><g:Label text="Approval List" ui:field="lblPanelTitle" /></h2>
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:LOVCapabledComboBoxWithLabel ui:field="cbObjectType" defaultLabel="Object Type" domId="COMMON_APPROVAL_LIST_PANEL_CB_OBJECT_TYPE" appendNonSelectedChoice="true" noneSelectedLabel="-Pilih Semua-"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel ui:field="txtReqUserName" defaultLabel="Requestor User Name" domId="COMMON_APPROVAL_LIST_PANEL_TXT_REQ_USER_NAME" /></td>
+			</tr>
+			<tr>
+				<td colspan="3"><p2:ExtendedButton ui:field="btnSearch" text="Search" /><p2:ExtendedButton ui:field="btnReset" text="Reset" /></td>
+			</tr>
+			<tr>
+				<td colspan="3"><p3:SimpleApprovalGrid ui:field="approvalGrid" /></td>
+			</tr>
+		</table>
+		
+		
+		
+		
+		
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 

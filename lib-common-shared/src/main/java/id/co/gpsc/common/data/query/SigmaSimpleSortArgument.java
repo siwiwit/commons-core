@@ -1,0 +1,94 @@
+package id.co.gpsc.common.data.query;
+
+import com.google.gwt.user.client.rpc.IsSerializable;
+
+import id.co.gpsc.common.data.reflection.ClientReflectableClass;
+import id.co.gpsc.common.util.json.IJSONFriendlyObject;
+import id.co.gpsc.common.util.json.ParsedJSONContainer;
+
+
+
+/**
+ * pindahan dari cams-data. di bikinkian base class agar lebih low impact bagi code teman2
+ * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
+ * @version $Id
+ **/
+@ClientReflectableClass
+public class SigmaSimpleSortArgument implements IsSerializable, IJSONFriendlyObject<SigmaSimpleSortArgument>{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6961355138817706370L;
+
+	/**
+	 * field sort
+	 **/
+	protected String sortField ;
+	
+	/**
+	 * ascding sort atau sebaliknya
+	 **/
+	protected boolean ascendingSort ;
+	
+	
+	
+	
+	
+
+	
+	public SigmaSimpleSortArgument(){}
+	
+	
+	/**
+	 * konstruktor dengan sort field + asc/desc
+	 **/
+	public SigmaSimpleSortArgument(String sortField  ,  boolean ascendingSort ){
+		this.sortField=sortField ; 
+		this.ascendingSort=ascendingSort;
+		
+	}
+	/**
+	 * field sort
+	 **/
+	public String getSortField() {
+		return sortField;
+	}
+
+	/**
+	 * field sort
+	 **/
+	public void setSortField(String sortField) {
+		this.sortField = sortField;
+	}
+
+	
+	/**
+	 * ascding sort atau sebaliknya
+	 **/
+	public boolean isAscendingSort() {
+		return ascendingSort;
+	}
+	/**
+	 * ascding sort atau sebaliknya
+	 **/
+	public void setAscendingSort(boolean ascendingSort) {
+		this.ascendingSort = ascendingSort;
+	}
+
+	
+	@Override
+	public String toString() {
+		return  "{\"sortField\":\""+sortField+"\" , \"ascendingSort\":\""+ascendingSort+"\"}" ;
+	}
+
+    @Override
+    public void translateToJSON(ParsedJSONContainer jsonContainerData) {
+      jsonContainerData.put("sortField", getSortField());
+      jsonContainerData.put("ascendingSort", isAscendingSort());
+    }
+
+    @Override
+    public SigmaSimpleSortArgument instantiateFromJSON(ParsedJSONContainer jsonContainer) {
+        return  new SigmaSimpleSortArgument(jsonContainer.getAsString("sortField"), jsonContainer.getAsBoolean("ascendingSort"));
+    }
+}

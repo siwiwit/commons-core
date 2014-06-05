@@ -1,0 +1,28 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form">	
+	<g:HTMLPanel>
+		<table width="100%" cellspacing="3" cellpadding="1">
+			<tr>
+				<td><g:Label text="Localization Key"/></td>
+				<td>:</td>
+				<td>  <g:Label text="localization" ui:field="lblLocalization"/></td>
+			</tr>
+			<tr>
+				<td><g:Label text="Key Label"/></td>
+				<td>:</td>
+				<td><p1:ExtendedTextBox ui:field="txtKeyLabel"/></td>
+			</tr>
+			<tr>
+				<td><g:Label text="Group Id"/></td>
+				<td>:</td>
+				<td><p1:LOVCapabledComboBox ui:field="cmbGroupId" width="149px"/></td>
+			</tr>
+			<tr>
+				<td><g:Label text="Label"/></td>
+				<td>:</td>
+				<td><p1:ExtendedTextBox ui:field="txtLabel"/></td>
+			</tr>						
+		</table>			
+	</g:HTMLPanel>
+</ui:UiBinder> 

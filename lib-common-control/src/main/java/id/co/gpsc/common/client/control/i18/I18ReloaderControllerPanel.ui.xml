@@ -1,0 +1,31 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<div id="sigma_i18_reloader_panel" class="ui-widget-content" style="position:absolute;top:0;width:300px;height:110px;padding:5px;">
+			<table>
+				<tbody>
+				<tr>
+					<td>Bahasa</td>
+					<td><g:ListBox ui:field="lblLanguages"/></td>
+					<td><p1:ExtendedButton ui:field="btnReloadLanguage">Reload</p1:ExtendedButton></td>
+				</tr>
+			
+				<tr>
+					<td colspan="3"  align="center"><hr /><br/>Ok Saya Sudah siap.Load Aplikasi saya sekarang</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><g:Button ui:field="btnLoadApp">Load</g:Button></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		
+	
+	</g:HTMLPanel>
+</ui:UiBinder> 

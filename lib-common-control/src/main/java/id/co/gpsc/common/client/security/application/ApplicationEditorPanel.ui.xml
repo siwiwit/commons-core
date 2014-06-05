@@ -1,0 +1,48 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form.advance" xmlns:p2="urn:import:id.co.gpsc.common.client.form">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>				
+		<table>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel ui:field="txtApplicationCode" defaultLabel="Code"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel ui:field="txtAplicationName" defaultLabel="Name"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel ui:field="txtApplicationUrl" defaultLabel="URL" width="310px"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel ui:field="txtNotifyUrl" defaultLabel="Notify URL" width="310px"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:TextBoxWithLabel ui:field="txtApplicationLoginUrl" defaultLabel="Automatic Login URL" width="310px"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><p1:CheckBoxWithLabel defaultLabel="Kick Prev Login On Concurent" ui:field="chkKickLogin"/></td>
+			</tr>
+			<tr>
+				<td><p2:ExtendedLabel configuredText="Application Active" ui:field="lblActive" i18Key="security.applicationlist.label.applicationactive"/></td>
+				<td><p2:ExtendedLabel configuredText=":" ui:field="lblPoint"/></td>
+				<td><p2:ExtendedCheckBox ui:field="chkActive"/></td>
+			</tr>
+		</table>
+						
+		<g:Hidden name="Hidden name" ui:field="txtApplicationId"/>							
+	</g:HTMLPanel>
+</ui:UiBinder> 

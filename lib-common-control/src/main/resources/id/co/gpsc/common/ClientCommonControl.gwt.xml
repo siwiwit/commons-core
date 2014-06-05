@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.4.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.4.0/distro-source/core/src/gwt-module.dtd">
+<module>
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="id.co.sigma.jquery.JqueryIntegration" />
+	<source path="client"/>
+	
+	<stylesheet src="common-control-css/common-control-icon-style.css"/>
+	<script src="cryptho/aes.js"></script>
+	
+	<!-- 
+	<inherits name="com.google.gwt.logging.Logging"/>
+	<set-property name='gwt.logging.enabled' value='TRUE'/>           
+	<set-property name='gwt.logging.consoleHandler' value='ENABLED'/>
+	<set-property name='gwt.logging.firebugHandler' value='ENABLED'/>  
+	<set-property name='gwt.logging.popupHandler' value='ENABLED'/> 
+ 	-->	
+
+
+</module>

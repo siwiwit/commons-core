@@ -1,0 +1,14 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.security.control">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+		<ul>
+			<li><p1:ApplicationMenuLink ui:field="menuApplicationList">Application List</p1:ApplicationMenuLink></li>
+			<li><p1:ApplicationMenuLink ui:field="menuUserGroup">User Group</p1:ApplicationMenuLink></li>
+			<li><p1:ApplicationMenuLink ui:field="menuUserList" text="User List">User List</p1:ApplicationMenuLink></li>
+		</ul>		
+	</g:HTMLPanel>
+</ui:UiBinder> 

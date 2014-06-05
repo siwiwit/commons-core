@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:p1="urn:import:id.co.gpsc.common.client.form">
+	<g:HTMLPanel>
+		<g:VerticalPanel width="441px">						
+			<g:HorizontalPanel>
+				<p1:ExtendedComboBox width="138px" ui:field="cmbCriteria"/>
+				<p1:ExtendedTextBox ui:field="txtCriteria"/>				
+			</g:HorizontalPanel>
+			<g:HorizontalPanel>
+				<p1:ExtendedButton ui:field="btnSearch">Search</p1:ExtendedButton>
+				<p1:ExtendedButton ui:field="btnReset">Reset</p1:ExtendedButton>
+			</g:HorizontalPanel>
+			<g:SimplePanel ui:field="spGridGroup"/>
+		</g:VerticalPanel>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 

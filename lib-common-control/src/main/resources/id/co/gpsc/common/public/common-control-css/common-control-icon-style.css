@@ -1,0 +1,45 @@
+/* 
+	icon custom style 
+	created by ashsepra@gmail.com
+*/
+
+.common_control_icon-place{
+	margin-top:1px;
+	width:22px;
+	height:22px;
+	margin-right:2px;
+	display:inline-block;
+	cursor:pointer;
+	
+}
+.common_control_icon-place:hover{
+	width:20px;
+	height:20px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border:#f6a200 1px outset;
+	background:#fff1d7;
+}
+.common_control_icon-place-click{
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border:#f6a200 1px outset;
+	background:#fedea2;
+	width:124px;
+}
+
+.common_control_icon-search{
+	display:inline-block;
+	height:17px;width:17px;
+	background:url(../common-control-images/icon/search.png) no-repeat center;
+}
+.common_control_icon-cancel{
+	display:inline-block;
+	height:17px;width:17px;
+	background:url(../common-control-images/icon/cancel.png) no-repeat center;
+}
+.common_control_icon-setting{
+	display:inline-block;
+	height:17px;width:17px;
+	background:url(../common-control-images/icon/setting.png) no-repeat center;
+}

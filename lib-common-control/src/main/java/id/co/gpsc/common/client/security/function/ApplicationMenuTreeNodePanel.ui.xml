@@ -1,0 +1,54 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:cc="urn:import:id.co.gpsc.common.client.widget">
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+	  	
+		<table>
+		    <tr valign="top">
+		        <td><cc:SpanLabel ui:field="appMenuIconSpan"></cc:SpanLabel></td>
+		        <td><cc:SpanLabel ui:field="appMenuLabel"></cc:SpanLabel></td>
+		       
+		</tr>
+		
+		<tr valign="top">
+		    <td colspan="2" style="padding-left:15px">
+		    <g:HTMLPanel ui:field="pnlPageContainer" visible="false">
+		    <table>
+		    	<tr valign="top">
+		    		<td>Page Code</td>
+		    		<td>:</td>
+		    		<td><cc:SpanLabel ui:field="lblPageCode"></cc:SpanLabel></td>
+		    	</tr>
+		    	<tr valign="top">
+		    		<td>Page Remark</td>
+		    		<td>:</td>
+		    		<td><cc:SpanLabel ui:field="lblPageRemark"></cc:SpanLabel></td>
+		    	</tr>
+		    </table>
+		    </g:HTMLPanel>
+		    </td>
+		</tr>
+		<tr valign="top">
+		 <td colspan="2" style="padding-left:25px">
+		 <table>
+		 <tr>
+			 <td> <cc:SpanButton ui:field="btnUp" buttonIconCssName="ui-icon-arrowthick-1-n"></cc:SpanButton></td>	 
+		 	<td><cc:SpanButton ui:field="btnAdd" buttonIconCssName="ui-icon-plus"></cc:SpanButton></td>
+			 <td><cc:SpanButton ui:field="btnEdit" buttonIconCssName="ui-icon-pencil"></cc:SpanButton></td>
+			 <td> <cc:SpanButton ui:field="btnErase" buttonIconCssName="ui-icon-trash"></cc:SpanButton></td>
+			  <td> <cc:SpanButton ui:field="btnDown" buttonIconCssName="ui-icon ui-icon-arrowthick-1-s"></cc:SpanButton></td>
+			 </tr>
+			 </table>
+		 
+		</td>
+		       
+		</tr>
+		
+		
+		</table>
+	</g:HTMLPanel>
+</ui:UiBinder> 

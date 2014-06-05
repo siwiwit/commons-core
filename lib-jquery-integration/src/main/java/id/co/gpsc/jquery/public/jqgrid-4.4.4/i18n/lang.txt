@@ -1,0 +1,53 @@
+ Volume in drive D is GPS-DATA
+ Volume Serial Number is 76F3-583D
+
+ Directory of D:\GPS-Documents\projects\self-development\shared-libs\svn-checkout\lib-jquery-integration\src\main\java\id\co\sigma\jquery\public\jqgrid-4.4..4\i18n
+
+03/20/2013  02:02 AM    <DIR>          .
+03/20/2013  02:02 AM    <DIR>          ..
+03/14/2013  04:09 AM             4,644 grid.locale-ar.js
+03/14/2013  04:09 AM             5,133 grid.locale-bg.js
+03/14/2013  04:09 AM             6,276 grid.locale-bg1251.js
+03/14/2013  04:09 AM             4,294 grid.locale-cat.js
+03/14/2013  04:09 AM             4,218 grid.locale-cn.js
+03/14/2013  04:09 AM             4,346 grid.locale-cs.js
+03/14/2013  04:09 AM             4,131 grid.locale-da.js
+03/14/2013  04:09 AM             6,864 grid.locale-de.js
+03/14/2013  04:09 AM             4,002 grid.locale-dk.js
+03/14/2013  04:09 AM             5,185 grid.locale-el.js
+03/14/2013  04:09 AM             6,531 grid.locale-en.js
+03/14/2013  04:09 AM             4,529 grid.locale-es.js
+03/14/2013  04:09 AM             6,444 grid.locale-fa.js
+03/14/2013  04:09 AM             4,467 grid.locale-fi.js
+03/14/2013  04:09 AM             4,286 grid.locale-fr.js
+03/14/2013  04:09 AM             4,445 grid.locale-gl.js
+03/14/2013  04:09 AM             4,489 grid.locale-he.js
+03/14/2013  04:09 AM             6,122 grid.locale-hr.js
+03/14/2013  04:09 AM             6,108 grid.locale-hr1250.js
+03/14/2013  04:09 AM             4,136 grid.locale-hu.js
+03/14/2013  04:09 AM             6,697 grid.locale-id.js
+03/14/2013  04:09 AM             4,249 grid.locale-is.js
+03/14/2013  04:09 AM             3,214 grid.locale-it.js
+03/14/2013  04:09 AM             6,912 grid.locale-ja.js
+03/14/2013  04:09 AM             4,298 grid.locale-kr.js
+03/14/2013  04:09 AM             4,296 grid.locale-lt.js
+03/14/2013  04:09 AM             4,144 grid.locale-mne.js
+03/14/2013  04:09 AM             5,432 grid.locale-nl.js
+03/14/2013  04:09 AM             2,770 grid.locale-no.js
+03/14/2013  04:09 AM             4,234 grid.locale-pl.js
+03/14/2013  04:09 AM             4,499 grid.locale-pt-br.js
+03/14/2013  04:09 AM             4,389 grid.locale-pt.js
+03/14/2013  04:09 AM             4,636 grid.locale-ro.js
+03/14/2013  04:09 AM             5,769 grid.locale-ru.js
+03/14/2013  04:09 AM             4,325 grid.locale-sk.js
+03/14/2013  04:09 AM             4,116 grid.locale-sr-latin.js
+03/14/2013  04:09 AM             5,061 grid.locale-sr.js
+03/14/2013  04:09 AM             4,280 grid.locale-sv.js
+03/14/2013  04:09 AM             6,164 grid.locale-th.js
+03/14/2013  04:09 AM             4,372 grid.locale-tr.js
+03/14/2013  04:09 AM             3,920 grid.locale-tw.js
+03/14/2013  04:09 AM             5,504 grid.locale-ua.js
+03/14/2013  04:09 AM             7,011 grid.locale-vi.js
+03/20/2013  02:02 AM                 0 lang.txt
+              44 File(s)        210,942 bytes
+               2 Dir(s)  81,707,950,080 bytes free

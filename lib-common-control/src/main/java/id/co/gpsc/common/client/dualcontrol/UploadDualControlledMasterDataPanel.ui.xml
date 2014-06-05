@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:g2="urn:import:id.co.gpsc.common.client.widget"
+	xmlns:g3="urn:import:id.co.gpsc.common.client.form"
+	xmlns:g4="urn:import:id.co.gpsc.common.client.form.advance"
+	xmlns:g5="urn:import:id.co.gpsc.common.client.control">
+	
+	<ui:style>
+		
+	</ui:style>
+	<g:HTMLPanel>
+	<g:HTMLPanel ui:field="pnlHeaderContainerPanel"></g:HTMLPanel>
+	
+	<div style="height:10px"></div>
+	<g:FormPanel ui:field="formUpload" >
+	<g:HTMLPanel>
+	<table>
+		<tr valign="top">
+			<td>File</td>
+			<td>:</td>
+			<td><g:Hidden name="fqcn" ui:field="hidnHandledFQCN"></g:Hidden>
+			<g5:SimpleFileUpload ui:field="upldExcelFile" name="uploadedFile"></g5:SimpleFileUpload> 
+			
+			</td>
+		</tr>
+		<tr valign="top">
+			<td></td>
+			<td></td>
+			<td><g4:TextBoxAreaWithLabel defaultLabel="Remark" ui:field="txtRemark" name="remark" maxLength="256"></g4:TextBoxAreaWithLabel></td>
+		</tr>
+		
+	
+	</table>
+	</g:HTMLPanel>
+	</g:FormPanel>
+	<div style="height:10px"></div>
+	<g3:ExtendedButton ui:field="btnUpload">Upload</g3:ExtendedButton>&nbsp;<g3:ExtendedButton ui:field="btnBatal">Batal</g3:ExtendedButton>
+	
+	</g:HTMLPanel>
+</ui:UiBinder> 

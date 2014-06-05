@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+	<artifactId>lib-jquery-integration</artifactId>
+
+    <packaging>jar</packaging>
+    <name>JQuery UI Integration Component</name>   
+	<parent>
+        <groupId>id.co.gpsc.commonlib</groupId>
+        <artifactId>commons-lib-group</artifactId>
+        <version>1.5</version>
+    </parent>
+    <build>
+    
+    	<resources>
+    		<resource>
+    			<directory>src/main/java</directory>
+    		</resource>
+    		
+    		<resource>
+    			<directory>src/main/resources</directory>
+    		</resource>
+    	
+    	</resources>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                   	<source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+          
+        </plugins>
+    </build>
+
+    <dependencies>
+    
+    <dependency>
+    	<artifactId>lib-common</artifactId>
+    	<groupId>id.co.gpsc.commonlib</groupId>
+    	<version>${project.version}</version>
+    </dependency>
+    
+    </dependencies>
+    
+   
+   
+    
+    <description>JQuery integration library</description>
+    <organization>
+    	<name>Sigma Cipta Caraka</name>
+    </organization>
+</project>
+
