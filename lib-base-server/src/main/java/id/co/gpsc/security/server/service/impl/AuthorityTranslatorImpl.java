@@ -4,7 +4,7 @@ import java.util.Collection;
 
 import org.springframework.stereotype.Service;
 
-import id.co.gpsc.common.server.data.security.SigmaAuthority;
+import id.co.gpsc.common.server.data.security.SimpleAuthority;
 import id.co.gpsc.common.server.data.security.UserLoginNotificationData;
 import id.co.gpsc.common.server.service.system.AuthorityTranslator;
 
@@ -12,7 +12,7 @@ import id.co.gpsc.common.server.service.system.AuthorityTranslator;
 public class AuthorityTranslatorImpl implements AuthorityTranslator{
 
 	@Override
-	public Collection<SigmaAuthority> generateAuthorities(UserLoginNotificationData notificationResult) {
+	public Collection<SimpleAuthority> generateAuthorities(UserLoginNotificationData notificationResult) {
 		return null;
 	}
 }

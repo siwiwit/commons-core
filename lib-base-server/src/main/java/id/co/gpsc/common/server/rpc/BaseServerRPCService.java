@@ -19,19 +19,19 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import com.google.gwt.user.client.rpc.IsSerializable;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.exception.CommonWrappedSerializableException;
 import id.co.gpsc.common.server.dao.ICustomJoinHqlProvider;
 import id.co.gpsc.common.server.dao.ICustomJoinHqlProviderManager;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
 import id.co.gpsc.common.server.dao.system.ApplicationConfigurationDao;
-import id.co.gpsc.common.server.data.security.SigmaSimpleUserData;
+import id.co.gpsc.common.server.data.security.SimpleUserData;
 import id.co.gpsc.common.server.rpc.impl.BaseRPCHandler;
 import id.co.gpsc.common.server.service.IObjectCleanUpManager;
 import id.co.gpsc.common.server.util.IDTOGenerator;
 import id.co.gpsc.common.server.util.IObjectCleanUp;
-import id.co.gpsc.security.server.SigmaUserDetail;
+import id.co.gpsc.security.server.SimpleUserDetail;
 
 /**
  * @author Agus Gede Adipartha Wibawa
@@ -63,7 +63,7 @@ public abstract class BaseServerRPCService<T> extends BaseRPCHandler<T>{
 	@Autowired
 	private HttpServletRequest httpServletRequest ; 
 	
-	protected SigmaSimpleUserData getCurrentUser () {
+	protected SimpleUserData getCurrentUser () {
 		Authentication swap =  SecurityContextHolder.getContext().getAuthentication();
 		if ( !(swap instanceof UsernamePasswordAuthenticationToken))
 			return null ; 
@@ -74,11 +74,11 @@ public abstract class BaseServerRPCService<T> extends BaseRPCHandler<T>{
 			return null ; 
 			
 			
-		if (swapPrincipal instanceof SigmaSimpleUserData)
-			return (SigmaSimpleUserData)swapPrincipal ; 
-		if ( swapPrincipal instanceof SigmaUserDetail){
-			SigmaUserDetail act = (SigmaUserDetail) swapPrincipal ; 
-			SigmaSimpleUserData retval = new SigmaSimpleUserData(); 
+		if (swapPrincipal instanceof SimpleUserData)
+			return (SimpleUserData)swapPrincipal ; 
+		if ( swapPrincipal instanceof SimpleUserDetail){
+			SimpleUserDetail act = (SimpleUserDetail) swapPrincipal ; 
+			SimpleUserData retval = new SimpleUserData(); 
 			retval.setBranchCode(act.getCurrentBranchCode());
 			retval.setEmail(act.getEmail());
 			retval.setFullName(act.getFullNameUser());
@@ -125,7 +125,7 @@ public abstract class BaseServerRPCService<T> extends BaseRPCHandler<T>{
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page , IObjectCleanUp<POJO> cleaner) throws Exception {
+	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page , IObjectCleanUp<POJO> cleaner) throws Exception {
 		String joinStatment =entityClass.getName() +" a "; 
 		if ( customJoinHqlProviderManager.contains(entityClass.getName())){
 			ICustomJoinHqlProvider<?> prv =  customJoinHqlProviderManager.getCustomProvider(entityClass.getName());
@@ -153,7 +153,7 @@ public abstract class BaseServerRPCService<T> extends BaseRPCHandler<T>{
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO , DTO> PagedResultHolder<DTO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page , IDTOGenerator<POJO , DTO> dtoGenerator) throws Exception {
+	protected <POJO , DTO> PagedResultHolder<DTO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page , IDTOGenerator<POJO , DTO> dtoGenerator) throws Exception {
 		String joinStatment =entityClass.getName() +" a "; 
 		if ( customJoinHqlProviderManager.contains(entityClass.getName())){
 			ICustomJoinHqlProvider<?> prv =  customJoinHqlProviderManager.getCustomProvider(entityClass.getName());
@@ -185,7 +185,7 @@ public abstract class BaseServerRPCService<T> extends BaseRPCHandler<T>{
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page) throws Exception {
+	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page) throws Exception {
 		@SuppressWarnings("unchecked")
 		IObjectCleanUp<POJO> cleaner =(IObjectCleanUp<POJO>) this.cleanUpManager.getObjectCleaner(entityClass.getName()); 
 		return selectDataPaged(entityClass, filters, sortArgs, pageSize, page ,cleaner) ; 

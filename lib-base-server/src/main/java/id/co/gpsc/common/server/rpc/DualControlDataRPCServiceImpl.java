@@ -15,8 +15,8 @@ import id.co.gpsc.common.data.app.DualControlEnabledData;
 import id.co.gpsc.common.data.app.DualControlEnabledOperation;
 import id.co.gpsc.common.data.app.HeaderDataOnlyCommonDualControlContainerTable;
 import id.co.gpsc.common.data.app.SimpleMasterDataDualControlApprovalResult;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.exception.InvalidExcelFileException;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
@@ -153,12 +153,12 @@ public class DualControlDataRPCServiceImpl extends BaseServerRPCService<DualCont
 
 	@Override
 	public PagedResultHolder<CommonDualControlContainerTable> getDataRequiredApproval(
-			String objectFQCN, SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments, int pageSize, int page) throws Exception{
-		SigmaSimpleQueryFilter f = new SigmaSimpleQueryFilter("targetObjectFQCN", SimpleQueryFilterOperator.equal, objectFQCN);
-		SigmaSimpleQueryFilter [] swap = 
+			String objectFQCN, SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments, int pageSize, int page) throws Exception{
+		SimpleQueryFilter f = new SimpleQueryFilter("targetObjectFQCN", SimpleQueryFilterOperator.equal, objectFQCN);
+		SimpleQueryFilter [] swap = 
 		( filters==null) ? 
-			  new SigmaSimpleQueryFilter[1] :  new SigmaSimpleQueryFilter[filters.length +1 ];   
+			  new SimpleQueryFilter[1] :  new SimpleQueryFilter[filters.length +1 ];   
 		swap[swap.length-1] = f ; 
 		if ( filters!= null){
 			for (int i =0 ; i<  filters.length; i++){
@@ -198,8 +198,8 @@ public class DualControlDataRPCServiceImpl extends BaseServerRPCService<DualCont
 
 	@Override
 	public PagedResultHolder<? extends DualControlEnabledData<?,?>> getDataForEditList(
-			String objectFQCN, SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments, int pageSize, int page)
+			String objectFQCN, SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments, int pageSize, int page)
 			throws Exception {
 		try {
 			return  this.dualControlDataService.getDataForEditList(objectFQCN, filters, sortArguments, pageSize, page);

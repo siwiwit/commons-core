@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.List;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.domain.Branch;
 import id.co.gpsc.common.security.dto.BranchDTO;
 
@@ -24,7 +24,7 @@ public interface IBranchService {
 	 * @return PageResultHolder
 	 * @throws Exception
 	 */
-	public PagedResultHolder<BranchDTO> getUserByParameter(SigmaSimpleQueryFilter[] filter, int pagePosition, int pageSize) throws Exception;
+	public PagedResultHolder<BranchDTO> getUserByParameter(SimpleQueryFilter[] filter, int pagePosition, int pageSize) throws Exception;
 	
 	/**
 	 * Save or update

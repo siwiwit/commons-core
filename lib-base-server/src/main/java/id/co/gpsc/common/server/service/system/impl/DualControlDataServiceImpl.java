@@ -10,8 +10,8 @@ import id.co.gpsc.common.data.app.DualControlEnabledOperation;
 import id.co.gpsc.common.data.app.HeaderDataOnlyCommonDualControlContainerTable;
 import id.co.gpsc.common.data.app.exception.InvalidDualControlStateException;
 import id.co.gpsc.common.data.app.exception.UnsupportedDualControlDataKeyType;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.exception.DataNotFoundException;
 import id.co.gpsc.common.exception.DataValidationException;
@@ -20,7 +20,7 @@ import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
 import id.co.gpsc.common.server.dao.system.ApplicationConfigurationDao;
 import id.co.gpsc.common.server.dao.util.ServerSideParsedJSONArrayContainer;
 import id.co.gpsc.common.server.dao.util.ServerSideParsedJSONContainer;
-import id.co.gpsc.common.server.service.AbstractSigmaService;
+import id.co.gpsc.common.server.service.AbstractSimpleService;
 import id.co.gpsc.common.server.service.BaseCustomTargetDataLoader;
 import id.co.gpsc.common.server.service.ICustomBulkDataAdditionalPropertyBinder;
 import id.co.gpsc.common.server.service.ICustomBulkDataAdditionalPropertyBinderManager;
@@ -74,7 +74,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  **/
 
-public class DualControlDataServiceImpl extends AbstractSigmaService 
+public class DualControlDataServiceImpl extends AbstractSimpleService 
 	implements DualControlDataService  , ICustomTargetDataLoaderContainer  , 
 		IDualControlAdditionalDataBinderManager  , ICustomBulkDualControlValidatorManager , 
 		ICustomBulkDataAdditionalPropertyBinderManager , 
@@ -146,8 +146,8 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 	
 	
 	
-	static SigmaSimpleSortArgument[] SORT_DUAL_CONTROL = new SigmaSimpleSortArgument[]{
-		new SigmaSimpleSortArgument("createdTime" , false )
+	static SimpleSortArgument[] SORT_DUAL_CONTROL = new SimpleSortArgument[]{
+		new SimpleSortArgument("createdTime" , false )
 	};
 	
 	
@@ -431,7 +431,7 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 		generalPurposeDao.update(dbData);
 		
 		
-		boolean virtualTarget =false;// table virtual atau bukan. refer ke id.co.sigma.common.server.service.dualcontrol.ICustomDualControlAfterApproveTask.isUseVirtualTable() 
+		boolean virtualTarget =false;// table virtual atau bukan. refer ke id.co.gpsc.common.server.service.dualcontrol.ICustomDualControlAfterApproveTask.isUseVirtualTable() 
 		if ( indexedCustomAfterApproveTask.containsKey(dbData.getTargetObjectFQCN())){
 			virtualTarget = indexedCustomAfterApproveTask.get(dbData.getTargetObjectFQCN()).isUseVirtualTable();
 		}
@@ -597,8 +597,8 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 				
 				@Override
 				public PagedResultHolder listDataRaw(int page, int pageSize,
-						SigmaSimpleQueryFilter[] filters,
-						SigmaSimpleSortArgument[] sortArguments)
+						SimpleQueryFilter[] filters,
+						SimpleSortArgument[] sortArguments)
 						throws Exception {
 					return genericlistDataRaw(this.getTargetClass(), page, pageSize, filters, sortArguments);
 				}
@@ -613,8 +613,8 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 					
 				@Override
 				public PagedResultHolder listDataRaw(int page, int pageSize,
-						SigmaSimpleQueryFilter[] filters,
-						SigmaSimpleSortArgument[] sortArguments)
+						SimpleQueryFilter[] filters,
+						SimpleSortArgument[] sortArguments)
 						throws Exception {
 					return genericlistDataRaw(this.getTargetClass(), page, pageSize, filters, sortArguments);
 				}
@@ -628,8 +628,8 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 					
 				@Override
 				public PagedResultHolder listDataRaw(int page, int pageSize,
-						SigmaSimpleQueryFilter[] filters,
-						SigmaSimpleSortArgument[] sortArguments)
+						SimpleQueryFilter[] filters,
+						SimpleSortArgument[] sortArguments)
 						throws Exception {
 					return genericlistDataRaw(this.getTargetClass(), page, pageSize, filters, sortArguments);
 				}
@@ -646,8 +646,8 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 					return generalPurposeDao.get(cls, Integer.parseInt( packedId));
 				}@Override
 				public PagedResultHolder listDataRaw(int page, int pageSize,
-						SigmaSimpleQueryFilter[] filters,
-						SigmaSimpleSortArgument[] sortArguments)
+						SimpleQueryFilter[] filters,
+						SimpleSortArgument[] sortArguments)
 						throws Exception {
 					return genericlistDataRaw(this.getTargetClass(), page, pageSize, filters, sortArguments);
 				}
@@ -775,7 +775,7 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 	/**
 	 * predefined argument list data yang bisa di edit. ini ambil berdasarkan approval status flag + active status seharusnya
 	 **/
-	private Map<String, SigmaSimpleQueryFilter[]> indexedPredefinedEditListQueryFilter = new HashMap<String, SigmaSimpleQueryFilter[]>();
+	private Map<String, SimpleQueryFilter[]> indexedPredefinedEditListQueryFilter = new HashMap<String, SimpleQueryFilter[]>();
 	
 	
 	
@@ -794,16 +794,16 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 	@SuppressWarnings("unchecked")
 	@Override
 	public PagedResultHolder<? extends DualControlEnabledData<?,?>> getDataForEditList(String objectFQCN,
-			SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments, int pageSize, int page)
+			SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments, int pageSize, int page)
 			throws Exception {
 		if ( !indexedPredefinedEditListQueryFilter.containsKey(objectFQCN)){
 			Class<?> dataClass = Class.forName(objectFQCN);
 			DualControlEnabledData<?, ?> sampleData = (DualControlEnabledData<?, ?>) BeanUtils.instantiate(dataClass);
 			indexedSampleObject.put(objectFQCN, sampleData); 
-			SigmaSimpleQueryFilter[] preDef= null ;  
+			SimpleQueryFilter[] preDef= null ;  
 			
-			SigmaSimpleQueryFilter inSMt = new SigmaSimpleQueryFilter();
+			SimpleQueryFilter inSMt = new SimpleQueryFilter();
 			inSMt.setField(sampleData.getApprovalStatusJPAAnnotatedField());
 			inSMt.setFilter(EDITABLE_STATUS_CODES);
 			
@@ -812,12 +812,12 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 					// erase on approve. jadinya ndak ada yang status nya di hapus
 				
 				 
-				preDef = new SigmaSimpleQueryFilter[]{inSMt} ; 
+				preDef = new SimpleQueryFilter[]{inSMt} ; 
 			}
 			else{			// di flag. berarti anda harus menambah kan flag 
-				preDef = 	new SigmaSimpleQueryFilter[]{
+				preDef = 	new SimpleQueryFilter[]{
 						inSMt, 
-						new SigmaSimpleQueryFilter(sampleData.getActiveFlagJPAAnnotatedField(), SimpleQueryFilterOperator.equal, DualControlEnabledData.DualDataActiveStatusFlag.ACTIVE.toString() )
+						new SimpleQueryFilter(sampleData.getActiveFlagJPAAnnotatedField(), SimpleQueryFilterOperator.equal, DualControlEnabledData.DualDataActiveStatusFlag.ACTIVE.toString() )
 					}	; 
 			}
 			indexedPredefinedEditListQueryFilter.put(objectFQCN, preDef);
@@ -825,12 +825,12 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 		}
 		
 		
-		SigmaSimpleQueryFilter[] passedFilter = null ; 
+		SimpleQueryFilter[] passedFilter = null ; 
 		if ( filters==null){
 			passedFilter = indexedPredefinedEditListQueryFilter.get(objectFQCN); 
 		}else{
-			SigmaSimpleQueryFilter[] arr = indexedPredefinedEditListQueryFilter.get(objectFQCN);
-			passedFilter = new SigmaSimpleQueryFilter[filters.length + arr.length];
+			SimpleQueryFilter[] arr = indexedPredefinedEditListQueryFilter.get(objectFQCN);
+			passedFilter = new SimpleQueryFilter[filters.length + arr.length];
 			 
 			for ( int i = 0   ; i< filters.length ; i++){
 				passedFilter[i] = filters[i];
@@ -851,8 +851,8 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 	 * akses data mentahan
 	 **/
 	public PagedResultHolder<? extends DualControlEnabledData<?, ?>> listDataRaw( Class<? extends DualControlEnabledData<?, ?>> entCls,
-			int page, int pageSize, SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments) throws Exception  {
+			int page, int pageSize, SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments) throws Exception  {
 		
 		return this.getOrCreateCustomDataLoader(entCls.getName()).listDataRaw(page, pageSize, filters, sortArguments); 
 	}
@@ -1131,7 +1131,7 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 	public void rejectAllWaitingApprovalData(Date latestDateToFetch,
 			String remarkForAllRejected) throws Exception {
 		
-		SigmaSimpleQueryFilter inFilter = new SigmaSimpleQueryFilter(); 
+		SimpleQueryFilter inFilter = new SimpleQueryFilter(); 
 		inFilter.setField("approvalStatus");
 		inFilter.setFilter(new String[]{
 				DualControlApprovalStatusCode.WAITING_APPROVE_CREATE.toString() , 
@@ -1146,19 +1146,19 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 		cal.set(Calendar.MINUTE, 59);
 		cal.set(Calendar.SECOND	, 59);
 		
-		SigmaSimpleQueryFilter waktu =  new SigmaSimpleQueryFilter("createdTime" , SimpleQueryFilterOperator.lessEqual , cal.getTime());
+		SimpleQueryFilter waktu =  new SimpleQueryFilter("createdTime" , SimpleQueryFilterOperator.lessEqual , cal.getTime());
 		
 		
-		SigmaSimpleQueryFilter[] filterTungal = new SigmaSimpleQueryFilter[]{
+		SimpleQueryFilter[] filterTungal = new SimpleQueryFilter[]{
 				inFilter , 
-				new SigmaSimpleQueryFilter("singleLineDataTypeFlag" , SimpleQueryFilterOperator.equal , "Y") , 
+				new SimpleQueryFilter("singleLineDataTypeFlag" , SimpleQueryFilterOperator.equal , "Y") , 
 				waktu
 		}; 
 		
 		
-		SigmaSimpleQueryFilter[] filterMultiple = new SigmaSimpleQueryFilter[]{
+		SimpleQueryFilter[] filterMultiple = new SimpleQueryFilter[]{
 				inFilter , 
-				new SigmaSimpleQueryFilter("singleLineDataTypeFlag" , SimpleQueryFilterOperator.equal , "N") , 
+				new SimpleQueryFilter("singleLineDataTypeFlag" , SimpleQueryFilterOperator.equal , "N") , 
 				waktu
 		};
 		
@@ -1180,7 +1180,7 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 
 	@Override
 	public boolean haveWaitingApprovalData(String fqcn) {
-		SigmaSimpleQueryFilter sttsCodeFlt = new SigmaSimpleQueryFilter(); 
+		SimpleQueryFilter sttsCodeFlt = new SimpleQueryFilter(); 
 		sttsCodeFlt.setField("approvalStatus");
 		sttsCodeFlt.setFilter( new String[]{
 				DualControlApprovalStatusCode.WAITING_APPROVE_CREATE.toString() , 
@@ -1188,8 +1188,8 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 				DualControlApprovalStatusCode.WAITING_APPROVE_DELETE.toString() ,
 		});
 		sttsCodeFlt.setOperator(SimpleQueryFilterOperator.fieldIn);
-		SigmaSimpleQueryFilter [] flt = new SigmaSimpleQueryFilter[]{
-			new SigmaSimpleQueryFilter("targetObjectFQCN", SimpleQueryFilterOperator.equal , fqcn) , 
+		SimpleQueryFilter [] flt = new SimpleQueryFilter[]{
+			new SimpleQueryFilter("targetObjectFQCN", SimpleQueryFilterOperator.equal , fqcn) , 
 			sttsCodeFlt
 		}; 
 		Long cnt =  generalPurposeDao.count(CommonDualControlContainerTable.class, flt);
@@ -1204,7 +1204,7 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 	@Override
 	public CommonDualControlContainerTable getLatestWaitingApprovalData(
 			String fqcn) throws Exception{
-		SigmaSimpleQueryFilter sttsCodeFlt = new SigmaSimpleQueryFilter(); 
+		SimpleQueryFilter sttsCodeFlt = new SimpleQueryFilter(); 
 		sttsCodeFlt.setField("approvalStatus");
 		sttsCodeFlt.setFilter( new String[]{
 				DualControlApprovalStatusCode.WAITING_APPROVE_CREATE.toString() , 
@@ -1212,8 +1212,8 @@ public class DualControlDataServiceImpl extends AbstractSigmaService
 				DualControlApprovalStatusCode.WAITING_APPROVE_DELETE.toString() ,
 		});
 		sttsCodeFlt.setOperator(SimpleQueryFilterOperator.fieldIn);
-		SigmaSimpleQueryFilter [] flt = new SigmaSimpleQueryFilter[]{
-			new SigmaSimpleQueryFilter("targetObjectFQCN", SimpleQueryFilterOperator.equal , fqcn) , 
+		SimpleQueryFilter [] flt = new SimpleQueryFilter[]{
+			new SimpleQueryFilter("targetObjectFQCN", SimpleQueryFilterOperator.equal , fqcn) , 
 			sttsCodeFlt
 		}; 
 		List<CommonDualControlContainerTable> rs =generalPurposeDao.list(CommonDualControlContainerTable.class, flt , SORT_DUAL_CONTROL , 1 , 0);  

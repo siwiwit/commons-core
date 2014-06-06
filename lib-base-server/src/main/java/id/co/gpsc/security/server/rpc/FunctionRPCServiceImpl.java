@@ -4,8 +4,8 @@
 package id.co.gpsc.security.server.rpc;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.exception.DataNotFoundException;
 import id.co.gpsc.common.security.domain.Function;
@@ -32,10 +32,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @version $Id
  * @since Jan 7, 2013, 10:30:26 AM
  */
-/*@WebServlet(
-		name="id.co.sigma.arium.security.server.rpc.FunctionRPCServiceImpl" , 
-		description="Servlet RPC untuk handle Function Domain" , 
-		urlPatterns={"/sigma-rpc/function.app-rpc"})*/
 public class FunctionRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/ BaseSecurityRPCService<FunctionRPCService>
 		implements FunctionRPCService {
 
@@ -70,12 +66,12 @@ public class FunctionRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/ Bas
 	}
 
 	@Override
-	public PagedResultHolder<PageDefinitionDTO> getCurrentAppAvailablePages(SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page) throws Exception {
+	public PagedResultHolder<PageDefinitionDTO> getCurrentAppAvailablePages(SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page) throws Exception {
 		
 		
 		BigInteger appId = applicationService.getCurrentApplicationId() ; 
-		SigmaSimpleQueryFilter appIdFilter = new SigmaSimpleQueryFilter("applicationId"  ,SimpleQueryFilterOperator.equal ,appId) ; 
-		SigmaSimpleQueryFilter[]  actual = appendToArray(filters, appIdFilter);
+		SimpleQueryFilter appIdFilter = new SimpleQueryFilter("applicationId"  ,SimpleQueryFilterOperator.equal ,appId) ; 
+		SimpleQueryFilter[]  actual = appendToArray(filters, appIdFilter);
 		
 		PagedResultHolder<PageDefinitionDTO>  retval =  selectDataPaged(PageDefinition.class, actual, sortArgs, pageSize, page , new IDTOGenerator<PageDefinition, PageDefinitionDTO>() {
 			@Override

@@ -10,12 +10,12 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 
 /**
- * base class untuk RPC Servlet sigma
+ * base class untuk RPC Servlet 
  * @author <a href='mailto:gede.sutarsa@gmail.com'>Gede Sutarsa</a>
  * @version $Id
  * @since 11 oct 2012
  **/
-public abstract class BaseSigmaRPCServlet extends RemoteServiceServlet{
+public abstract class BaseSimpleRPCServlet extends RemoteServiceServlet{
 
 	/**
 	 * 

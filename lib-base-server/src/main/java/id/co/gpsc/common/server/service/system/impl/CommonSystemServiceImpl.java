@@ -22,12 +22,12 @@ import id.co.gpsc.common.data.app.SystemSimpleParameter;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
 import id.co.gpsc.common.server.data.system.CommonSequenceTable;
 import id.co.gpsc.common.server.service.system.ICommonSystemService;
-import id.co.gpsc.common.server.service.AbstractSigmaService;
+import id.co.gpsc.common.server.service.AbstractSimpleService;
 
 /**
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
-public class CommonSystemServiceImpl extends AbstractSigmaService implements ICommonSystemService{
+public class CommonSystemServiceImpl extends AbstractSimpleService implements ICommonSystemService{
 	
 	private static final Logger logger = LoggerFactory.getLogger(CommonSystemServiceImpl.class);	
 	

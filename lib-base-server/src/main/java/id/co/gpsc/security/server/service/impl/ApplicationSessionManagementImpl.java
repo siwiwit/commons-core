@@ -9,7 +9,7 @@ import org.springframework.security.core.session.SessionRegistry;
 
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.security.ApplicationSessionRegistry;
-import id.co.gpsc.security.server.SigmaUserDetail;
+import id.co.gpsc.security.server.SimpleUserDetail;
 import id.co.gpsc.security.server.service.IApplicationSessionManagement;
 
 /**
@@ -21,7 +21,7 @@ public class ApplicationSessionManagementImpl implements IApplicationSessionMana
 	
 	protected class SessionAndUserCombiner {
 		public String sessionId ; 
-		public SigmaUserDetail user ; 
+		public SimpleUserDetail user ; 
 	}
 	
 	
@@ -53,7 +53,7 @@ public class ApplicationSessionManagementImpl implements IApplicationSessionMana
 		
 		
 		for ( Object scn : allSessions){
-			SigmaUserDetail userData = (SigmaUserDetail)scn;
+			SimpleUserDetail userData = (SimpleUserDetail)scn;
 			
 			List<SessionInformation> infs =  sessionRegistry.getAllSessions(scn, false);
 			boolean chk =  isMatch(usernameWildCard, realNameWildCard, email, userData);
@@ -88,7 +88,7 @@ public class ApplicationSessionManagementImpl implements IApplicationSessionMana
 	
 	
 	
-	private ApplicationSessionRegistry translate( SigmaUserDetail userDetail, String sessionId ){
+	private ApplicationSessionRegistry translate( SimpleUserDetail userDetail, String sessionId ){
 		ApplicationSessionRegistry retval = new ApplicationSessionRegistry(); 
 		retval.setEmail(userDetail.getEmail()); 
 		retval.setIpAddress(userDetail.getIpAddress());
@@ -103,7 +103,7 @@ public class ApplicationSessionManagementImpl implements IApplicationSessionMana
 	/**
 	 * ngecek match ndak dengan wild card nya
 	 */
-	private boolean isMatch ( String usernameWildCard, String realNameWildCard, String email , SigmaUserDetail userData ){
+	private boolean isMatch ( String usernameWildCard, String realNameWildCard, String email , SimpleUserDetail userData ){
 		if ( (usernameWildCard== null|| usernameWildCard.isEmpty()) &&
 				 (realNameWildCard== null|| realNameWildCard.isEmpty())&&
 				 (email== null|| email.isEmpty())) 

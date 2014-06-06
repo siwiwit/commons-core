@@ -1,6 +1,6 @@
 package id.co.gpsc.security.server.dao.impl;
 
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.domain.Branch;
 import id.co.gpsc.common.security.domain.BranchAssignment;
 import id.co.gpsc.security.server.dao.BaseGenericDao;
@@ -27,7 +27,7 @@ public class BranchDaoImpl extends BaseGenericDao implements IBranchDao{
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Branch> getDataByFilters(SigmaSimpleQueryFilter[] filters,int pagePosition, int pageSize) throws Exception {
+	public List<Branch> getDataByFilters(SimpleQueryFilter[] filters,int pagePosition, int pageSize) throws Exception {
 		String whereSql = "";
 		String sql = "SELECT a FROM Branch a WHERE 1=1";
 		if(filters != null){
@@ -52,7 +52,7 @@ public class BranchDaoImpl extends BaseGenericDao implements IBranchDao{
 	}
 
 	@Override
-	public Integer countDataByFilters(SigmaSimpleQueryFilter[] filters) throws Exception {
+	public Integer countDataByFilters(SimpleQueryFilter[] filters) throws Exception {
 		String whereSql = "";
 		String sql = "SELECT COUNT(a) FROM Branch a WHERE 1=1";
 		if(filters != null){

@@ -1,7 +1,7 @@
 package id.co.gpsc.common.server.dao.base;
 
 
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.util.IDateFormatter;
 
 import java.text.SimpleDateFormat;
@@ -24,7 +24,7 @@ public abstract class SimpleDataGridPagedResultExecutorTemplate<CORETABLECLASS> 
 	 **/
 	private  String [] actualFieldToFetch;
 	
-	protected static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat(SigmaSimpleQueryFilter.DATE_TO_STRING_SERIALIZATION_PATTERN);
+	protected static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat(SimpleQueryFilter.DATE_TO_STRING_SERIALIZATION_PATTERN);
 	
 	
 	/**

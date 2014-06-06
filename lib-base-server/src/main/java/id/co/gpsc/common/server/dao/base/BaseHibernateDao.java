@@ -21,8 +21,8 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.server.dao.IBaseDao;
 
@@ -180,7 +180,7 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public <DATA> List<DATA> list(Class<? extends DATA> entityClass , SigmaSimpleSortArgument[] sortArguments) {
+	public <DATA> List<DATA> list(Class<? extends DATA> entityClass , SimpleSortArgument[] sortArguments) {
 		String hqlSmt ="SELECT a FROM " + entityClass.getName() +" a " + buildOrderByStatement("a", sortArguments);
 		return getCurrentSession().createQuery(hqlSmt).list();
 	}
@@ -189,7 +189,7 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	@Override
 	public <DATA> List<DATA> list(String tableAndJoinStatment,
 			String primaryTableAliasName,
-			SigmaSimpleSortArgument[] sortArguments) {
+			SimpleSortArgument[] sortArguments) {
 		String hqlSmt ="SELECT "+primaryTableAliasName+" FROM " + tableAndJoinStatment +  buildOrderByStatement(primaryTableAliasName, sortArguments);
 		return getCurrentSession().createQuery(hqlSmt).list();
 	}
@@ -203,7 +203,7 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	 * 
 	 **/
 	@SuppressWarnings("unchecked")
-	public <DATA> List<DATA> list(Class<? extends DATA> entityClass , SigmaSimpleQueryFilter[] filters, SigmaSimpleSortArgument[] sortArguments ) throws Exception {
+	public <DATA> List<DATA> list(Class<? extends DATA> entityClass , SimpleQueryFilter[] filters, SimpleSortArgument[] sortArguments ) throws Exception {
 		String hql = "select a from " + entityClass.getName() + " a where 1=1 " + buildWhereStatement("a", filters) + buildOrderByStatement("a", sortArguments); 
 		Query q =  getCurrentSession().createQuery(hql);
 		q = putQueryArguments(q, filters); 
@@ -217,8 +217,8 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	 **/
 	@SuppressWarnings("unchecked")
 	public <DATA> List<DATA> list(Class<? extends DATA> entityClass , 
-			SigmaSimpleQueryFilter[] filters, 
-			SigmaSimpleSortArgument[] sortArguments,  int pageSize , int firstRowPosition) throws Exception{
+			SimpleQueryFilter[] filters, 
+			SimpleSortArgument[] sortArguments,  int pageSize , int firstRowPosition) throws Exception{
 		String countSmt = "SELECT a  from " + entityClass.getName() + " a where 1=1  " + buildWhereStatement("a", filters) + buildOrderByStatement("a", sortArguments); 
 		Query q =  getCurrentSession().createQuery(countSmt) ;
 		q = this.putQueryArguments(q, filters).setMaxResults(pageSize).setFirstResult(firstRowPosition);
@@ -232,7 +232,7 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	 * membaca data dengan simple filter
 	 **/
 	@SuppressWarnings("unchecked")
-	public <DATA> List<DATA> list( String tableNameAndJoinArgument , String primaryTableNameAlias , SigmaSimpleQueryFilter[] filters, SigmaSimpleSortArgument[] sortArguments,  int pageSize , int firstRowPosition) throws Exception{
+	public <DATA> List<DATA> list( String tableNameAndJoinArgument , String primaryTableNameAlias , SimpleQueryFilter[] filters, SimpleSortArgument[] sortArguments,  int pageSize , int firstRowPosition) throws Exception{
 		String countSmt = "SELECT  "+primaryTableNameAlias+"  from " + tableNameAndJoinArgument + "  where 1=1  " + buildWhereStatement(primaryTableNameAlias, filters) + buildOrderByStatement(primaryTableNameAlias, sortArguments); 
 		Query q =  getCurrentSession().createQuery(countSmt) ;
 		q = this.putQueryArguments(q, filters).setMaxResults(pageSize).setFirstResult(firstRowPosition);
@@ -244,7 +244,7 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	/**
 	 * ini untuk count berapa data yang nemu 
 	 **/
-	public Long count(Class<?> entityClass , SigmaSimpleQueryFilter[] filters){
+	public Long count(Class<?> entityClass , SimpleQueryFilter[] filters){
 		String countSmt = "SELECT count(*)  from " + entityClass.getName() + " a where 1=1  " + buildWhereStatement("a", filters); 
 		Query q =  getCurrentSession().createQuery(countSmt) ;
 		q = this.putQueryArguments(q, filters);
@@ -259,7 +259,7 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 
 	@Override
 	public Long count(String tableAndJoinStatment,
-			String primaryTableAliasName, SigmaSimpleQueryFilter[] filters) {
+			String primaryTableAliasName, SimpleQueryFilter[] filters) {
 		String countSmt = "SELECT count(*)  from " + tableAndJoinStatment + " where 1=1  " + buildWhereStatement(primaryTableAliasName, filters); 
 		Query q =  getCurrentSession().createQuery(countSmt) ;
 		q = this.putQueryArguments(q, filters);
@@ -303,15 +303,15 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	 * worker untuk build smt HQL dari field-field yang di minta dari client
 	 * @param tableAlias table alias. ini untuk membangun statement, nama table alias[dot] nama field. tipikal nya a
 	 * @param filters filter query
-	 * @return contoh hasil : <br/> <code>AND a.name=:SIGMAPARAM1 AND a.username=:SIGMAPARAM2
+	 * @return contoh hasil : <br/> <code>AND a.name=:GPSCPARAM1 AND a.username=:GPSCPARAM2
 	 * </code> , jadinya parameter di automate dengan jumlah pada argument filters
 	 **/
-	protected String  buildWhereStatement(String tableAlias ,  SigmaSimpleQueryFilter[] filters) {
+	protected String  buildWhereStatement(String tableAlias ,  SimpleQueryFilter[] filters) {
 		String retval="" ; 
 		if ( filters==null||filters.length==0)
 			return "" ;
 		int i=0;
-		for ( SigmaSimpleQueryFilter scn : filters){
+		for ( SimpleQueryFilter scn : filters){
 			if ( (scn.getFilter()==null||scn.getFilter().length()==0)&& (			
 					SimpleQueryFilterOperator.likeBothSide.equals(  scn.getOperator())||
 					SimpleQueryFilterOperator.likeFrontOnly.equals(  scn.getOperator())||
@@ -398,11 +398,11 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	 *  
 	 *  
 	 **/
-	protected String buildOrderByStatement(String tableAlias ,SigmaSimpleSortArgument[] sortArgs  ) {
+	protected String buildOrderByStatement(String tableAlias ,SimpleSortArgument[] sortArgs  ) {
 		if ( sortArgs==null||sortArgs.length==0)
 			return "" ; 
 		String builder = "" ; 
-		for ( SigmaSimpleSortArgument scn : sortArgs){
+		for ( SimpleSortArgument scn : sortArgs){
 			builder += tableAlias + "." + scn.getSortField() + " " + (  scn.isAscendingSort()? " asc " : "desc");
 			builder += ",";
 		}
@@ -418,12 +418,12 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	 * @param filters data filters
 	 * @see {@link SimpleQueryFilter#getFilterTypeClass()} --> sebelum di set ke query param tipe data harus di rubah dulu 
 	 **/
-	protected Query putQueryArguments(Query query , SigmaSimpleQueryFilter[] filters){
+	protected Query putQueryArguments(Query query , SimpleQueryFilter[] filters){
 		if ( filters==null||filters.length==0)
 			return query;
 		
 		int i=0;
-		for ( SigmaSimpleQueryFilter scn : filters){
+		for ( SimpleQueryFilter scn : filters){
 			if ( (scn.getFilter()==null||scn.getFilter().length()==0)&& (
 					
 					SimpleQueryFilterOperator.likeBothSide.equals(  scn.getOperator())||
@@ -550,7 +550,7 @@ public  abstract class BaseHibernateDao extends SharedPartBaseDao implements IBa
 	 * sebab tidak semua database engine support update join. mohon berhati-hati dalam mempergunakan method ini 
 	 * @param entityClass entity class yang hendak di update
 	 */
-	public int updateData ( Class<?> entityClass , SimpleKeyValueParameter[] updatedFields , SigmaSimpleQueryFilter [] filters ){
+	public int updateData ( Class<?> entityClass , SimpleKeyValueParameter[] updatedFields , SimpleQueryFilter [] filters ){
 		Query updQuery =  getCurrentSession().createQuery(generateUpdateStatement(entityClass, updatedFields, filters));
 		updQuery = putQueryArguments(updQuery, filters); 
 		for ( SimpleKeyValueParameter scn  : updatedFields){

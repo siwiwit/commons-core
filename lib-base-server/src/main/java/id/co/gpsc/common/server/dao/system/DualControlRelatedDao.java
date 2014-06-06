@@ -3,8 +3,8 @@ package id.co.gpsc.common.server.dao.system;
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.app.DualControlApprovalStatusCode;
 import id.co.gpsc.common.data.app.SimplifiedDualControlContainerTable;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.server.dao.IBaseDao;
 
 /**
@@ -27,7 +27,7 @@ public interface DualControlRelatedDao extends IBaseDao{
 	 * <ol>
 	 * 
 	 **/
-	public PagedResultHolder<SimplifiedDualControlContainerTable> getApprovalList ( SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sorts , String username , int page , int pageSize ) ;
+	public PagedResultHolder<SimplifiedDualControlContainerTable> getApprovalList ( SimpleQueryFilter[] filters , SimpleSortArgument[] sorts , String username , int page , int pageSize ) ;
 	
 
 }

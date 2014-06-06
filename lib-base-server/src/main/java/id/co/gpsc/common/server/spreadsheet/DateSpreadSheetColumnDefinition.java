@@ -13,7 +13,7 @@ import org.apache.poi.ss.usermodel.Cell;
 
 /**
  * 
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Sep 3, 2013 6:06:07 PM
  */
 public abstract class DateSpreadSheetColumnDefinition<DATA> extends BaseSpreadSheetColumnDefinition<DATA, Date> {

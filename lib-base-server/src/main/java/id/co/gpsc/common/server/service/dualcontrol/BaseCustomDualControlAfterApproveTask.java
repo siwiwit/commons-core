@@ -12,13 +12,13 @@ import id.co.gpsc.common.data.app.CommonDualControlContainerTable;
 import id.co.gpsc.common.data.app.SimpleDualControlData;
 import id.co.gpsc.common.exception.DataValidationException;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
-import id.co.gpsc.common.server.service.AbstractSigmaService;
+import id.co.gpsc.common.server.service.AbstractSimpleService;
 
 /**
  * base class untuk custom handler
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
-public abstract class BaseCustomDualControlAfterApproveTask<DATA extends SimpleDualControlData<?>> extends AbstractSigmaService implements ICustomDualControlAfterApproveTask<DATA> , InitializingBean{
+public abstract class BaseCustomDualControlAfterApproveTask<DATA extends SimpleDualControlData<?>> extends AbstractSimpleService implements ICustomDualControlAfterApproveTask<DATA> , InitializingBean{
 
 	
 	private static final Logger logger = LoggerFactory.getLogger(BaseCustomDualControlAfterApproveTask.class); 

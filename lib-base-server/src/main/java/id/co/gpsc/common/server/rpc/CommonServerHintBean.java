@@ -29,7 +29,7 @@ public class CommonServerHintBean {
 				"</servlet>\n");
 		System.out.println("2. servlet ini minimal musti handle url dengan *.app-rpc. RPC yang sudah predefined di definisikan dengan RPC url. Di sarankan anda juga mempergunakan ini untuk RPC anda");
 		System.out.println("3. karena diperlukan org.springframework.web.servlet.DispatcherServlet, anda juga memerlukan spring web-mvc file(sesuai dengan nama servlet anda dalam sample di atas namanya app-rpc-dispatch)--(ini bisa hanya file kosong) dengan nama file: nama_servlet_anda-servlet.xml(contoh saya di sini nama file nya menjadi : app-rpc-dispatch-servlet.xml) ");
-		System.out.println("4. anda wajib juga menyediakan implementasi direct to table LOV reader(service class dengan implement interface id.co.sigma.common.server.dao.DirectTableLookupProviderDao )\nId dari dao bean harus : common-lov.directTableProvider ");
+		System.out.println("4. anda wajib juga menyediakan implementasi direct to table LOV reader(service class dengan implement interface id.co.gpsc.common.server.dao.DirectTableLookupProviderDao )\nId dari dao bean harus : common-lov.directTableProvider ");
 		System.out.println("mohon di recek kembali ke aplikasi anda kala ada sesuatu yang tidak berjalan sesuai dengan rencana");
 	}
 }

@@ -10,7 +10,7 @@ import org.apache.poi.ss.usermodel.CellStyle;
 
 /**
  * 
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Oct 7, 2013 6:00:59 PM
  */
 public abstract class BaseSpreadSheetColumnDefinition<DATA, CELLTYPE> {

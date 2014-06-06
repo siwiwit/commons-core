@@ -19,10 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @since Nov 26, 2012, 4:10:31 PM
  * @version $Id
  */
-/*@WebServlet(
-		name="id.co.sigma.arium.security.server.rpc.GroupRPCServiceImpl" , 
-		description="Servlet RPC untuk handle Group User" , 
-		urlPatterns={"/sigma-rpc/user-sec-group.app-rpc"})*/
 public class GroupRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/BaseSecurityRPCService<GroupRPCService> implements GroupRPCService{
 
 	private static final long serialVersionUID = -3764022559012913633L;

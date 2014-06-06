@@ -1,6 +1,6 @@
 /**
  * File Name : IUserLoginService.java
- * Package   : id.co.sigma.arium.security.server.service
+ * Package   : id.co.gpsc.arium.security.server.service
  * Project   : security-server
  */
 package id.co.gpsc.security.server.service;

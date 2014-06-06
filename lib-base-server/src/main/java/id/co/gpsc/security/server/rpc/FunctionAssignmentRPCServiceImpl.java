@@ -23,10 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @version $Id
  * @since Jan 8, 2013, 2:24:17 PM
  */
-/*@WebServlet(
-		name="id.co.sigma.arium.security.server.rpc.FunctionAssignmentRPCServiceImpl" , 
-		description="Servlet RPC untuk handle Function Assignment Domain" , 
-		urlPatterns={"/sigma-rpc/function-assignment.app-rpc"})*/
+
 public class FunctionAssignmentRPCServiceImpl extends
 		/*BaseSelfRegisteredRPCService*/ BaseSecurityRPCService<FunctionAssignmentRPCService> implements FunctionAssignmentRPCService {
 

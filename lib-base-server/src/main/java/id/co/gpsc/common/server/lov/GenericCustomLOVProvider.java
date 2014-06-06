@@ -4,7 +4,7 @@
 package id.co.gpsc.common.server.lov;
 
 import id.co.gpsc.common.data.lov.CommonLOV;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
 import id.co.gpsc.common.server.lov.BaseSelfRegisterLOVProvider;
 
@@ -22,7 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * <li>set jadi bean dan make lazy=false*mekanisme menjadikan bean, ikut policy*</li>
  * </ol>
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Jul 31, 2013 4:23:58 PM
  */
 public abstract class GenericCustomLOVProvider<KEY, DATA> extends BaseSelfRegisterLOVProvider {
@@ -110,7 +110,7 @@ public abstract class GenericCustomLOVProvider<KEY, DATA> extends BaseSelfRegist
 	/**
 	 * field-field untuk sort
 	 **/
-	protected abstract SigmaSimpleSortArgument[] getLOVSorter();
+	protected abstract SimpleSortArgument[] getLOVSorter();
 	
 	/**
 	 * pekerjaan nya adalah merubah dari data MDA menjadi data LOV

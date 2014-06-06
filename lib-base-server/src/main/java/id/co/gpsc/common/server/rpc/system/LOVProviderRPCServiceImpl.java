@@ -31,9 +31,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 /**
  * Lov Provider servlet
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
- * @author <a href="gede.mahendra@sigma.co.id">Gede Mahendra</a>
+ * @author <a href="dein.mahendra@gmail.com">Gede Mahendra</a>
  **/
-/*@WebServlet(name="id.co.sigma.common.server.rpc.system.LOVProviderRPCServiceImpl" ,
+/*@WebServlet(name="id.co.gpsc.common.server.rpc.system.LOVProviderRPCServiceImpl" ,
 			description="servlet provider Lookup value. custom maupun yang simple" , 
 			urlPatterns={
 				"/corelib-rpc/lov-data.app-rpc"

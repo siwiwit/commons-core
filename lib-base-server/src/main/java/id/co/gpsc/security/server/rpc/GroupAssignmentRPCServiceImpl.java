@@ -11,10 +11,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-/*@WebServlet(
-		name="id.co.sigma.arium.security.server.rpc.GroupAssignmentRPCServiceImpl" , 
-		description="Servlet RPC untuk handle Group User" , 
-		urlPatterns={"/sigma-rpc/group-assignment.app-rpc"})*/
+
 public class GroupAssignmentRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/BaseSecurityRPCService<GroupAssignmentRPCService> implements GroupAssignmentRPCService{
 
 	private static final long serialVersionUID = 8846531085713519227L;

@@ -13,8 +13,8 @@ import java.util.Map;
 
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.query.BaseGridDataProviderNativeSql;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.server.service.datagrid.IJSONDataGridProvider;
 import id.co.gpsc.common.server.service.datagrid.SimplifiedGridDataRowWrapper;
 import id.co.gpsc.common.server.service.datagrid.SimplifiedGridDataWrapper;
@@ -53,8 +53,8 @@ public abstract class BaseNativeSqlJSONDataGridDaoLayer implements  IJSONDataGri
     @Override
     public SimplifiedGridDataWrapper getData(String[] fetchedFieldNames,
     		int pageSize, int pagePosition,
-    		SigmaSimpleQueryFilter[] queryFilters,
-    		SigmaSimpleSortArgument[] sortArguments) {
+    		SimpleQueryFilter[] queryFilters,
+    		SimpleSortArgument[] sortArguments) {
     	QueryNormalizeResult normalizer = new QueryNormalizeResult(queryFilters); 
     	Long cnt = countData(queryFilters, normalizer); 
     	if ( cnt==null||cnt.longValue()==0)
@@ -74,7 +74,7 @@ public abstract class BaseNativeSqlJSONDataGridDaoLayer implements  IJSONDataGri
      * @param sortArguments sort arguments untuk data. data di sort berdasarkan apa
      * 
      **/
-    protected Long countData (SigmaSimpleQueryFilter[] queryFilters , QueryNormalizeResult  resultHolder) {
+    protected Long countData (SimpleQueryFilter[] queryFilters , QueryNormalizeResult  resultHolder) {
     	String orgQuery  = getQueryProvider().generateCountSql(queryFilters, "cnt") ;
     	QueryReadyData readyData =  resultHolder.normalizeQuery(orgQuery) ; 
     	Long data =  (new JdbcTemplate(dataSource)).queryForLong(readyData.getNormalizeQuery()	 ,readyData.getQueryParameters()  ,  readyData.getQueryParameterSqlTypes());
@@ -82,7 +82,7 @@ public abstract class BaseNativeSqlJSONDataGridDaoLayer implements  IJSONDataGri
     }
     
     
-    protected List<SimplifiedGridDataRowWrapper> queryData (QueryNormalizeResult  resultHolder , String[] fetchedFieldNames , int fetchSize , int firstRowPositionToFetch , SigmaSimpleQueryFilter[] queryFilters , SigmaSimpleSortArgument[] sortArguments) {
+    protected List<SimplifiedGridDataRowWrapper> queryData (QueryNormalizeResult  resultHolder , String[] fetchedFieldNames , int fetchSize , int firstRowPositionToFetch , SimpleQueryFilter[] queryFilters , SimpleSortArgument[] sortArguments) {
     	String orgQuery  = getQueryProvider().generateDataSql("GRID_DATA_ID___________"  ,  fetchedFieldNames, fetchSize, firstRowPositionToFetch, queryFilters, sortArguments); 
     	QueryReadyData readyData =  resultHolder.normalizeQuery(orgQuery) ;
     	

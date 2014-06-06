@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
  * @since Jan 29, 2013, 11:09:22 AM
  * @version $Id
  */
-public class SigmaUserAuthority implements GrantedAuthority{
+public class SimpleUserAuthority implements GrantedAuthority{
 
 	private static final long serialVersionUID = -4592877226590205303L;
 
@@ -20,7 +20,7 @@ public class SigmaUserAuthority implements GrantedAuthority{
 	/**
 	 * Constructor
 	 */
-	public SigmaUserAuthority() {
+	public SimpleUserAuthority() {
 		super();
 	}
 	
@@ -28,7 +28,7 @@ public class SigmaUserAuthority implements GrantedAuthority{
 	 * Additional Constructor
 	 * @param authority
 	 */
-	public SigmaUserAuthority(SigmaAuthorityEnum authority){
+	public SimpleUserAuthority(SimpleAuthorityEnum authority){
 		this.authority = authority.toString();
 	}
 	

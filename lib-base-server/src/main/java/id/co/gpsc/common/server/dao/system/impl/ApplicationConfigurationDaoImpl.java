@@ -6,7 +6,7 @@ import id.co.gpsc.common.data.entity.FormLabel;
 import id.co.gpsc.common.data.entity.I18Code;
 import id.co.gpsc.common.data.entity.I18NTextGroup;
 import id.co.gpsc.common.data.entity.I18Text;
-import id.co.gpsc.common.server.dao.base.BaseSigmaDao;
+import id.co.gpsc.common.server.dao.base.BaseJPADao;
 import id.co.gpsc.common.server.dao.system.ApplicationConfigurationDao;
 
 import java.util.Collection;
@@ -25,7 +25,7 @@ import org.springframework.stereotype.Repository;
  * @author <a href='mailto:gede.sutarsa@gmail.com'>Gede Sutarsa</a>
  **/
 @Repository
-public class ApplicationConfigurationDaoImpl extends BaseSigmaDao implements ApplicationConfigurationDao{
+public class ApplicationConfigurationDaoImpl extends BaseJPADao implements ApplicationConfigurationDao{
 	
 	
 	private static Logger logger = LoggerFactory.getLogger(ApplicationConfigurationDaoImpl.class);

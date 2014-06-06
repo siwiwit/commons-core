@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * @version $Id
  **/
-@Service(value="sigma-no-operation-pwd-encoder")
-public class SigmaNoOpPassowordEconder implements PasswordEncoder{
+@Service(value="gpsc-no-operation-pwd-encoder")
+public class SimpleNoOpPassowordEconder implements PasswordEncoder{
 
 	@Override
 	public String encodePassword(String rawPass, Object salt) {

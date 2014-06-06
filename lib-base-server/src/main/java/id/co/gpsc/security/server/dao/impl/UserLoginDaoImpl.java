@@ -1,6 +1,6 @@
 /**
  * File Name : UserLoginDaoImpl.java
- * Package   : id.co.sigma.arium.security.server.dao.impl
+ * Package   : id.co.gpsc.arium.security.server.dao.impl
  * Project   : security-server
  */
 package id.co.gpsc.security.server.dao.impl;

@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Lazy;
  * configurator bean untuk load Page controller(berbasis spring MVC)
  **/
 @Configuration
-public class SigmaCommonMVCControllerConfiguration {
+public class SimpleCommonMVCControllerConfiguration {
 	/**
 	 * ini maksa spring MVC Up
 	 **/

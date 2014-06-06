@@ -39,7 +39,7 @@ public class SystemParameterFieldMetadataComposer<D extends SystemParamDrivenCla
 	
 	
 	/**
-	 * key of : id.co.sigma.common.data.app.SystemSimpleParameter yang di pergunakan dalm clzz ini
+	 * key of : id.co.gpsc.common.data.app.SystemSimpleParameter yang di pergunakan dalm clzz ini
 	 */
 	private String [] systemParamKeys ; 
 	
@@ -51,7 +51,7 @@ public class SystemParameterFieldMetadataComposer<D extends SystemParamDrivenCla
 	private Class<D> handledClass ; 
 	
 	/**
-	 * key : key pada id.co.sigma.common.data.app.SystemSimpleParameter
+	 * key : key pada id.co.gpsc.common.data.app.SystemSimpleParameter
 	 * value : nama java field yang memakai key tsb
 	 */
 	private Map<String,  String> indexedFieldBySystemParamKey = new HashMap<String,   String>(); 

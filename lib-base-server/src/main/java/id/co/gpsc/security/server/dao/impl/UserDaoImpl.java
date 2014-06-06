@@ -1,12 +1,12 @@
 package id.co.gpsc.security.server.dao.impl;
 
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.domain.Application;
 import id.co.gpsc.common.security.domain.ApplicationUser;
 import id.co.gpsc.common.security.domain.User;
 import id.co.gpsc.common.security.domain.UserGroupAssignment;
 import id.co.gpsc.common.security.domain.UserPassword;
-import id.co.gpsc.common.server.dao.base.BaseSigmaDao;
+import id.co.gpsc.common.server.dao.base.BaseJPADao;
 import id.co.gpsc.security.server.dao.IUserDao;
 
 import java.math.BigInteger;
@@ -23,7 +23,7 @@ import org.springframework.stereotype.Repository;
  * @version $Id
  */
 @Repository
-public class UserDaoImpl extends BaseSigmaDao implements IUserDao{
+public class UserDaoImpl extends BaseJPADao implements IUserDao{
 
 	private final String paramPrefix = "PARAM_";
 	
@@ -170,7 +170,7 @@ public class UserDaoImpl extends BaseSigmaDao implements IUserDao{
 	 * @param alias alias dari tabelnya
 	 * @return
 	 */
-	private String generateWhereString(SigmaSimpleQueryFilter[] filters, String alias) {
+	private String generateWhereString(SimpleQueryFilter[] filters, String alias) {
 		if (filters == null)
 			return "";
 		String whereString = "";
@@ -186,7 +186,7 @@ public class UserDaoImpl extends BaseSigmaDao implements IUserDao{
 	 * @param query query dengan patameter
 	 * @param filters filter untuk querynya
 	 */
-	private void setParameterAtWhereString(Query query, SigmaSimpleQueryFilter[] filters) {
+	private void setParameterAtWhereString(Query query, SimpleQueryFilter[] filters) {
 		if (filters == null)
 			return ;
 		for (int i = 0; i < filters.length; i++) {
@@ -196,7 +196,7 @@ public class UserDaoImpl extends BaseSigmaDao implements IUserDao{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<User> getUserByFilters(SigmaSimpleQueryFilter[] filters, int pagePosition, int pageSize) throws Exception {
+	public List<User> getUserByFilters(SimpleQueryFilter[] filters, int pagePosition, int pageSize) throws Exception {
 		String hql = "SELECT A FROM User A WHERE 1=1";
 		Query query = getEntityManager().createQuery(hql + generateWhereString(filters, "A"));
 		setParameterAtWhereString(query, filters);
@@ -216,7 +216,7 @@ public class UserDaoImpl extends BaseSigmaDao implements IUserDao{
 	}
 
 	@Override
-	public Integer countUserByFilters(SigmaSimpleQueryFilter[] filters)
+	public Integer countUserByFilters(SimpleQueryFilter[] filters)
 			throws Exception {
 		String hql = "SELECT COUNT(A) FROM User A WHERE 1=1";
 		String whereString = generateWhereString(filters, "A");

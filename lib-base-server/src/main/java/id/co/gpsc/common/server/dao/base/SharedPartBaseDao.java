@@ -2,7 +2,7 @@ package id.co.gpsc.common.server.dao.base;
 
 import id.co.gpsc.common.data.ModificationDataContainer;
 import id.co.gpsc.common.data.SingleKeyEntityData;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.server.dao.IBaseDao;
 import id.co.gpsc.common.server.util.ExtendedBeanUtils;
@@ -29,7 +29,7 @@ public abstract class SharedPartBaseDao implements IBaseDao{
 	/**
 	 * formatter untuk date (digunakan dalam casting filter ke type data aslinya)
 	 **/
-	protected static SimpleDateFormat dateFormatter = new SimpleDateFormat(SigmaSimpleQueryFilter.DATE_TO_STRING_SERIALIZATION_PATTERN);
+	protected static SimpleDateFormat dateFormatter = new SimpleDateFormat(SimpleQueryFilter.DATE_TO_STRING_SERIALIZATION_PATTERN);
 	
 	protected static SimpleDateFormat DATE_FORMATTER_SHORT = new SimpleDateFormat("yyyy-MM-dd");
 	
@@ -41,7 +41,7 @@ public abstract class SharedPartBaseDao implements IBaseDao{
 	/**
 	 * Prefix untuk automated named param. nantinya di gabung dengan nomor urut
 	 **/
-	protected static final String AUTO_PARAM_PREFIX ="SIGMA_PARAM";
+	protected static final String AUTO_PARAM_PREFIX ="GPSC_PARAM";
 	
 	/**
 	 * membaca statement sql dari resource file. ini di cari dalam package yang sama dengan class
@@ -143,10 +143,10 @@ public abstract class SharedPartBaseDao implements IBaseDao{
 	 * worker untuk build smt HQL dari field-field yang di minta dari client. ini di revisi agar bisa di pergunakan untuk invoke statment update dengan parameter paramter sederhana
 	 * @param tableAlias table alias. ini untuk membangun statement, nama table alias[dot] nama field. tipikal nya a
 	 * @param filters filter query
-	 * @return contoh hasil : <br/> <code>AND a.name=:SIGMAPARAM1 AND a.username=:SIGMAPARAM2
+	 * @return contoh hasil : <br/> <code>AND a.name=:GPSCPARAM1 AND a.username=:GPSCPARAM2
 	 * </code> , jadinya parameter di automate dengan jumlah pada argument filters
 	 **/
-	protected String  buildWhereStatement(String tableAlias ,  SigmaSimpleQueryFilter[] filters) {
+	protected String  buildWhereStatement(String tableAlias ,  SimpleQueryFilter[] filters) {
 		String retval="" ; 
 		if ( filters==null||filters.length==0)
 			return "" ;
@@ -155,7 +155,7 @@ public abstract class SharedPartBaseDao implements IBaseDao{
 		
 		String tableAliasWithDot = tableAlias!= null && tableAlias.length()> 0 ? tableAlias +"." : "" ;
 		
-		for ( SigmaSimpleQueryFilter scn : filters){
+		for ( SimpleQueryFilter scn : filters){
 			if ( (scn.getFilter()==null||scn.getFilter().length()==0)&& (			
 					SimpleQueryFilterOperator.likeBothSide.equals(  scn.getOperator())||
 					SimpleQueryFilterOperator.likeFrontOnly.equals(  scn.getOperator())||
@@ -211,7 +211,7 @@ public abstract class SharedPartBaseDao implements IBaseDao{
 	}
 	
 	
-	protected String  buildWhereStatementOriginal(String tableAlias ,  SigmaSimpleQueryFilter[] filters) {
+	protected String  buildWhereStatementOriginal(String tableAlias ,  SimpleQueryFilter[] filters) {
 		String retval="" ; 
 		if ( filters==null||filters.length==0)
 			return "" ;
@@ -220,7 +220,7 @@ public abstract class SharedPartBaseDao implements IBaseDao{
 		
 		
 		
-		for ( SigmaSimpleQueryFilter scn : filters){
+		for ( SimpleQueryFilter scn : filters){
 			if ( (scn.getFilter()==null||scn.getFilter().length()==0)&& (			
 					SimpleQueryFilterOperator.likeBothSide.equals(  scn.getOperator())||
 					SimpleQueryFilterOperator.likeFrontOnly.equals(  scn.getOperator())||
@@ -304,7 +304,7 @@ public abstract class SharedPartBaseDao implements IBaseDao{
 	 * @param updatedFields field-field yang di update
 	 * @param filters filters untuk proses update data
 	 */
-	protected String generateUpdateStatement ( Class<?> entityClass , SimpleKeyValueParameter[] updatedFields , SigmaSimpleQueryFilter [] filters  ) {
+	protected String generateUpdateStatement ( Class<?> entityClass , SimpleKeyValueParameter[] updatedFields , SimpleQueryFilter [] filters  ) {
 		StringBuffer fieldUpdateStatment = new StringBuffer(); 
 		for ( SimpleKeyValueParameter scn :  updatedFields ){
 			if ( fieldUpdateStatment.length()>0)

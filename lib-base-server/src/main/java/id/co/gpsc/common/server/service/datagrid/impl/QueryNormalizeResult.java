@@ -6,7 +6,7 @@ import id.co.gpsc.common.data.impl.DoubleDataConverter;
 import id.co.gpsc.common.data.impl.FloatDataConverter;
 import id.co.gpsc.common.data.impl.IntegerDataConverter;
 import id.co.gpsc.common.data.impl.LongDataConverter;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 
 import java.math.BigInteger;
 import java.sql.Types;
@@ -103,7 +103,7 @@ public class QueryNormalizeResult {
 	 **/
 	private static final Map<String , Integer > SQL_TYPE_MAP = new HashMap<String, Integer>(); 
 	
-	private static final SimpleDateFormat formatter = new SimpleDateFormat(SigmaSimpleQueryFilter.DATE_ONLY_STRING_SERIALIZATION_PATTERN);
+	private static final SimpleDateFormat formatter = new SimpleDateFormat(SimpleQueryFilter.DATE_ONLY_STRING_SERIALIZATION_PATTERN);
 	
 	
 	
@@ -174,9 +174,9 @@ public class QueryNormalizeResult {
 	private Map<String, Object>  parameterDataMap = new HashMap<String, Object>(); 
 	
 	
-	public QueryNormalizeResult(SigmaSimpleQueryFilter [] filters ){
+	public QueryNormalizeResult(SimpleQueryFilter [] filters ){
 		if ( filters!= null&& filters.length>0){
-			for ( SigmaSimpleQueryFilter scn : filters){
+			for ( SimpleQueryFilter scn : filters){
 				String key = scn.getField().toUpperCase() ; 
 				
 				parameterDataTypeMap.put( key.toUpperCase()	,  scn.getFilterTypeClass()  ) ;

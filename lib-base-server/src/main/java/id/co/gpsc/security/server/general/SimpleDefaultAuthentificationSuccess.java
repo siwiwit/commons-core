@@ -24,7 +24,7 @@ import id.co.gpsc.security.server.service.BaseSecurityService;
  * @since Apr 22, 2013, 11:14:03 AM
  * @version $Id
  */
-public class SigmaDefaultAuthentificationSuccess extends BaseSecurityService implements AuthenticationSuccessHandler{
+public class SimpleDefaultAuthentificationSuccess extends BaseSecurityService implements AuthenticationSuccessHandler{
 
 	@Autowired
 	private UserLoginDaoImpl userLoginDao;
@@ -43,8 +43,8 @@ public class SigmaDefaultAuthentificationSuccess extends BaseSecurityService imp
 			data.setLogonTime(new Date());
 			data.setTerminal(request.getRemoteHost());
 			data.setUserBrowser(request.getHeader("user-agent"));
-			data.setUserId(getSigmaUserDetailFromSecurityContext().getUserInternalId());
-			data.setUuid(getSigmaUserDetailFromSecurityContext().getUuid());
+			data.setUserId(getUserDetailFromSecurityContext().getUserInternalId());
+			data.setUuid(getUserDetailFromSecurityContext().getUuid());
 																							
 			userLoginDao.insert(data);
 			respon.sendRedirect(singleApplicationURL);

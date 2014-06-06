@@ -6,11 +6,11 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import id.co.gpsc.common.server.data.security.SigmaSimpleUserData;
+import id.co.gpsc.common.server.data.security.SimpleUserData;
 import id.co.gpsc.common.server.data.security.UserLoginNotificationData;
-import id.co.gpsc.common.server.service.AbstractSigmaService;
+import id.co.gpsc.common.server.service.AbstractSimpleService;
 import id.co.gpsc.common.server.service.system.AuthorityTranslator;
-import id.co.gpsc.common.server.service.system.ISigmaUserService;
+import id.co.gpsc.common.server.service.system.ISimpleUserService;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +27,8 @@ import org.springframework.stereotype.Service;
  * @version $Id
  * 
  **/
-@Service(value="sigma-user-detail-service")
-public class SigmaUserDetailServiceImpl extends AbstractSigmaService implements UserDetailsService , InitializingBean, ISigmaUserService{
+@Service(value="gpsc-user-detail-service")
+public class SimpleUserDetailServiceImpl extends AbstractSimpleService implements UserDetailsService , InitializingBean, ISimpleUserService{
 
 	
 	
@@ -69,7 +69,7 @@ public class SigmaUserDetailServiceImpl extends AbstractSigmaService implements 
 	/**
 	 * validasi user : username , host
 	 **/
-	protected SigmaSimpleUserData validateAndBuildUserData(UserLoginNotificationData userData){
+	protected SimpleUserData validateAndBuildUserData(UserLoginNotificationData userData){
 		String remoteHost=  request.getRemoteHost();
 		
 		
@@ -78,7 +78,7 @@ public class SigmaUserDetailServiceImpl extends AbstractSigmaService implements 
 			System.out.println("user : " + userData.getUserName() + ", mencoba menerobos dari ip : " + remoteHost +", ip di ijinkan :" + userData.getUserHost());
 			return null ; 
 		}
-		SigmaSimpleUserData baru = new SigmaSimpleUserData(); 
+		SimpleUserData baru = new SimpleUserData(); 
 		baru.setBranchCode(userData.getBranchCode());
 		baru.setBranchName(userData.getBranchName());
 		baru.setEmail(userData.getEmail());

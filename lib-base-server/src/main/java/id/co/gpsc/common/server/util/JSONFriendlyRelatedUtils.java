@@ -214,7 +214,7 @@ public class JSONFriendlyRelatedUtils {
 		
 		JSONFriendlyRelatedUtils u = new JSONFriendlyRelatedUtils(); 
 		
-		System.out.println(  u.generateMethodRaw("id.co.sigma.common.data.approval.CommonApprovalHeader"));
+		System.out.println(  u.generateMethodRaw("id.co.gpsc.common.data.approval.CommonApprovalHeader"));
 		/*
 		System.out.println(String[].class.getName());
 		*/

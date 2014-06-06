@@ -1,7 +1,7 @@
 package id.co.gpsc.security.server.general;
 
 import id.co.gpsc.common.security.domain.Signon;
-import id.co.gpsc.security.server.SigmaUserDetail;
+import id.co.gpsc.security.server.SimpleUserDetail;
 import id.co.gpsc.security.server.dao.impl.UserLoginDaoImpl;
 
 import java.io.IOException;
@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @since Apr 22, 2013, 11:24:56 AM
  * @version $Id
  */
-public class SigmaDefaultSuccessLogoutHandler implements LogoutSuccessHandler{
+public class SimpleDefaultSuccessLogoutHandler implements LogoutSuccessHandler{
 
 	@Autowired
 	private UserLoginDaoImpl userLoginDao;
@@ -40,7 +40,7 @@ public class SigmaDefaultSuccessLogoutHandler implements LogoutSuccessHandler{
 		try {
 			if ( auth== null)
 				return ; 
-			SigmaUserDetail userDetail = (SigmaUserDetail) auth.getPrincipal();
+			SimpleUserDetail userDetail = (SimpleUserDetail) auth.getPrincipal();
 			if(userDetail != null){
 				String jsession = userDetail.getUuid();			
 				Signon data = userLoginDao.getSignonData(jsession);

@@ -2,7 +2,7 @@ package id.co.gpsc.common.server.service.system;
 
 import java.util.List;
 
-public interface ISigmaSessionRegistry {
+public interface ISimpleSessionRegistry {
 	
 	
 	public List<Object> getAllPrincipals(); 

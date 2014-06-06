@@ -8,12 +8,12 @@ import java.util.Map;
 import javax.persistence.Query;
 
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
-import id.co.gpsc.common.server.dao.base.BaseSigmaDao;
+import id.co.gpsc.common.server.dao.base.BaseJPADao;
 
 /**
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
-public class GeneralPurposeDaoImpl extends BaseSigmaDao implements IGeneralPurposeDao{
+public class GeneralPurposeDaoImpl extends BaseJPADao implements IGeneralPurposeDao{
 
 	
 	static final String PREFIX_IN_PARAM ="INPRM"; 

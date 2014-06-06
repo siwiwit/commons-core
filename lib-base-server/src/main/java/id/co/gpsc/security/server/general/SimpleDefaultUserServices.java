@@ -17,8 +17,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import id.co.gpsc.common.security.domain.Signon;
 import id.co.gpsc.common.security.domain.User;
-import id.co.gpsc.security.server.SigmaUserAuthority;
-import id.co.gpsc.security.server.SigmaUserDetail;
+import id.co.gpsc.security.server.SimpleUserAuthority;
+import id.co.gpsc.security.server.SimpleUserDetail;
 import id.co.gpsc.security.server.dao.IUserLoginDao;
 import id.co.gpsc.security.server.service.BaseSecurityService;
 
@@ -28,13 +28,13 @@ import id.co.gpsc.security.server.service.BaseSecurityService;
  * <li>Cek ke tabel sec_user berdasarkan username yg dimasukkan</li>
  * <li>Cek apakah user dalam status aktif atau tidak</li>
  * <li>Cek apakah password yg dimasukkan sudah match dg yg di database</li>
- * <li>Jika 3 kriteria diatas terpenuhi maka tinggal set data yg diperlukan ke dalam object SigmaUserDetail untuk keperluan SpringSecurity</li>
+ * <li>Jika 3 kriteria diatas terpenuhi maka tinggal set data yg diperlukan ke dalam object SimpleUserDetail untuk keperluan SpringSecurity</li>
  * </ul>
  * @author I Gede Mahendra
  * @since Apr 22, 2013, 11:35:25 AM
  * @version $Id
  */
-public class SigmaDefaultUserServices extends BaseSecurityService implements UserDetailsService{
+public class SimpleDefaultUserServices extends BaseSecurityService implements UserDetailsService{
 
 	@Autowired
 	private IUserLoginDao userDao;
@@ -43,12 +43,12 @@ public class SigmaDefaultUserServices extends BaseSecurityService implements Use
 	private HttpServletRequest request ;
 		
 	@Autowired
-	@Qualifier("SigmaPasswordEncoder")
+	@Qualifier("SimplePasswordEncoder")
 	private MessageDigestPasswordEncoder encoder;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		SigmaUserDetail userDetail = null;
+		SimpleUserDetail userDetail = null;
 		try {								 			
 			username = username.toUpperCase();
 			User userFromDb = userDao.getUserByUsername(username);
@@ -60,7 +60,7 @@ public class SigmaDefaultUserServices extends BaseSecurityService implements Use
 					System.out.println("DEBUG PASSWORD FROM UI SECURITY SERVER >>> md5 password from ui : " + passwordDb);
 					System.out.println("DEBUG PASSWORD DB SECURITY SERVER >>> password from db : " + userFromDb.getChipperText());
 					if(passwordDb.equals(userFromDb.getChipperText())){
-						userDetail = new SigmaUserDetail();
+						userDetail = new SimpleUserDetail();
 						userDetail.setIpAddress(getCurrentUserIpAddress());
 						setUserDetailFromDb(userDetail, userFromDb);
 						System.out.println("DEBUG USER DETAIL SECURITY SERVER >>> user detail yang di return : " + userDetail);
@@ -85,7 +85,7 @@ public class SigmaDefaultUserServices extends BaseSecurityService implements Use
 	 * @param userFromDb
 	 * @param application
 	 */
-	protected void setUserDetailFromDb(SigmaUserDetail userDetail, User userFromDb) throws Exception{
+	protected void setUserDetailFromDb(SimpleUserDetail userDetail, User userFromDb) throws Exception{
 		String passwordNoEncript = request.getParameter("j_password");
 		
 		/*Variable untuk spring security*/
@@ -127,8 +127,8 @@ public class SigmaDefaultUserServices extends BaseSecurityService implements Use
 		userDetail.setLastLogin(lastLDate);
 		userDetail.setUuid(UUID.randomUUID().toString());
 										
-		Collection<SigmaUserAuthority> authority = new ArrayList<SigmaUserAuthority>();
-		SigmaUserAuthority authorityRoleUser = new SigmaUserAuthority();
+		Collection<SimpleUserAuthority> authority = new ArrayList<SimpleUserAuthority>();
+		SimpleUserAuthority authorityRoleUser = new SimpleUserAuthority();
 		authorityRoleUser.setAuthority("ROLE_USER");
 		authority.add(authorityRoleUser);
 		

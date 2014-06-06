@@ -3,23 +3,19 @@ package id.co.gpsc.common.server.rpc;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 
-import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Service;
 import org.springframework.web.context.ServletConfigAware;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 
 /**
- * rpc url mapper Sigma
+ * rpc url mapper . bridge antara spring mvc vs RPC. 
+ * versi ini sudah mulai di tinggalkan
  * @author <a href='mailto:gede.sutarsa@gmail.com'>Gede Sutarsa</a>
  * @version $Id
  * @since 5 Aug 2012
  **/
-//@Service(value="urlMapping")
-//@Lazy(value=false)
-public class SigmaRPCServiceUrlMapper extends SimpleUrlHandlerMapping implements SelfRegisterRPCUrlMapper , ServletConfigAware{
+public class SimpleRPCServiceUrlMapper extends SimpleUrlHandlerMapping implements SelfRegisterRPCUrlMapper , ServletConfigAware{
 	Map<String, RPCServletWrapperController> urlHandlerMap ; 
 	
 	
@@ -28,7 +24,7 @@ public class SigmaRPCServiceUrlMapper extends SimpleUrlHandlerMapping implements
 	
 	protected int automaticServletNameCounter =1 ; 
 	
-	public SigmaRPCServiceUrlMapper(){
+	public SimpleRPCServiceUrlMapper(){
 		setOrder(1); 
 		urlHandlerMap= new HashMap<String, RPCServletWrapperController>();
 		
@@ -37,8 +33,7 @@ public class SigmaRPCServiceUrlMapper extends SimpleUrlHandlerMapping implements
 	
 	@Override
 	public void registerRPCService(RPCServletWrapperController wrappedRPCservlet) { 
-		//registerHandler(wrappedRPCservlet.getRemoteServicePath(), wrappedRPCservlet);  
-		//getServletContext().addServlet("sigma-rpc-servlet" + automaticServletNameCounter,(Servlet) wrappedRPCservlet).addMapping(wrappedRPCservlet.getRemoteServicePath());
+		
 		automaticServletNameCounter++;
 	}
 		

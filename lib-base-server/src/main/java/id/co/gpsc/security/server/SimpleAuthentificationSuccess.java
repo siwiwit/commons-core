@@ -27,7 +27,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
  * @since Jan 16, 2013, 4:35:39 PM
  * @version $Id
  */
-public class SigmaAuthentificationSuccess extends BaseSecurityService implements AuthenticationSuccessHandler , InitializingBean{
+public class SimpleAuthentificationSuccess extends BaseSecurityService implements AuthenticationSuccessHandler , InitializingBean{
 
 	@Autowired
 	private IUserLoginService loginService;
@@ -50,15 +50,15 @@ public class SigmaAuthentificationSuccess extends BaseSecurityService implements
 		
 		UserDetailDTO user = getUserDetailDTOFromSecurityContext();
 		if(user != null){
-			SigmaUserDetail userSigma = getSigmaUserDetailFromSecurityContext();		
+			SimpleUserDetail userApp = getUserDetailFromSecurityContext();		
 			
 			//Pengecekan apakah user login sebagai QA atau developer
 			if(user.getApplicationId().compareTo(securityApplicationIdAsBigInt) == 0 || 
 					user.getApplicationId().compareTo(securityApplicationIdDevAsBigInt) == 0){			
-				securityAppHandler(request, respone, userSigma);
+				securityAppHandler(request, respone, userApp);
 			}else{
 				try {
-					otherAppHandler(request, respone, userSigma);
+					otherAppHandler(request, respone, userApp);
 				} catch (Exception e) {				
 					e.printStackTrace();
 				}
@@ -73,12 +73,12 @@ public class SigmaAuthentificationSuccess extends BaseSecurityService implements
 	/**
 	 * ini kalau login ke arium_security
 	 **/
-	protected void securityAppHandler(HttpServletRequest request, HttpServletResponse respone,SigmaUserDetail userSigma) {
+	protected void securityAppHandler(HttpServletRequest request, HttpServletResponse respone,SimpleUserDetail userSigma) {
 		try {
-			List<SigmaUserAuthority> authorities = (List<SigmaUserAuthority>) userSigma.getAuthorities();
+			List<SimpleUserAuthority> authorities = (List<SimpleUserAuthority>) userSigma.getAuthorities();
 			if(authorities != null && authorities.size() > 0){
 				System.out.println("ROLE : " + authorities.get(0).getAuthority());
-				if(authorities.get(0).getAuthority().equals(SigmaAuthorityEnum.SUPER_ADMIN.toString())){
+				if(authorities.get(0).getAuthority().equals(SimpleAuthorityEnum.SUPER_ADMIN.toString())){
 					respone.sendRedirect(userSigma.getApplicationUrl() + "AriumSecurity.jsp");
 				}
 			}
@@ -91,7 +91,7 @@ public class SigmaAuthentificationSuccess extends BaseSecurityService implements
 	/**
 	 * ini kalau mau login as other app
 	 **/
-	protected void otherAppHandler(HttpServletRequest request, HttpServletResponse respone,SigmaUserDetail userSigma) throws Exception {		
+	protected void otherAppHandler(HttpServletRequest request, HttpServletResponse respone,SimpleUserDetail userSigma) throws Exception {		
 		Signon signonData = loginService.createSignOnDataAndKickPrevUser(userSigma.getApplicationId(), userSigma.getUserInternalId());
 		loginService.notifyRequesterHostOnSuccessLogin(signonData);		
 		Application app =  loginService.getApplication(signonData.getApplicationId());		

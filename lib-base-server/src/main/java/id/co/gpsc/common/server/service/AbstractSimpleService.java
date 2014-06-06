@@ -4,7 +4,7 @@ import id.co.gpsc.common.data.ICreateAuditedData;
 import id.co.gpsc.common.data.IModifyAuditedData;
 import id.co.gpsc.common.exception.BaseIsSerializableException;
 import id.co.gpsc.common.exception.IStackTraceToStringWorker;
-import id.co.gpsc.security.server.SigmaUserDetail;
+import id.co.gpsc.security.server.SimpleUserDetail;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,11 +34,11 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * @version $Id
  **/
-public abstract class AbstractSigmaService implements IBaseService{
+public abstract class AbstractSimpleService implements IBaseService{
 	
 	
 	
-	private static final Logger logger = LoggerFactory.getLogger(AbstractSigmaService.class);
+	private static final Logger logger = LoggerFactory.getLogger(AbstractSimpleService.class);
 	
 	/**
 	 * init proccess
@@ -142,8 +142,8 @@ public abstract class AbstractSigmaService implements IBaseService{
 	 */
 	public String getCurrentBranchCode () {
 		Object swap =  SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if ( swap != null &&  swap instanceof SigmaUserDetail ){
-			SigmaUserDetail d = (SigmaUserDetail) swap;
+		if ( swap != null &&  swap instanceof SimpleUserDetail ){
+			SimpleUserDetail d = (SimpleUserDetail) swap;
 			return d.getCurrentBranchCode() ; 
 		}
 		

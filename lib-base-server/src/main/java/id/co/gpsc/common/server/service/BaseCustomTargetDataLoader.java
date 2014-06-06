@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.app.DualControlEnabledData;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
 import id.co.gpsc.common.server.dao.system.ApplicationConfigurationDao;
 
@@ -55,8 +55,8 @@ public abstract class BaseCustomTargetDataLoader<DATA extends DualControlEnabled
 	 **/
 	@SuppressWarnings("unchecked")
 	protected  PagedResultHolder<DATA> genericlistDataRaw( Class<? extends DualControlEnabledData<?, ?>> entCls,
-			int page, int pageSize, SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments) throws Exception  {
+			int page, int pageSize, SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments) throws Exception  {
 		
 		Long cnt = generalPurposeDao.count(entCls, filters); 
 		if ( cnt==null)

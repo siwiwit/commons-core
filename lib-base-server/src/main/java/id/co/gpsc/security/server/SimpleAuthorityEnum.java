@@ -6,14 +6,14 @@ package id.co.gpsc.security.server;
  * @since Jan 29, 2013, 11:30:56 AM
  * @version $Id
  */
-public enum SigmaAuthorityEnum{
+public enum SimpleAuthorityEnum{
 	
 	SUPER_ADMIN("SUPER_ADMIN"),
 	ADMIN_APP("ADMIN_APP");
 	
 	private String authorize ; 
 	
-	private SigmaAuthorityEnum(String authorityCode){
+	private SimpleAuthorityEnum(String authorityCode){
 		this.authorize=authorityCode;
 	}
 	

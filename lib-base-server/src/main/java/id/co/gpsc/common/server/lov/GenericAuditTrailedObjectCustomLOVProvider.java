@@ -5,7 +5,7 @@ import id.co.gpsc.common.data.ICreateAndModifyAuditedObject;
 /**
  * generic LOV untuk tipe yang create + modify audited object
  *@author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
- *@author <a href="mailto:gede.wibawa@sigma.co.id">Dode</a>
+ *@author <a href="mailto:agus.adiparth@gmail.com">Dode</a>
  */
 public abstract class GenericAuditTrailedObjectCustomLOVProvider<KEY, DATA extends ICreateAndModifyAuditedObject>  extends GenericCustomLOVProvider<KEY, DATA>{
 

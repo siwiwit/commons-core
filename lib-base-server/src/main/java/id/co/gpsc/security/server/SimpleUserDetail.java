@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  * @since Jan 14, 2013, 6:07:32 PM
  * @version $Id
  */
-public class SigmaUserDetail implements UserDetails{
+public class SimpleUserDetail implements UserDetails{
 
 	private static final long serialVersionUID = -2716995867343635820L;
 	
@@ -28,7 +28,7 @@ public class SigmaUserDetail implements UserDetails{
 	private boolean accountNonLocked;
 	private boolean credentialsNonExpired;
 	private boolean enabled;
-	private Collection<SigmaUserAuthority> authorities;
+	private Collection<SimpleUserAuthority> authorities;
 	
 	/*Varibale tambahan yg dibutuhan oleh aplikasi*/
 	private String applicationName;
@@ -69,7 +69,7 @@ public class SigmaUserDetail implements UserDetails{
 	
 	
 	@Override
-	public Collection<SigmaUserAuthority> getAuthorities() {		
+	public Collection<SimpleUserAuthority> getAuthorities() {		
 		return authorities;
 	}
 
@@ -191,7 +191,7 @@ public class SigmaUserDetail implements UserDetails{
 	/**
 	 * Set authority
 	 */
-	public void setAuthorities(Collection<SigmaUserAuthority> authorities) {
+	public void setAuthorities(Collection<SimpleUserAuthority> authorities) {
 		this.authorities = authorities;
 	}
 
@@ -257,7 +257,7 @@ public class SigmaUserDetail implements UserDetails{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		SigmaUserDetail other = (SigmaUserDetail) obj;
+		SimpleUserDetail other = (SimpleUserDetail) obj;
 		if (accountNonExpired != other.accountNonExpired)
 			return false;
 		if (accountNonLocked != other.accountNonLocked)
@@ -331,7 +331,7 @@ public class SigmaUserDetail implements UserDetails{
 
 	@Override
 	public String toString() {
-		return "SigmaUserDetail [userInternalId=" + userInternalId
+		return "UserDetail [userInternalId=" + userInternalId
 				+ ", password=" + password + ", username=" + username
 				+ ", accountNonExpired=" + accountNonExpired
 				+ ", accountNonLocked=" + accountNonLocked

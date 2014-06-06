@@ -19,10 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @version $Id
  * @since Dec 19, 2012, 2:54:06 PM
  */
-/*@WebServlet(
-		name="id.co.sigma.arium.security.server.rpc.ApplicationRPCServiceImpl" , 
-		description="Servlet RPC untuk handle application" , 
-		urlPatterns={"/sigma-rpc/application.app-rpc"})*/
 public class ApplicationRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/BaseSecurityRPCService<ApplicationRPCService>
 		implements ApplicationRPCService {
 

@@ -1,7 +1,7 @@
 package id.co.gpsc.security.server.service.impl;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.MD5Utils;
 import id.co.gpsc.common.security.domain.Application;
 import id.co.gpsc.common.security.domain.ApplicationUser;
@@ -54,7 +54,7 @@ public class UserServiceImpl implements IUserService{
 	
 	@Transactional(readOnly=true)
 	@Override
-	public PagedResultHolder<UserDTO> getUserByParameter(SigmaSimpleQueryFilter[] filter,int pagePosition, int pageSize) throws Exception {
+	public PagedResultHolder<UserDTO> getUserByParameter(SimpleQueryFilter[] filter,int pagePosition, int pageSize) throws Exception {
 		
 		PagedResultHolder<UserDTO> retval = new PagedResultHolder<UserDTO>();
 		List<User> actualData = new ArrayList<User>();
@@ -96,7 +96,7 @@ public class UserServiceImpl implements IUserService{
 	 */
 	@Transactional(readOnly=true)
 	@Override
-	public PagedResultHolder<UserDTO> getUserAtWorklistByParam(BigInteger applicationId, SigmaSimpleQueryFilter[] filter, int pagePosition, int pageSize) throws Exception {		
+	public PagedResultHolder<UserDTO> getUserAtWorklistByParam(BigInteger applicationId, SimpleQueryFilter[] filter, int pagePosition, int pageSize) throws Exception {		
 		PagedResultHolder<UserDTO> retval = new PagedResultHolder<UserDTO>();
 		List<User> resultUser = new ArrayList<User>();
 		User parameter = null;		
@@ -172,7 +172,7 @@ public class UserServiceImpl implements IUserService{
 	 * @param filter
 	 * @param objParam
 	 */
-	private void setParameterByFilter(SigmaSimpleQueryFilter filter, User objParam){		
+	private void setParameterByFilter(SimpleQueryFilter filter, User objParam){		
 		if(filter.getField().equals(USER_CODE)){
 			objParam.setUserCode(filter.getFilter());
 		}else if(filter.getField().equals(REAL_NAME)){
@@ -186,7 +186,7 @@ public class UserServiceImpl implements IUserService{
 	
 	@Override
 	public PagedResultHolder<User> getUserByFilter(
-			SigmaSimpleQueryFilter[] filters, int pagePosition, int pageSize)
+			SimpleQueryFilter[] filters, int pagePosition, int pageSize)
 			throws Exception {
 		Integer count = userDao.countUserByFilters(filters);
 		if (count == null) 

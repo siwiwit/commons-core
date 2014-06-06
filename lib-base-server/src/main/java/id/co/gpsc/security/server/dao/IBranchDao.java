@@ -1,6 +1,6 @@
 package id.co.gpsc.security.server.dao;
 
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.domain.Branch;
 import id.co.gpsc.common.security.domain.BranchAssignment;
 
@@ -22,7 +22,7 @@ public interface IBranchDao {
 	 * @return list data user
 	 * @throws Exception
 	 */
-	public List<Branch> getDataByFilters(SigmaSimpleQueryFilter[] filters, int pagePosition, int pageSize) throws Exception;
+	public List<Branch> getDataByFilters(SimpleQueryFilter[] filters, int pagePosition, int pageSize) throws Exception;
 	
 	/**
 	 * count data branch
@@ -30,7 +30,7 @@ public interface IBranchDao {
 	 * @return
 	 * @throws Exception
 	 */
-	public Integer countDataByFilters(SigmaSimpleQueryFilter[] filters) throws Exception;
+	public Integer countDataByFilters(SimpleQueryFilter[] filters) throws Exception;
 	
 	/**
 	 * Mendapatkan branch assignment berdasarkan user id

@@ -7,7 +7,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import id.co.gpsc.common.data.entity.FormElementConfiguration;
-import id.co.gpsc.common.server.dao.base.BaseSigmaDao;
+import id.co.gpsc.common.server.dao.base.BaseJPADao;
 import id.co.gpsc.common.server.dao.system.IApplicationConfigFieldControl;
 
 /**
@@ -16,7 +16,7 @@ import id.co.gpsc.common.server.dao.system.IApplicationConfigFieldControl;
  * @version $Id
  */
 @Repository
-public class ApplicationConfigFieldControlImpl extends BaseSigmaDao implements IApplicationConfigFieldControl{
+public class ApplicationConfigFieldControlImpl extends BaseJPADao implements IApplicationConfigFieldControl{
 
 	@SuppressWarnings("unchecked")
 	@Override

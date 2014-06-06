@@ -1,7 +1,7 @@
 package id.co.gpsc.security.server.service.impl;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.security.domain.Branch;
 import id.co.gpsc.common.security.domain.BranchAssignment;
@@ -32,7 +32,7 @@ public class BranchServiceImpl implements IBranchService{
 	
 	@Transactional(readOnly=true)
 	@Override
-	public PagedResultHolder<BranchDTO> getUserByParameter(SigmaSimpleQueryFilter[] filter, int pagePosition, int pageSize) throws Exception {
+	public PagedResultHolder<BranchDTO> getUserByParameter(SimpleQueryFilter[] filter, int pagePosition, int pageSize) throws Exception {
 		Integer count = branchDao.countDataByFilters(filter);
 		if(count == null){
 			return null;
@@ -96,12 +96,12 @@ public class BranchServiceImpl implements IBranchService{
 	 */
 	private String getBranchCode(BigInteger id){
 		try {
-			SigmaSimpleQueryFilter tempFilter = new SigmaSimpleQueryFilter();
+			SimpleQueryFilter tempFilter = new SimpleQueryFilter();
 			tempFilter.setField("id");
 			tempFilter.setFilter(id);
 			tempFilter.setOperator(SimpleQueryFilterOperator.equal);
 			
-			List<Branch> data = branchDao.getDataByFilters(new SigmaSimpleQueryFilter[]{tempFilter}, 0, 1);			
+			List<Branch> data = branchDao.getDataByFilters(new SimpleQueryFilter[]{tempFilter}, 0, 1);			
 			return data.get(0).getBranchCode();
 		} catch (Exception e) {			
 			return "";

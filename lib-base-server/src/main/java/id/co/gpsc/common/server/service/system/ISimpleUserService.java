@@ -7,7 +7,7 @@ import id.co.gpsc.common.server.data.security.UserLoginNotificationData;
 /**
  * interface user akses
  **/
-public interface ISigmaUserService {
+public interface ISimpleUserService {
 	
 	
 	

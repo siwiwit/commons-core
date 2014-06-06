@@ -2,8 +2,8 @@ package id.co.gpsc.common.server.service;
 
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.app.DualControlEnabledData;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 
 /**
  * 
@@ -32,8 +32,8 @@ public interface ICustomTargetDataLoader<DATA extends DualControlEnabledData<DAT
 	 * custom loader data berupa grid. Kalau data perlu di load dengan join ke table-table tertentu, proses nya di taruh di sini
 	 **/
 	public PagedResultHolder<DATA> listDataRaw(  
-			int page, int pageSize, SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments) throws Exception;
+			int page, int pageSize, SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments) throws Exception;
 	
 
 }

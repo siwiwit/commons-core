@@ -2,12 +2,12 @@ package id.co.gpsc.common.server.rpc;
 
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.exception.CommonWrappedSerializableException;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
 import id.co.gpsc.common.server.dao.system.ApplicationConfigurationDao;
-import id.co.gpsc.common.server.data.security.SigmaSimpleUserData;
+import id.co.gpsc.common.server.data.security.SimpleUserData;
 import id.co.gpsc.common.server.util.IDTOGenerator;
 import id.co.gpsc.common.server.util.IObjectCleanUp;
 
@@ -44,7 +44,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  * @version $Id
  * @since 5 aug 2012
  **/
-public abstract class BaseSelfRegisteredRPCService extends BaseSigmaRPCServlet  implements RPCServletWrapperController {
+public abstract class BaseSelfRegisteredRPCService extends BaseSimpleRPCServlet  implements RPCServletWrapperController {
 
 	/**
 	 * 
@@ -130,7 +130,7 @@ public abstract class BaseSelfRegisteredRPCService extends BaseSigmaRPCServlet  
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page) throws Exception {
+	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page) throws Exception {
 		return selectDataPaged(entityClass, filters, sortArgs, pageSize, page ,(IObjectCleanUp<POJO>) null ) ; 
 	}
 	
@@ -139,7 +139,7 @@ public abstract class BaseSelfRegisteredRPCService extends BaseSigmaRPCServlet  
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page , IObjectCleanUp<POJO> cleaner) throws Exception {
+	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page , IObjectCleanUp<POJO> cleaner) throws Exception {
 		Long cnt =  generalPurposeDao.count(entityClass, filters); 
 		if ( cnt==null||cnt.longValue()==0)
 			return null ; 
@@ -160,7 +160,7 @@ public abstract class BaseSelfRegisteredRPCService extends BaseSigmaRPCServlet  
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO , DTO> PagedResultHolder<DTO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page , IDTOGenerator<POJO , DTO> dtoGenerator) throws Exception {
+	protected <POJO , DTO> PagedResultHolder<DTO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page , IDTOGenerator<POJO , DTO> dtoGenerator) throws Exception {
 		Long cnt =  generalPurposeDao.count(entityClass, filters); 
 		if ( cnt==null||cnt.longValue()==0)
 			return null ; 
@@ -194,7 +194,7 @@ public abstract class BaseSelfRegisteredRPCService extends BaseSigmaRPCServlet  
 	 * 
 	 * </ol>
 	 **/
-	protected SigmaSimpleQueryFilter[] appendToArray (SigmaSimpleQueryFilter[] original , SigmaSimpleQueryFilter ...  arrgs ){
+	protected SimpleQueryFilter[] appendToArray (SimpleQueryFilter[] original , SimpleQueryFilter ...  arrgs ){
 		if ( original != null){
 			if ( arrgs==null|| arrgs.length==0)
 				return original ; 
@@ -213,13 +213,13 @@ public abstract class BaseSelfRegisteredRPCService extends BaseSigmaRPCServlet  
 	/**
 	 * ini versi sudah bersih, cukup menyalin saja dari array ke dalam array baru
 	 **/
-	protected SigmaSimpleQueryFilter[] appendToArrayClean (SigmaSimpleQueryFilter[] original , SigmaSimpleQueryFilter ...  arrgs ){
-		SigmaSimpleQueryFilter[] retval   = new SigmaSimpleQueryFilter[original.length + arrgs.length];
+	protected SimpleQueryFilter[] appendToArrayClean (SimpleQueryFilter[] original , SimpleQueryFilter ...  arrgs ){
+		SimpleQueryFilter[] retval   = new SimpleQueryFilter[original.length + arrgs.length];
 		int i=0 ; 
-		for ( SigmaSimpleQueryFilter scn : original  ){
+		for ( SimpleQueryFilter scn : original  ){
 			retval[i++] = scn ; 
 		}
-		for ( SigmaSimpleQueryFilter scn : arrgs  ){
+		for ( SimpleQueryFilter scn : arrgs  ){
 			retval[i++] = scn ; 
 		}
 		return retval ; 
@@ -235,16 +235,16 @@ public abstract class BaseSelfRegisteredRPCService extends BaseSigmaRPCServlet  
 	}
 	*/
 	
-	protected SigmaSimpleUserData getCurrentUser () {
+	protected SimpleUserData getCurrentUser () {
 		Authentication swap =  SecurityContextHolder.getContext().getAuthentication();
 		if ( !(swap instanceof UsernamePasswordAuthenticationToken))
 			return null ; 
 		UsernamePasswordAuthenticationToken tkn = (UsernamePasswordAuthenticationToken)swap;
 		Object swapPrincipal =  tkn.getPrincipal() ; 
 				
-		if ( swapPrincipal ==null|| !(swapPrincipal instanceof SigmaSimpleUserData))
+		if ( swapPrincipal ==null|| !(swapPrincipal instanceof SimpleUserData))
 			return null ; 
-		return (SigmaSimpleUserData)swapPrincipal ; 
+		return (SimpleUserData)swapPrincipal ; 
 				 
 	}
 	 

@@ -8,7 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * @version $Id
  **/
-public class SigmaAuthority implements GrantedAuthority{
+public class SimpleAuthority implements GrantedAuthority{
 	
 	
 	/**

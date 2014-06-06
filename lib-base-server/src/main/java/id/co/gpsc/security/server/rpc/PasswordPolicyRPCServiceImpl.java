@@ -17,10 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @version $Id
  * @since Jan 30, 2013, 3:42:08 PM
  */
-/*@WebServlet(
-		name="id.co.sigma.arium.security.server.rpc.PasswordPolicyRPCServiceImpl" , 
-		description="Servlet RPC untuk handle password policy Domain" , 
-		urlPatterns={"/sigma-rpc/password-policy.app-rpc"})*/
 public class PasswordPolicyRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/BaseSecurityRPCService<PasswordPolicyRPCService>
 		implements PasswordPolicyRPCService {
 

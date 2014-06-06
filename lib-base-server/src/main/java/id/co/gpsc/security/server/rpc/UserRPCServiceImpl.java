@@ -1,7 +1,7 @@
 package id.co.gpsc.security.server.rpc;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.domain.Branch;
 import id.co.gpsc.common.security.domain.User;
 import id.co.gpsc.common.security.dto.UserDTO;
@@ -25,10 +25,6 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @since Dec 10, 2012, 1:42:47 PM
  * @version $Id
  */
-/*@WebServlet(
-		name="id.co.sigma.arium.security.server.rpc.UserRPCServiceImpl" , 
-		description="Servlet RPC untuk handle User Domain" , 
-		urlPatterns={"/sigma-rpc/user.app-rpc"})*/
 public class UserRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/BaseSecurityRPCService<UserRPCService> implements UserRPCService{
 
 	private static final long serialVersionUID = 2632805041653674567L;
@@ -55,18 +51,18 @@ public class UserRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/BaseSecu
 	
 	
 	@Override
-	public PagedResultHolder<UserDTO> getUserByParameter(SigmaSimpleQueryFilter[] filter, int page, int pageSize) throws Exception{		
+	public PagedResultHolder<UserDTO> getUserByParameter(SimpleQueryFilter[] filter, int page, int pageSize) throws Exception{		
 		return userService.getUserByParameter(filter, page, pageSize);
 	}
 
 	@Override
-	public PagedResultHolder<UserDTO> getUserByParameter(BigInteger applicationId, SigmaSimpleQueryFilter[] filter,int page, int pageSize) throws Exception {	
+	public PagedResultHolder<UserDTO> getUserByParameter(BigInteger applicationId, SimpleQueryFilter[] filter,int page, int pageSize) throws Exception {	
 		return userService.getUserAtWorklistByParam(applicationId, filter, page, pageSize);
 	}
 
 	@Override
 	public PagedResultHolder<User> getUserByFilter(
-			SigmaSimpleQueryFilter[] filters, int pagePosition, int pageSize)
+			SimpleQueryFilter[] filters, int pagePosition, int pageSize)
 			throws Exception {
 		return userService.getUserByFilter(filters, pagePosition, pageSize);
 	}

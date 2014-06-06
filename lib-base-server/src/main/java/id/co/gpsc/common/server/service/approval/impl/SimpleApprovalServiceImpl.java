@@ -8,7 +8,7 @@ import id.co.gpsc.common.data.approval.CommonApprovalHeader;
 import id.co.gpsc.common.data.approval.ISimpleApprovableObject;
 import id.co.gpsc.common.data.approval.SimpleApprovalStatus;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
-import id.co.gpsc.common.server.service.AbstractSigmaService;
+import id.co.gpsc.common.server.service.AbstractSimpleService;
 import id.co.gpsc.common.server.service.approval.SimpleApprovalService;
 
 import java.math.BigInteger;
@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author Sutarsa
  */
-public class SimpleApprovalServiceImpl extends  AbstractSigmaService implements  SimpleApprovalService{
+public class SimpleApprovalServiceImpl extends  AbstractSimpleService implements  SimpleApprovalService{
 
     
     

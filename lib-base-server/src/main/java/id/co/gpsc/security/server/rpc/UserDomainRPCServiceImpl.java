@@ -1,7 +1,7 @@
 package id.co.gpsc.security.server.rpc;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.menu.UserDomain;
 import id.co.gpsc.common.security.menu.UserDomainPaging;
 import id.co.gpsc.common.security.rpc.UserDomainRPCService;
@@ -21,10 +21,6 @@ import com.google.gson.Gson;
  * @since Nov 29, 2012, 5:56:07 PM
  * @version $Id
  */
-/*@WebServlet(
-		name="id.co.sigma.arium.security.server.rpc.UserDomainRPCServiceImpl" , 
-		description="Servlet RPC untuk handle User Domain" , 
-		urlPatterns={"/sigma-rpc/user-domain.app-rpc"})*/
 public class UserDomainRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/BaseSecurityRPCService<UserDomainRPCService> implements UserDomainRPCService{
 
 	private static final long serialVersionUID = -486119248242224155L;
@@ -34,7 +30,7 @@ public class UserDomainRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/Ba
 	
 	@SuppressWarnings("unused")
 	@Override
-	public PagedResultHolder<UserDomain> getUserDomainFromIIS(SigmaSimpleQueryFilter[] filter, int page, int pageSize) {
+	public PagedResultHolder<UserDomain> getUserDomainFromIIS(SimpleQueryFilter[] filter, int page, int pageSize) {
 		String user = "null";
 		String fullname = "null";
 		String urlIISServer = redirectUrl.getUrlIisServer() + "get-user-domain.aspx?pagePosition=" + page + "&pageSize=" + pageSize;

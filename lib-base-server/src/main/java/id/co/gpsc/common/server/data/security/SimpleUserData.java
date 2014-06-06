@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * @version $Id
  **/
-public class SigmaSimpleUserData implements UserDetails{
+public class SimpleUserData implements UserDetails{
 	
 	
 	/**
@@ -53,14 +53,14 @@ public class SigmaSimpleUserData implements UserDetails{
 	/**
 	 * authorities
 	 **/
-	private Collection<SigmaAuthority> authorities; 
+	private Collection<SimpleAuthority> authorities; 
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return authorities;
 	}
 	
-	public void setAuthorities(Collection<SigmaAuthority> authorities) {
+	public void setAuthorities(Collection<SimpleAuthority> authorities) {
 		this.authorities = authorities;
 	}
 
@@ -197,7 +197,7 @@ public class SigmaSimpleUserData implements UserDetails{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		SigmaSimpleUserData other = (SigmaSimpleUserData) obj;
+		SimpleUserData other = (SimpleUserData) obj;
 		if (authorities == null) {
 			if (other.authorities != null)
 				return false;
@@ -238,7 +238,7 @@ public class SigmaSimpleUserData implements UserDetails{
 
 	@Override
 	public String toString() {
-		return "SigmaSimpleUserData [username=" + username + ", fullName="
+		return "SimpleUserData [username=" + username + ", fullName="
 				+ fullName + ", email=" + email + ", branchCode=" + branchCode
 				+ ", branchName=" + branchName + ", uuid=" + uuid
 				+ ", authorities=" + authorities + "]";

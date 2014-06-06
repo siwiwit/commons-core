@@ -14,11 +14,11 @@ import id.co.gpsc.common.data.entity.FormElementConfiguration;
 import id.co.gpsc.common.data.entity.I18Code;
 import id.co.gpsc.common.data.entity.I18NTextGroup;
 import id.co.gpsc.common.data.entity.I18Text;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.server.dao.base.PagedResultExecutorTemplate;
 import id.co.gpsc.common.server.dao.system.ApplicationConfigurationDao;
-import id.co.gpsc.common.server.data.security.SigmaSimpleUserData;
+import id.co.gpsc.common.server.data.security.SimpleUserData;
 import id.co.gpsc.common.server.rpc.BaseServerRPCService;
 import id.co.gpsc.common.server.service.system.ApplicationConfigService;
 import id.co.gpsc.common.server.util.JaxbConverterUtils;
@@ -36,12 +36,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * provider application configuration
  * @author <a href='mailto:gede.sutarsa@gmail.com'>Gede Sutarsa</a>
- * @author <a href="gede.mahendra@sigma.co.id">Gede Mahendra</a>
+ * @author <a href="dein.mahendra@gmail.com">Gede Mahendra</a>
  * @version $Id
  **/
 /*@WebServlet(
 		description="servlet service provider konfigurasi"  , 
-		name="id.co.sigma.common.server.rpc.system.ApplicationConfigRPCServiceImpl" ,
+		name="id.co.gpsc.common.server.rpc.system.ApplicationConfigRPCServiceImpl" ,
 		urlPatterns={"/corelib-rpc/app-cnf-data.app-rpc"})*/
 public class ApplicationConfigRPCServiceImpl extends /*BaseSelfRegisteredRPCService*/BaseServerRPCService<ApplicationConfigRPCService>  implements ApplicationConfigRPCService{
 
@@ -178,14 +178,14 @@ public class ApplicationConfigRPCServiceImpl extends /*BaseSelfRegisteredRPCServ
 
 
 
-	final SigmaSimpleSortArgument i18textSorter []={
-			new SigmaSimpleSortArgument("groupCode", true) ,
-			new SigmaSimpleSortArgument("id.textKey", true) , 
-			new SigmaSimpleSortArgument("label", true) ,
+	final SimpleSortArgument i18textSorter []={
+			new SimpleSortArgument("groupCode", true) ,
+			new SimpleSortArgument("id.textKey", true) , 
+			new SimpleSortArgument("label", true) ,
 	}; 
 	@Override
 	public PagedResultHolder<I18Text> getI18NTexts(int pageSize,
-			int pagePosition,final SigmaSimpleQueryFilter[] filters)
+			int pagePosition,final SimpleQueryFilter[] filters)
 			throws Exception {
 		PagedResultExecutorTemplate<I18Text> executor  = new PagedResultExecutorTemplate<I18Text>() {
 			@Override
@@ -224,8 +224,8 @@ public class ApplicationConfigRPCServiceImpl extends /*BaseSelfRegisteredRPCServ
 	/**
 	 * ini sorter 
 	 **/
-	private final SigmaSimpleSortArgument sortLanguages[] = new SigmaSimpleSortArgument[]{
-			new SigmaSimpleSortArgument("id",true)
+	private final SimpleSortArgument sortLanguages[] = new SimpleSortArgument[]{
+			new SimpleSortArgument("id",true)
 	};
 
 	
@@ -248,7 +248,7 @@ public class ApplicationConfigRPCServiceImpl extends /*BaseSelfRegisteredRPCServ
 	
 	@Override
 	public void saveLabels(I18Text[] texts) throws Exception {
-		SigmaSimpleUserData usr = getCurrentUser();
+		SimpleUserData usr = getCurrentUser();
 		String usrName = usr==null?null : usr.getUsername();
 		
 		applicationConfigService.saveLabels(texts, usrName, getApplicationDate());

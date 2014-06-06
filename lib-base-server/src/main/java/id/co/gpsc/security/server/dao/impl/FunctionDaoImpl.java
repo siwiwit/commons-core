@@ -11,7 +11,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import id.co.gpsc.common.security.domain.Function;
-import id.co.gpsc.common.server.dao.base.BaseSigmaDao;
+import id.co.gpsc.common.server.dao.base.BaseJPADao;
 import id.co.gpsc.security.server.dao.IFunctionDao;
 
 /**
@@ -21,7 +21,7 @@ import id.co.gpsc.security.server.dao.IFunctionDao;
  * @since Jan 7, 2013, 10:05:58 AM
  */
 @Repository
-public class FunctionDaoImpl extends BaseSigmaDao implements IFunctionDao {
+public class FunctionDaoImpl extends BaseJPADao implements IFunctionDao {
 
 	@SuppressWarnings("unchecked")
 	@Override

@@ -7,8 +7,8 @@ import java.util.Map;
 
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.query.BaseGridDataProviderNativeSql;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.server.service.datagrid.impl.CommonNativeSqlJSONDataGridDaoLayer;
 
@@ -68,7 +68,7 @@ public class UnifiedGridDataProviderController {
 	 * @param pageSize ukuran page per pembacaan data
 	 * @param pagePoisition posisi page data di baca(basis 0)
 	 * @param fetchedFieldNames nama-nama fields yang perlu di select
-	 * @param sortArgumentsJsonString string json untuk proses sorting. Sorting ngikut pada : {@link id.co.sigma.common.data.query.SigmaSimpleSortArgument} di json -kan
+	 * @param sortArgumentsJsonString string json untuk proses sorting. Sorting ngikut pada : {@link SimpleSortArgument} di json -kan
 	 * @param filterArgumentsJsonString filters di json kan
 	 * @param rootDataKey key json untuk root data
 	 * @param pagesKey key json untuk page position
@@ -102,8 +102,8 @@ public class UnifiedGridDataProviderController {
 				nativeSqlProviderMap.put(sqlProviderfqcn, prv); 
 			}
 			commonNativeSqlJSONDataGridDaoLayer.setQueryProvider(nativeSqlProviderMap.get(sqlProviderfqcn));
-			SigmaSimpleSortArgument[] sorts = generateSortArguments(sortArgumentsJsonString); 
-			SigmaSimpleQueryFilter [] filters = generateFilters(filterArgumentsJsonString);
+			SimpleSortArgument[] sorts = generateSortArguments(sortArgumentsJsonString); 
+			SimpleQueryFilter [] filters = generateFilters(filterArgumentsJsonString);
 			//PagedResultHolder<Object[]> readedData =  commonNativeSqlJSONDataGridDaoLayer.getData(fetchedFieldNames, pageSize, pagePoisition, filters, sorts);
 		 
 			 
@@ -118,7 +118,7 @@ public class UnifiedGridDataProviderController {
 	}
 	
 	
-	private SigmaSimpleQueryFilter [] generateFilters(String filterArgumentsJsonString) {
+	private SimpleQueryFilter [] generateFilters(String filterArgumentsJsonString) {
 		if ( filterArgumentsJsonString==null||filterArgumentsJsonString.trim().length()==0)
 			return null ; 
 		JsonParser p = new JsonParser(); 
@@ -129,14 +129,14 @@ public class UnifiedGridDataProviderController {
 		if ( !arr.isJsonNull() ){
 			
 			int max = arr.size();
-			SigmaSimpleQueryFilter [] retval = new SigmaSimpleQueryFilter [max];
+			SimpleQueryFilter [] retval = new SimpleQueryFilter [max];
 			for ( int i = 0 ; i < max ; i++){
 				JsonElement elem =  arr.get(i);
 				if ( elem.isJsonNull()){
 					retval[i]  = null ;
 					continue ; 
 				}
-				SigmaSimpleQueryFilter f = new SigmaSimpleQueryFilter();
+				SimpleQueryFilter f = new SimpleQueryFilter();
 				retval[i] = f ; 
 				
 				
@@ -158,7 +158,7 @@ public class UnifiedGridDataProviderController {
 	
 	
 	
-	private SigmaSimpleSortArgument[] generateSortArguments(String sortArgumentsJsonString) {
+	private SimpleSortArgument[] generateSortArguments(String sortArgumentsJsonString) {
 		if ( sortArgumentsJsonString==null||sortArgumentsJsonString.trim().length()==0)
 			return null ;
 		
@@ -169,7 +169,7 @@ public class UnifiedGridDataProviderController {
 		if ( arr.isJsonNull())
 			return null ; 
 		int max = arr.size();
-		SigmaSimpleSortArgument [] retval = new SigmaSimpleSortArgument [max];
+		SimpleSortArgument [] retval = new SimpleSortArgument [max];
 		for ( int i = 0 ; i < max ; i++){
 			JsonElement elem =  arr.get(i);
 			if ( elem.isJsonNull()){
@@ -180,7 +180,7 @@ public class UnifiedGridDataProviderController {
 			JsonObject obj =  elem.getAsJsonObject(); 
 			
 			
-			SigmaSimpleSortArgument s = new SigmaSimpleSortArgument(); 
+			SimpleSortArgument s = new SimpleSortArgument(); 
 			retval[i] = s ; 
 			s.setSortField(obj.get("sortField").getAsString());
 			s.setAscendingSort(obj.get("ascendingSort").getAsBoolean());

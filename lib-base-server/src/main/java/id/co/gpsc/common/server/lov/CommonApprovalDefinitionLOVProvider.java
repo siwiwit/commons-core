@@ -7,13 +7,13 @@ import id.co.gpsc.common.data.CoreLibLookup;
 import id.co.gpsc.common.data.approval.CommonApprovalDefinition;
 import id.co.gpsc.common.data.lov.CommonLOV;
 import id.co.gpsc.common.data.lov.StrongTypedCustomLOVID;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 
 import java.util.Date;
 
 /**
  * bean untuk lov object type dari common approval definition
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Sep 25, 2013 3:14:01 PM
  */
 public class CommonApprovalDefinitionLOVProvider extends GenericAuditTrailedObjectCustomLOVProvider<String, CommonApprovalDefinition> {
@@ -24,8 +24,8 @@ public class CommonApprovalDefinitionLOVProvider extends GenericAuditTrailedObje
 	}
 
 	@Override
-	protected SigmaSimpleSortArgument[] getLOVSorter() {
-		return new SigmaSimpleSortArgument[] {new SigmaSimpleSortArgument("objectName", true)};
+	protected SimpleSortArgument[] getLOVSorter() {
+		return new SimpleSortArgument[] {new SimpleSortArgument("objectName", true)};
 	}
 
 	@Override

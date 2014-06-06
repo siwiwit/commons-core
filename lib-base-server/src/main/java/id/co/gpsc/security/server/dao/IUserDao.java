@@ -1,6 +1,6 @@
 package id.co.gpsc.security.server.dao;
 
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.domain.ApplicationUser;
 import id.co.gpsc.common.security.domain.User;
 import id.co.gpsc.common.security.domain.UserGroupAssignment;
@@ -69,7 +69,7 @@ public interface IUserDao extends IBaseDao{
 	 * @return list data user
 	 * @throws Exception
 	 */
-	public List<User> getUserByFilters(SigmaSimpleQueryFilter[] filters, int pagePosition, int pageSize) throws Exception;
+	public List<User> getUserByFilters(SimpleQueryFilter[] filters, int pagePosition, int pageSize) throws Exception;
 	
 	/**
 	 * count semua data user di db
@@ -77,7 +77,7 @@ public interface IUserDao extends IBaseDao{
 	 * @return jumlah data user
 	 * @throws Exception
 	 */
-	public Integer countUserByFilters(SigmaSimpleQueryFilter[] filters) throws Exception;
+	public Integer countUserByFilters(SimpleQueryFilter[] filters) throws Exception;
 	
 	/**
 	 * get user by id

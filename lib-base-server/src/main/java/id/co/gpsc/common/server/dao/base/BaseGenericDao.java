@@ -14,7 +14,7 @@ import javax.persistence.Query;
  * @param <PK> primary key dari object entity
  * @param <DOMAIN> domain object yang di handle generic clas
  **/
-public abstract class BaseGenericDao<  PK extends Serializable , DOMAIN extends Serializable> extends BaseSigmaDao {
+public abstract class BaseGenericDao<  PK extends Serializable , DOMAIN extends Serializable> extends BaseJPADao {
 
 
 	

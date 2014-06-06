@@ -3,8 +3,8 @@ package id.co.gpsc.common.server.rpc.impl;
 import java.math.BigInteger;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.rpc.common.GeneralPurposeRPC;
 import id.co.gpsc.common.server.rpc.BaseServerRPCService;
 import id.co.gpsc.common.util.json.IJSONFriendlyObject;
@@ -28,8 +28,8 @@ public class GeneralPurposeRPCImpl extends BaseServerRPCService<GeneralPurposeRP
 	@SuppressWarnings("unchecked")
 	@Override
 	public PagedResultHolder<IJSONFriendlyObject<?>> getPagedData(
-			String objectFQCN, SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sorts, int page, int pageSize)
+			String objectFQCN, SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sorts, int page, int pageSize)
 			throws Exception {
 		return (PagedResultHolder<IJSONFriendlyObject<?>>) selectDataPaged(Class.forName(objectFQCN), filters, sorts, pageSize, page);
 	}

@@ -3,7 +3,7 @@ package id.co.gpsc.security.server;
 import id.co.gpsc.common.security.domain.Application;
 import id.co.gpsc.common.security.domain.User;
 import id.co.gpsc.common.security.domain.UserPassword;
-import id.co.gpsc.common.server.service.AbstractSigmaService;
+import id.co.gpsc.common.server.service.AbstractSimpleService;
 import id.co.gpsc.security.server.dao.IUserLoginDao;
 import id.co.gpsc.security.server.dao.impl.ApplicationDaoImpl;
 import id.co.gpsc.security.server.dao.impl.UserLoginDaoImpl;
@@ -25,7 +25,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
  * @since Jan 14, 2013, 3:42:25 PM
  * @version $Id
  */
-public class UserDetailService extends AbstractSigmaService implements UserDetailsService{
+public class UserDetailService extends AbstractSimpleService implements UserDetailsService{
 
 	@Autowired
 	private IUserLoginDao userDao;
@@ -41,7 +41,7 @@ public class UserDetailService extends AbstractSigmaService implements UserDetai
 		
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {		
-		SigmaUserDetail userDetail = null;
+		SimpleUserDetail userDetail = null;
 		try {			
 			String applicationId = request.getParameter("j_applicationId");			
 			Application application = (Application) applicationDao.find(Application.class, new BigInteger(applicationId));
@@ -51,7 +51,7 @@ public class UserDetailService extends AbstractSigmaService implements UserDetai
 				UserPassword userPassword = userPasswordDao.getPasswordAtHistory(userFromDb.getId());
 				if(userPassword != null){
 					if(userPassword.getCipherText().equals(userFromDb.getChipperText())){
-						userDetail = new SigmaUserDetail();
+						userDetail = new SimpleUserDetail();
 						userDetail.setIpAddress(getCurrentUserIpAddress());
 						/*Set userDetail sesuai dg data yg diperlukan*/
 						setUserDetailFromDb(userDetail, userFromDb, application);
@@ -74,7 +74,7 @@ public class UserDetailService extends AbstractSigmaService implements UserDetai
 	 * @param userFromDb
 	 * @param application
 	 */
-	private void setUserDetailFromDb(SigmaUserDetail userDetail, User userFromDb, Application application){
+	private void setUserDetailFromDb(SimpleUserDetail userDetail, User userFromDb, Application application){
 		String passwordNoEncript = request.getParameter("j_password");
 		
 		/*Variable untuk spring security*/
@@ -104,8 +104,8 @@ public class UserDetailService extends AbstractSigmaService implements UserDetai
 		userDetail.setUserInternalId(userFromDb.getId());
 
 		if ("Y".equals( userFromDb.getSuperAdmin())){										
-			Collection<SigmaUserAuthority> authority = new ArrayList<SigmaUserAuthority>();
-			authority.add(new SigmaUserAuthority(SigmaAuthorityEnum.SUPER_ADMIN));
+			Collection<SimpleUserAuthority> authority = new ArrayList<SimpleUserAuthority>();
+			authority.add(new SimpleUserAuthority(SimpleAuthorityEnum.SUPER_ADMIN));
 			userDetail.setAuthorities(authority);					
 		}
 	}

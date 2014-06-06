@@ -5,8 +5,8 @@
 package id.co.gpsc.common.server.service.datagrid;
 
 
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 
 /**
  * interface untuk simple list data provider
@@ -23,7 +23,7 @@ public interface IJSONDataGridProvider {
      * @param  sortArguments  data di sort berdasarkan apa
      * @param queryFilters  filters untuk proses select
     */
-    public SimplifiedGridDataWrapper getData( String[] fetchedFieldNames , int pageSize , int pagePosition , SigmaSimpleQueryFilter[] queryFilters , SigmaSimpleSortArgument[] sortArguments ); 
+    public SimplifiedGridDataWrapper getData( String[] fetchedFieldNames , int pageSize , int pagePosition , SimpleQueryFilter[] queryFilters , SimpleSortArgument[] sortArguments ); 
     
     
 }

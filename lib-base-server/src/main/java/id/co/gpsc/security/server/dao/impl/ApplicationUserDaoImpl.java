@@ -5,7 +5,7 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 import id.co.gpsc.common.security.domain.ApplicationUser;
-import id.co.gpsc.common.server.dao.base.BaseSigmaDao;
+import id.co.gpsc.common.server.dao.base.BaseJPADao;
 import id.co.gpsc.security.server.dao.IApplicationUserDao;
 
 /**
@@ -15,7 +15,7 @@ import id.co.gpsc.security.server.dao.IApplicationUserDao;
  * @version $Id
  */
 @Repository
-public class ApplicationUserDaoImpl extends BaseSigmaDao implements IApplicationUserDao{
+public class ApplicationUserDaoImpl extends BaseJPADao implements IApplicationUserDao{
 
 	@Override
 	public Integer countApplicationUserByParameter(ApplicationUser parameter) throws Exception {

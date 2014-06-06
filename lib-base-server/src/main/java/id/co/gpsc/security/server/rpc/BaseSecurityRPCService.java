@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.exception.CommonWrappedSerializableException;
 import id.co.gpsc.common.server.dao.IGeneralPurposeDao;
 import id.co.gpsc.common.server.dao.system.ApplicationConfigurationDao;
@@ -58,7 +58,7 @@ public abstract class BaseSecurityRPCService<T> extends BaseRPCHandler<T> {
 	 * 
 	 * </ol>
 	 **/
-	protected SigmaSimpleQueryFilter[] appendToArray (SigmaSimpleQueryFilter[] original , SigmaSimpleQueryFilter ...  arrgs ){
+	protected SimpleQueryFilter[] appendToArray (SimpleQueryFilter[] original , SimpleQueryFilter ...  arrgs ){
 		if ( original != null){
 			if ( arrgs==null|| arrgs.length==0)
 				return original ; 
@@ -74,13 +74,13 @@ public abstract class BaseSecurityRPCService<T> extends BaseRPCHandler<T> {
 	/**
 	 * ini versi sudah bersih, cukup menyalin saja dari array ke dalam array baru
 	 **/
-	protected SigmaSimpleQueryFilter[] appendToArrayClean (SigmaSimpleQueryFilter[] original , SigmaSimpleQueryFilter ...  arrgs ){
-		SigmaSimpleQueryFilter[] retval   = new SigmaSimpleQueryFilter[original.length + arrgs.length];
+	protected SimpleQueryFilter[] appendToArrayClean (SimpleQueryFilter[] original , SimpleQueryFilter ...  arrgs ){
+		SimpleQueryFilter[] retval   = new SimpleQueryFilter[original.length + arrgs.length];
 		int i=0 ; 
-		for ( SigmaSimpleQueryFilter scn : original  ){
+		for ( SimpleQueryFilter scn : original  ){
 			retval[i++] = scn ; 
 		}
-		for ( SigmaSimpleQueryFilter scn : arrgs  ){
+		for ( SimpleQueryFilter scn : arrgs  ){
 			retval[i++] = scn ; 
 		}
 		return retval ; 
@@ -90,7 +90,7 @@ public abstract class BaseSecurityRPCService<T> extends BaseRPCHandler<T> {
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page) throws Exception {
+	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page) throws Exception {
 		return selectDataPaged(entityClass, filters, sortArgs, pageSize, page ,(IObjectCleanUp<POJO>) null ) ; 
 	}
 	
@@ -99,7 +99,7 @@ public abstract class BaseSecurityRPCService<T> extends BaseRPCHandler<T> {
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page , IObjectCleanUp<POJO> cleaner) throws Exception {
+	protected <POJO> PagedResultHolder<POJO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page , IObjectCleanUp<POJO> cleaner) throws Exception {
 		Long cnt =  configurationDao.count(entityClass, filters); 
 		if ( cnt==null||cnt.longValue()==0)
 			return null ; 
@@ -120,7 +120,7 @@ public abstract class BaseSecurityRPCService<T> extends BaseRPCHandler<T> {
 	 * common utuls, membaca data dalam posisi paged
 	 * @throws Exception 
 	 **/
-	protected <POJO , DTO> PagedResultHolder<DTO> selectDataPaged (Class<POJO> entityClass , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page , IDTOGenerator<POJO , DTO> dtoGenerator) throws Exception {
+	protected <POJO , DTO> PagedResultHolder<DTO> selectDataPaged (Class<POJO> entityClass , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page , IDTOGenerator<POJO , DTO> dtoGenerator) throws Exception {
 		Long cnt =  configurationDao.count(entityClass, filters); 
 		if ( cnt==null||cnt.longValue()==0)
 			return null ; 
