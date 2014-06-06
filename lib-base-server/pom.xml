@@ -13,9 +13,9 @@
     <name>Common GWT Server Component</name>
 
    <parent>
-        <groupId>id.co.sigma.commonlib</groupId>
+        <groupId>id.co.gpsc.commonlib</groupId>
         <artifactId>commons-lib-group</artifactId>
-        <version>1.4</version>
+        <version>1.5</version>
     </parent>
 
     <build>
@@ -63,13 +63,13 @@
 	
 	
 		<dependency>
-			<groupId>id.co.sigma.commonlib</groupId>
+			<groupId>id.co.gpsc.commonlib</groupId>
 			<artifactId>lib-common</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		
 		<dependency>
-			<groupId>id.co.sigma.commonlib</groupId>
+			<groupId>id.co.gpsc.commonlib</groupId>
 			<artifactId>lib-common-shared</artifactId>
 			<version>${project.version}</version>
 		</dependency>

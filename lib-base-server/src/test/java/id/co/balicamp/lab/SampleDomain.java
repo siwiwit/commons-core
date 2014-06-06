@@ -2,10 +2,10 @@ package id.co.balicamp.lab;
  
 import java.util.Date;
 
-import id.co.sigma.common.server.util.strings.fixedlength.FixedLengthField;
-import id.co.sigma.common.server.util.strings.fixedlength.impl.DDMMYYYYDateFixedLengthSerializer;
-import id.co.sigma.common.server.util.strings.fixedlength.impl.StringCustomFixedLengthSerializer;
-import id.co.sigma.common.server.util.strings.fixedlength.impl.ZeroLeadedItegerCustomFixedLengthSerializer;
+import id.co.gpsc.common.server.util.strings.fixedlength.FixedLengthField;
+import id.co.gpsc.common.server.util.strings.fixedlength.impl.DDMMYYYYDateFixedLengthSerializer;
+import id.co.gpsc.common.server.util.strings.fixedlength.impl.StringCustomFixedLengthSerializer;
+import id.co.gpsc.common.server.util.strings.fixedlength.impl.ZeroLeadedItegerCustomFixedLengthSerializer;
 
 /**
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
