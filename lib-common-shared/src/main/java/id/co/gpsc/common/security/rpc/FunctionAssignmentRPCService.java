@@ -16,7 +16,6 @@ import java.util.List;
  * @version $Id
  * @since Jan 8, 2013, 2:14:30 PM
  */
-//@RemoteServiceRelativePath(value="/sigma-rpc/function-assignment.app-rpc")
 public interface FunctionAssignmentRPCService extends JSONSerializedRemoteService {
 	
 	

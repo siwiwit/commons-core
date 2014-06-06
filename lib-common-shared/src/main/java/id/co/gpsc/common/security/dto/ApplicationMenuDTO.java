@@ -215,11 +215,11 @@ public class ApplicationMenuDTO implements IsSerializable, IJSONFriendlyObject<A
 		jsonContainer.put("modifiedDate",getModifiedDate());
 		jsonContainer.put("modifiedIpAddr",getModifiedIpAddr());
 		jsonContainer.put("order",getOrder());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("pageDetail",getPageDetail());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("pageDetail",getPageDetail());
 		jsonContainer.put("pageId",getPageId());
 		jsonContainer.put("parentId",getParentId());
 		jsonContainer.put("status",getStatus());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("subMenus",getSubMenus());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("subMenus",getSubMenus());
 		jsonContainer.put("treeLevel",getTreeLevel());
 	}
 	
@@ -237,7 +237,7 @@ public class ApplicationMenuDTO implements IsSerializable, IJSONFriendlyObject<A
 		retval.setModifiedDate( (Date)jsonContainer.get("modifiedDate" ,  Date.class.getName()));
 		retval.setModifiedIpAddr( (String)jsonContainer.get("modifiedIpAddr" ,  String.class.getName()));
 		retval.setOrder( (Integer)jsonContainer.get("order" ,  Integer.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setPageDetail( (PageDefinitionDTO)jsonContainer.get("pageDetail" ,  PageDefinitionDTO.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setPageDetail( (PageDefinitionDTO)jsonContainer.get("pageDetail" ,  PageDefinitionDTO.class.getName()));
 		retval.setPageId( (BigInteger)jsonContainer.get("pageId" ,  BigInteger.class.getName()));
 		retval.setParentId( (BigInteger)jsonContainer.get("parentId" ,  BigInteger.class.getName()));
 		retval.setStatus( (String)jsonContainer.get("status" ,  String.class.getName()));

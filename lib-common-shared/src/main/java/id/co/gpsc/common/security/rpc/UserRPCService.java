@@ -1,7 +1,7 @@
 package id.co.gpsc.common.security.rpc;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.rpc.JSONSerializedRemoteService;
 import id.co.gpsc.common.security.domain.User;
 import id.co.gpsc.common.security.dto.UserDTO;
@@ -16,7 +16,6 @@ import java.math.BigInteger;
  * @since Dec 10, 2012, 11:01:15 AM
  * @version $Id
  */
-//@RemoteServiceRelativePath(value="/sigma-rpc/user.app-rpc")
 public interface UserRPCService extends JSONSerializedRemoteService{
 	
 	/**
@@ -26,7 +25,7 @@ public interface UserRPCService extends JSONSerializedRemoteService{
 	 * @param pageSize
 	 * @return
 	 */
-	public PagedResultHolder<UserDTO> getUserByParameter(SigmaSimpleQueryFilter[] filter, int page, int pageSize) throws Exception;
+	public PagedResultHolder<UserDTO> getUserByParameter(SimpleQueryFilter[] filter, int page, int pageSize) throws Exception;
 	
 	/**
 	 * Get user by parameter
@@ -37,7 +36,7 @@ public interface UserRPCService extends JSONSerializedRemoteService{
 	 * @return PageResultHolder
 	 * @throws Exception
 	 */
-	public PagedResultHolder<UserDTO> getUserByParameter(BigInteger applicationId,SigmaSimpleQueryFilter[] filter, int page, int pageSize) throws Exception;
+	public PagedResultHolder<UserDTO> getUserByParameter(BigInteger applicationId,SimpleQueryFilter[] filter, int page, int pageSize) throws Exception;
 	
 	/**
 	 * get user by filter
@@ -47,7 +46,7 @@ public interface UserRPCService extends JSONSerializedRemoteService{
 	 * @return data user
 	 * @throws Exception
 	 */
-	public PagedResultHolder<User> getUserByFilter(SigmaSimpleQueryFilter[] filters, int pagePosition, int pageSize) throws Exception;
+	public PagedResultHolder<User> getUserByFilter(SimpleQueryFilter[] filters, int pagePosition, int pageSize) throws Exception;
 	
 	/**
 	 * insert data user
@@ -78,8 +77,8 @@ public interface UserRPCService extends JSONSerializedRemoteService{
 	public void resetPassword(User data) throws Exception, PasswordPolicyException;
 	
 	/**
-	 * Get current sigma user login
-	 * @return Sigma User Detail
+	 * Get current user login
+	 * @return  User Detail
 	 */
 	public UserDetailDTO getCurrentUserLogin();
 }

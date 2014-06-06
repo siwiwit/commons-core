@@ -4,7 +4,7 @@ import id.co.gpsc.common.client.form.ExtendedTextBox;
 import id.co.gpsc.common.client.form.LOVCapabledComboBox;
 import id.co.gpsc.common.client.form.i18.LabelConfigurationEditorPanel;
 import id.co.gpsc.common.client.rpc.ApplicationConfigRPCServiceAsync;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.app.LabelDataWrapper;
 import id.co.gpsc.common.data.entity.I18NTextGroup;
@@ -34,7 +34,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @since Sep 18, 2012, 11:37:54 AM
  * @version $Id
  */
-public class I18TextEditorPanel extends BaseSigmaComposite implements IReload{
+public class I18TextEditorPanel extends BaseSimpleComposite implements IReload{
 
 	private static I18TextEditorPanelUiBinder uiBinder = GWT.create(I18TextEditorPanelUiBinder.class);
 	private LabelConfigurationEditorPanel editorPanel;

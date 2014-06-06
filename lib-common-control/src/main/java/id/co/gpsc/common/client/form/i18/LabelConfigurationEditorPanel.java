@@ -6,7 +6,7 @@ import id.co.gpsc.common.client.control.i18.IReload;
 import id.co.gpsc.common.client.form.ExtendedTextBox;
 import id.co.gpsc.common.client.form.LOVCapabledComboBox;
 import id.co.gpsc.common.client.rpc.ApplicationConfigRPCServiceAsync;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.data.entity.I18NTextGroup;
 import id.co.gpsc.common.data.entity.I18Text;
 import id.co.gpsc.common.data.entity.I18TextPK;
@@ -25,7 +25,7 @@ import com.google.gwt.user.client.ui.Widget;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a> 
  * @version $Id
  **/
-public class LabelConfigurationEditorPanel extends BaseSigmaComposite  {
+public class LabelConfigurationEditorPanel extends BaseSimpleComposite  {
 	
 	private static LabelConfigurationEditorPanelUiBinder uiBinder = GWT.create(LabelConfigurationEditorPanelUiBinder.class);
 	private String localeId;

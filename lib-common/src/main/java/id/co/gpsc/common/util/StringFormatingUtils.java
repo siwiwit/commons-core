@@ -6,7 +6,7 @@ package id.co.gpsc.common.util;
 /**
  * class untuk memformat string menjadi format string yang diinginkan
  * ini dibuat untuk memformat Nomor Objek Pajak, dan NPWP
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Aug 19, 2013 1:53:29 PM
  */
 public class StringFormatingUtils {

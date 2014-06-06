@@ -1,9 +1,9 @@
 package id.co.gpsc.common.client.security.function;
 
 import id.co.gpsc.common.client.form.ExtendedButton;
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.client.security.rpc.FunctionRPCServiceAsync;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.security.dto.ApplicationMenuDTO;
 import id.co.gpsc.jquery.client.container.JQDialog;
 
@@ -29,7 +29,7 @@ import com.google.gwt.user.client.ui.Widget;
  *
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
-public class ApplicationMenuEditorPanel extends BaseSigmaComposite {
+public class ApplicationMenuEditorPanel extends BaseSimpleComposite {
 
 	private static ApplicationMenuEditorPanelUiBinder uiBinder = GWT
 			.create(ApplicationMenuEditorPanelUiBinder.class);
@@ -78,7 +78,7 @@ public class ApplicationMenuEditorPanel extends BaseSigmaComposite {
 	 * request data via RPC dan render data
 	 **/
 	protected void requestAndRenderTree () {
-		FunctionRPCServiceAsync.Util.getInstance().getCurrentAppMenuDToByAppIdOrderByTreeLevelAndSiblingOrder(new SigmaAsyncCallback<List<ApplicationMenuDTO>>() {
+		FunctionRPCServiceAsync.Util.getInstance().getCurrentAppMenuDToByAppIdOrderByTreeLevelAndSiblingOrder(new SimpleAsyncCallback<List<ApplicationMenuDTO>>() {
 			@Override
 			protected void customFailurehandler(Throwable caught) {
 				

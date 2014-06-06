@@ -11,8 +11,8 @@ import id.co.gpsc.common.data.app.DualControlEnabledData;
 import id.co.gpsc.common.data.app.DualControlEnabledOperation;
 import id.co.gpsc.common.data.app.HeaderDataOnlyCommonDualControlContainerTable;
 import id.co.gpsc.common.data.app.SimpleMasterDataDualControlApprovalResult;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 
 import java.math.BigInteger;
 import java.util.Date;
@@ -100,7 +100,7 @@ public interface DualControlDataRPCServiceAsync {
 	 * @param filters query filters. dalam kasus ini, yang di pakai adalah key 1 dan key2 
 	 * @param sortArguments argument untuk proses sorting data
 	 **/
-	public void getDataRequiredApproval(String objectFQCN , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArguments , int pageSize , int page , AsyncCallback<PagedResultHolder<CommonDualControlContainerTable>> callback);
+	public void getDataRequiredApproval(String objectFQCN , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArguments , int pageSize , int page , AsyncCallback<PagedResultHolder<CommonDualControlContainerTable>> callback);
 	
 	
 	
@@ -110,8 +110,8 @@ public interface DualControlDataRPCServiceAsync {
 	 * get data untuk proses update
 	 **/
 	public void getDataForEditList(
-			String objectFQCN, SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments, int pageSize, int page, AsyncCallback<PagedResultHolder<? extends DualControlEnabledData<?, ?>>> callback)  ;
+			String objectFQCN, SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments, int pageSize, int page, AsyncCallback<PagedResultHolder<? extends DualControlEnabledData<?, ?>>> callback)  ;
 	
 	
 	

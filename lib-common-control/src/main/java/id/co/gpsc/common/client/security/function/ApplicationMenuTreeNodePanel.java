@@ -1,6 +1,6 @@
 package id.co.gpsc.common.client.security.function;
 
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.client.security.BaseAriumSecurityComposite;
 import id.co.gpsc.common.client.security.rpc.FunctionRPCServiceAsync;
 import id.co.gpsc.common.client.widget.SpanButton;
@@ -104,7 +104,7 @@ public class ApplicationMenuTreeNodePanel extends BaseAriumSecurityComposite {
 				if (Window.confirm("Apakah anda yakin ingin menghapus menu " + currentMenuData.getLabel()+" ?") == true) {
 					// hapus dari tree
 					try {
-						FunctionRPCServiceAsync.Util.getInstance().eraseApplicationMenu(currentMenuData.getId(), new SigmaAsyncCallback<Void>() {
+						FunctionRPCServiceAsync.Util.getInstance().eraseApplicationMenu(currentMenuData.getId(), new SimpleAsyncCallback<Void>() {
 
 							@Override
 							public void onSuccess(Void result) {

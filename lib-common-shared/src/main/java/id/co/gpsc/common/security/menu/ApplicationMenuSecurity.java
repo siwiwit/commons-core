@@ -236,7 +236,7 @@ public class ApplicationMenuSecurity implements Serializable,IsSerializable, IJS
 	@Override
 	public void translateToJSON(ParsedJSONContainer jsonContainer) {
 		jsonContainer.put("actionCommand",getActionCommand());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/
 		ApplicationMenuSecurity[] param2 = getChildren();
 		if (param2 != null && param2.length > 0) {
 			for ( id.co.gpsc.common.security.menu.ApplicationMenuSecurity scn : param2){
@@ -258,7 +258,7 @@ public class ApplicationMenuSecurity implements Serializable,IsSerializable, IJS
 
 			}
 		}
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		 
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		 
 		  List<id.co.gpsc.common.security.menu.ApplicationMenuSecurity> param3 = getChildrenList() ; 
 		 if (  param3 != null && !param3.isEmpty()){ 
 			for ( id.co.gpsc.common.security.menu.ApplicationMenuSecurity scn : param3){
@@ -286,7 +286,7 @@ public class ApplicationMenuSecurity implements Serializable,IsSerializable, IJS
 		jsonContainer.put("menuCode",getMenuCode());
 		jsonContainer.put("menuId",getMenuId());
 		jsonContainer.put("menuTreeCode",getMenuTreeCode());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("miscObject",getMiscObject());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("miscObject",getMiscObject());
 		jsonContainer.put("parentId",getParentId());
 		jsonContainer.put("sequence",getSequence());
 	}
@@ -295,7 +295,7 @@ public class ApplicationMenuSecurity implements Serializable,IsSerializable, IJS
 	public ApplicationMenuSecurity instantiateFromJSON(ParsedJSONContainer jsonContainer) {
 		ApplicationMenuSecurity retval = new ApplicationMenuSecurity();
 		retval.setActionCommand( (String)jsonContainer.get("actionCommand" ,  String.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setChildren( (ApplicationMenuSecurity[])jsonContainer.get("children" ,  ApplicationMenuSecurity[].class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setChildren( (ApplicationMenuSecurity[])jsonContainer.get("children" ,  ApplicationMenuSecurity[].class.getName()));
 		Boolean tmp = (Boolean)jsonContainer.get("haveChildren" ,  Boolean.class.getName() ); 
 		retval.setHaveChildren( tmp!=null ? tmp.booleanValue() : false);
 		retval.setLabel( (String)jsonContainer.get("label" ,  String.class.getName()));

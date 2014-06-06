@@ -10,8 +10,8 @@ import com.google.gwt.user.client.ui.FlowPanel;
 import id.co.gpsc.common.client.control.Base1ComboSearchFilterPanel;
 import id.co.gpsc.common.client.control.SimpleSearchFilterHandler;
 import id.co.gpsc.common.client.form.ExtendedButton;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.util.I18Utilities;
 
 /**
@@ -103,8 +103,8 @@ public abstract class Simple1ComboBoxDrivenTitleAndSearchFilterPanel extends Bas
 	 * ini untuk meminta. ini bisa di trigger kalau misalnya search mau di run programmatically
 	 */
 	protected void doSearchData () {
-		SigmaSimpleSortArgument [] sort = getDefaultSortArguments(); 
-		SigmaSimpleQueryFilter[] a = generateDataFilterArguments(); 
+		SimpleSortArgument [] sort = getDefaultSortArguments(); 
+		SimpleQueryFilter[] a = generateDataFilterArguments(); 
 		getSearchFilterHandler().applyFilter( a , sort);
 	}
 	
@@ -137,7 +137,7 @@ public abstract class Simple1ComboBoxDrivenTitleAndSearchFilterPanel extends Bas
 	/**
 	 * sort argument standard untuk data
 	 */
-	protected SigmaSimpleSortArgument [] getDefaultSortArguments () {
+	protected SimpleSortArgument [] getDefaultSortArguments () {
 		return null ; 
 	}
 }

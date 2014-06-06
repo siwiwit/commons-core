@@ -1,6 +1,6 @@
 /**
  * File Name : Function.java
- * Package   : id.co.sigma.arium.security.shared.domain
+ * Package   : id.co.gpsc.arium.security.shared.domain
  * Project   : security-data
  */
 package id.co.gpsc.common.security.domain;
@@ -433,7 +433,7 @@ public class Function extends BaseAuditedObject implements IJSONFriendlyObject<F
 		jsonContainer.put("modifiedBy",getModifiedBy());
 		jsonContainer.put("modifiedByIPAddress",getModifiedByIPAddress());
 		jsonContainer.put("modifiedOn",getModifiedOn());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("pageDefinition",getPageDefinition());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("pageDefinition",getPageDefinition());
 		jsonContainer.put("pageId",getPageId());
 		jsonContainer.put("siblingOrder",getSiblingOrder());
 		jsonContainer.put("status",getStatus());
@@ -457,7 +457,7 @@ public class Function extends BaseAuditedObject implements IJSONFriendlyObject<F
 		retval.setModifiedBy( (String)jsonContainer.get("modifiedBy" ,  String.class.getName()));
 		retval.setModifiedByIPAddress( (String)jsonContainer.get("modifiedByIPAddress" ,  String.class.getName()));
 		retval.setModifiedOn( (Date)jsonContainer.get("modifiedOn" ,  Date.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setPageDefinition( (PageDefinition)jsonContainer.get("pageDefinition" ,  PageDefinition.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setPageDefinition( (PageDefinition)jsonContainer.get("pageDefinition" ,  PageDefinition.class.getName()));
 		retval.setPageId( (BigInteger)jsonContainer.get("pageId" ,  BigInteger.class.getName()));
 		retval.setSiblingOrder( (Integer)jsonContainer.get("siblingOrder" ,  Integer.class.getName()));
 		retval.setStatus( (String)jsonContainer.get("status" ,  String.class.getName()));

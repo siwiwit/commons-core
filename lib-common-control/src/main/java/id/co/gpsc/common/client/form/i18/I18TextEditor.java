@@ -19,9 +19,9 @@ import com.google.gwt.user.client.ui.Label;
 import id.co.gpsc.common.client.form.ExtendedTextBox;
 import id.co.gpsc.common.client.form.LOVCapabledComboBox;
 import id.co.gpsc.common.client.rpc.ApplicationConfigRPCServiceAsync;
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.client.util.CommonClientControlUtil;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.data.CoreLibLookup;
 import id.co.gpsc.common.data.entity.I18Code;
 import id.co.gpsc.common.data.entity.I18Text;
@@ -35,7 +35,7 @@ import id.co.gpsc.jquery.client.container.JQDialog;
  * @version $Id
  * @since 
  **/
-public final class I18TextEditor extends BaseSigmaComposite {
+public final class I18TextEditor extends BaseSimpleComposite {
 	
 	
 	private static I18TextEditor instance ; 
@@ -156,7 +156,7 @@ public final class I18TextEditor extends BaseSigmaComposite {
 			scn.setValue("");
 		}
 		groupCmb.setEnabled(false);
-		ApplicationConfigRPCServiceAsync.Util.getInstance().getAllLanguagesTextById(i18NKey, new SigmaAsyncCallback<List<I18Text>>() {
+		ApplicationConfigRPCServiceAsync.Util.getInstance().getAllLanguagesTextById(i18NKey, new SimpleAsyncCallback<List<I18Text>>() {
 
 			@Override
 			public void onSuccess(List<I18Text> result) {
@@ -242,7 +242,7 @@ public final class I18TextEditor extends BaseSigmaComposite {
 		}
 		I18Text[] arr = new I18Text[txts.size()];
 		txts.toArray(arr);
-		ApplicationConfigRPCServiceAsync.Util.getInstance().saveLabels(arr, new SigmaAsyncCallback<Void>() {
+		ApplicationConfigRPCServiceAsync.Util.getInstance().saveLabels(arr, new SimpleAsyncCallback<Void>() {
 
 			@Override
 			public void onSuccess(Void result) {

@@ -5,7 +5,7 @@
 		
 	</ui:style>
 	<g:HTMLPanel>
-		<div id="sigma_i18_reloader_panel" class="ui-widget-content" style="position:absolute;top:0;width:300px;height:110px;padding:5px;">
+		<div id="gpsc_i18_reloader_panel" class="ui-widget-content" style="position:absolute;top:0;width:300px;height:110px;padding:5px;">
 			<table>
 				<tbody>
 				<tr>

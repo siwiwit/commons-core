@@ -6,7 +6,7 @@ import id.co.gpsc.common.client.rpc.ApplicationConfigRPCServiceAsync;
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.entity.I18Text;
 import id.co.gpsc.common.data.entity.I18TextPK;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.util.I18Utilities;
 import id.co.gpsc.jquery.client.grid.cols.BaseColumnDefinition;
@@ -54,10 +54,10 @@ public class I18NTextLookup extends BaseSimpleSingleResultLookupDialog<I18TextPK
 	}
 
 	@Override
-	protected void retrieveData(SigmaSimpleQueryFilter[] filters, int page,
+	protected void retrieveData(SimpleQueryFilter[] filters, int page,
 			int pageSize, AsyncCallback<PagedResultHolder<I18Text>> callback) {
 		if ( filters!=null){
-			for (SigmaSimpleQueryFilter scn : filters){
+			for (SimpleQueryFilter scn : filters){
 				System.out.println( scn.toString());
 			}
 		}
@@ -65,21 +65,21 @@ public class I18NTextLookup extends BaseSimpleSingleResultLookupDialog<I18TextPK
 	}
 
 	@Override
-	protected SigmaSimpleQueryFilter[] generateDataFilters() {
+	protected SimpleQueryFilter[] generateDataFilters() {
 		
-		SigmaSimpleQueryFilter[] baseResult =  super.generateDataFilters();
+		SimpleQueryFilter[] baseResult =  super.generateDataFilters();
 		int size = baseResult==null? 0 : baseResult.length; 
 		
 		
 		
-		SigmaSimpleQueryFilter[] retval = new SigmaSimpleQueryFilter[size+1];
+		SimpleQueryFilter[] retval = new SimpleQueryFilter[size+1];
 		if ( baseResult!= null){
 			for ( int i=0;i< baseResult.length; i++){
 				retval[i] = baseResult[i];
 			}
 		}
 		
-		retval[retval.length-1] = new SigmaSimpleQueryFilter("id.localeCode"  , SimpleQueryFilterOperator.equal , I18Utilities.getInstance().getCurrentLocalizationCode()) ;
+		retval[retval.length-1] = new SimpleQueryFilter("id.localeCode"  , SimpleQueryFilterOperator.equal , I18Utilities.getInstance().getCurrentLocalizationCode()) ;
 		return retval ; 
 	}
 	@Override

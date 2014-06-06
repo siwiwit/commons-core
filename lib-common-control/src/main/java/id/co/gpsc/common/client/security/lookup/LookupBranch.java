@@ -4,7 +4,7 @@ import id.co.gpsc.common.client.control.BaseSimpleSearchComboContentLocator;
 import id.co.gpsc.common.client.security.lookup.base.SecurityBaseSimpleSingleResultLookupDialog;
 import id.co.gpsc.common.client.security.rpc.BranchRPCServiceAsync;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.dto.BranchDTO;
 import id.co.gpsc.jquery.client.grid.cols.BaseColumnDefinition;
 import id.co.gpsc.jquery.client.grid.cols.StringColumnDefinition;
@@ -32,7 +32,7 @@ public class LookupBranch extends SecurityBaseSimpleSingleResultLookupDialog<Big
 	}
 
 	@Override
-	protected void retrieveData(SigmaSimpleQueryFilter[] filters, int page, int pageSize, AsyncCallback<PagedResultHolder<BranchDTO>> callback) {
+	protected void retrieveData(SimpleQueryFilter[] filters, int page, int pageSize, AsyncCallback<PagedResultHolder<BranchDTO>> callback) {
 		BranchRPCServiceAsync.Util.getInstance().getDataByParameter(filters, page, pageSize, callback);	
 	}
 

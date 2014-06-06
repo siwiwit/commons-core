@@ -7,8 +7,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import id.co.gpsc.common.client.rpc.impl.GeneralPurposeRPCAsyncImpl;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.util.json.IJSONFriendlyObject;
 
 /**
@@ -46,7 +46,7 @@ public interface GeneralPurposeRPCAsync  {
 	 *  
 	 * 
 	 **/
-	public <DATA extends IJSONFriendlyObject<DATA>> void getPagedData (String objectFQCN , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sorts , int page , int pageSize , AsyncCallback<PagedResultHolder<DATA>> callback);
+	public <DATA extends IJSONFriendlyObject<DATA>> void getPagedData (String objectFQCN , SimpleQueryFilter[] filters , SimpleSortArgument[] sorts , int page , int pageSize , AsyncCallback<PagedResultHolder<DATA>> callback);
 	
 	
 	/**

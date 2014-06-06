@@ -107,14 +107,14 @@ public final class RawJSFormElementConfiguration extends JavaScriptObject implem
 	 * grad data dari js variables
 	 **/
 	public static native RawJSFormElementConfiguration getConfigurationById (String key)/*-{
-		var arr = ["id","co","sigma","formConfigs"];
+		var arr = ["id","co","gpsc","formConfigs"];
 		var curr = $wnd ; 
 		for ( i=0;i<arr.length;i++){
 			curr=curr[arr[i]];
 			if ( curr==null||typeof curr == undefined)
 				return ; 
 		}
-		return $wnd.id.co.sigma.formConfigs[key];
+		return $wnd.id.co.gpsc.formConfigs[key];
 	
 	}-*/;
 	

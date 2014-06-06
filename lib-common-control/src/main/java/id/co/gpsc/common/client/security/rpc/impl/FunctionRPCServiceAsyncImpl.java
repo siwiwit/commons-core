@@ -40,9 +40,9 @@ public class FunctionRPCServiceAsyncImpl extends ManualJSONSerializeRPCService<F
 	}
 
 
-	public void getCurrentAppAvailablePages(id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[] param0,id.co.gpsc.common.data.query.SigmaSimpleSortArgument[] param1,int param2,int param3,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.dto.PageDefinitionDTO>> callback) {
+	public void getCurrentAppAvailablePages(id.co.gpsc.common.data.query.SimpleQueryFilter[] param0,id.co.gpsc.common.data.query.SimpleSortArgument[] param1,int param2,int param3,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.dto.PageDefinitionDTO>> callback) {
 		this.submitRPCRequestRaw( "getCurrentAppAvailablePages", new Class<?>[]{
-			id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[].class,id.co.gpsc.common.data.query.SigmaSimpleSortArgument[].class,int.class,int.class, 
+			id.co.gpsc.common.data.query.SimpleQueryFilter[].class,id.co.gpsc.common.data.query.SimpleSortArgument[].class,int.class,int.class, 
 			
 		}, 
 		new Object[]{

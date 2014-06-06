@@ -1,7 +1,7 @@
 package id.co.gpsc.common.security.rpc;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.rpc.JSONSerializedRemoteService;
 import id.co.gpsc.common.security.domain.Branch;
 import id.co.gpsc.common.security.dto.BranchDTO;
@@ -14,7 +14,6 @@ import java.math.BigInteger;
  * @since Jan 30, 2013, 3:34:57 PM
  * @version $Id
  */
-//@RemoteServiceRelativePath(value="/sigma-rpc/branch-list.app-rpc")
 public interface BranchRPCService extends JSONSerializedRemoteService{
 	
 	/**
@@ -24,7 +23,7 @@ public interface BranchRPCService extends JSONSerializedRemoteService{
 	 * @param pageSize
 	 * @return pageResultHolder
 	 */
-	public PagedResultHolder<BranchDTO> getDataByParameter(SigmaSimpleQueryFilter[] filter, int page, int pageSize) throws Exception;
+	public PagedResultHolder<BranchDTO> getDataByParameter(SimpleQueryFilter[] filter, int page, int pageSize) throws Exception;
 	
 	/**
 	 * Save or update data

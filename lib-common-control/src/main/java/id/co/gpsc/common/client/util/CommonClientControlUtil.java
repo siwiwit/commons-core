@@ -26,7 +26,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.user.datepicker.client.CalendarUtil;
 
 import id.co.gpsc.common.client.CommonClientControlConstant;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.CommonLibraryConstant;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 
 
 
@@ -133,7 +134,7 @@ public final class CommonClientControlUtil {
 	 **/
 	public native String getStringResource (String key) /*-{
 		try{
-			return $wnd.id.co.sigma.languages[key];
+			return $wnd.id.co.gpsc.languages[key];
 		}
 		catch(exc){
 			return null ; 
@@ -157,7 +158,7 @@ public final class CommonClientControlUtil {
 	 * reload i18 Text. Dev mode dari database, else dari file dengan tag &lt;script&gt;&lt;/script&gt;
 	 **/
 	public void reloadI18Texts(String localeCode){
-		String url = applicationBaseUrl+ "sigma-app-configuration/" +localeCode+ "/i18-groups.json";
+		String url = applicationBaseUrl+  CommonLibraryConstant.APPLICATION_CONFIG_SERVICE_BASE_URL +   "/" +localeCode+ "/i18-groups.json";
 		fetchScriptSynchronous(url);
 	}
 	
@@ -493,10 +494,10 @@ public final class CommonClientControlUtil {
 	 * generate filter dengan date betwen. jadinya bikin tgl skr + tgl h+1
 	 * @param fieldName 
 	 */
-	public SigmaSimpleQueryFilter generateDateWithBetweenFilter ( String fieldName  , Date dateFilter )  {
+	public SimpleQueryFilter generateDateWithBetweenFilter ( String fieldName  , Date dateFilter )  {
 		Date tglDari = generate00HourPassedDate(dateFilter); 
 		Date tglSampai = generate00HourPassedDateNextDate(dateFilter);
-		SigmaSimpleQueryFilter retval = new SigmaSimpleQueryFilter(fieldName ,tglDari , tglSampai ); 
+		SimpleQueryFilter retval = new SimpleQueryFilter(fieldName ,tglDari , tglSampai ); 
 		return retval ; 
 		
 	}

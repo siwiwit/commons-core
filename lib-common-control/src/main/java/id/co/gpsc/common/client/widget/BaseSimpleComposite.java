@@ -4,7 +4,6 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.DOM;
-import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
@@ -35,7 +34,7 @@ import java.util.Map;
  * 
  * @author <a href='mailto:gede.sutarsa@gmail.com'>Gede Sutarsa</a>
  **/
-public abstract class BaseSigmaComposite extends Composite implements LovPoolPanel ,DisposeablePanel{
+public abstract class BaseSimpleComposite extends Composite implements LovPoolPanel ,DisposeablePanel{
 	
 	
 	
@@ -202,8 +201,8 @@ public abstract class BaseSigmaComposite extends Composite implements LovPoolPan
 	@Override
 	protected void initWidget(Widget widget) {
 		super.initWidget(widget);
-		if ( widget.getElement().getId()== null ||  widget.getElement().getId().isEmpty()){
-			widget.getElement().setId(DOM.createUniqueId());
+		if ( widget.getElement().getId()==null||widget.getElement().getId().length()==0){
+			widget.getElement().setId("GPS-COMPOSITE-" + DOM.createUniqueId());
 		}
 			
 		getElement().setPropertyObject(CommonClientControlConstant.TAG_KEY_SEL_REF, this);
@@ -211,12 +210,8 @@ public abstract class BaseSigmaComposite extends Composite implements LovPoolPan
 		if ( !GWT.isProdMode() || "true".equalsIgnoreCase(debugerFlag) ){
 			widget.setTitle("class:" + getClass().getName());
 		}
-		if ( widget.getElement().getId()==null||widget.getElement().getId().length()==0){
-			widget.getElement().setId("SIGMA-COMPOSITE-" + DOM.createUniqueId());
-		}
-		if ( widget.getElement().getId()==null||widget.getElement().getId().length()==0){
-			 widget.getElement().setId("SIGMA_COMPOSITE_" + DOM.createUniqueId());
-		}
+		
+		
 	}
 	
 	

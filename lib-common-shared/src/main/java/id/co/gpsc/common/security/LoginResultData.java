@@ -1,6 +1,6 @@
 /**
  * File Name : LoginResultData.java
- * Package   : id.co.sigma.arium.security.shared
+ * Package   : id.co.gpsc.arium.security.shared
  * Project   : security-shared
  */
 package id.co.gpsc.common.security;

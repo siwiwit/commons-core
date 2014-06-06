@@ -53,11 +53,11 @@ public abstract class BaseJQGridPanel<DATA> extends SimplePanel{
 	/**
 	 * nama variable untuk map reference grid
 	 **/
-	public static final String GRID_REFERENCE_MAP_NAME="SIGMA_JQGRID_CELL_BUTTON_GRID_REFERENCE";
+	public static final String GRID_REFERENCE_MAP_NAME="GPSC_JQGRID_CELL_BUTTON_GRID_REFERENCE";
 	/**
 	 * prefix nama method untuk handler button click
 	 **/
-	public static final String IN_CELL_BUTTON_METHOD_NAME_PREFIX="SIGMA_CELL_BUTTON_HANDLER";
+	public static final String IN_CELL_BUTTON_METHOD_NAME_PREFIX="GPSC_CELL_BUTTON_HANDLER";
 	
 	/**
 	 * method counter untuk akses button handler. karena ini di taruh dalam native js jadinya ini perlu dijamin method nya beda
@@ -314,7 +314,7 @@ public abstract class BaseJQGridPanel<DATA> extends SimplePanel{
 		
 		
 		
-		spanOuter.setId("SIGMA_JQGRID_" + DOM.createUniqueId());
+		spanOuter.setId("GPS_JQGRID_" + DOM.createUniqueId());
 		gridTableElement = DOM.createTable();
 		gridTableElement.setId("GRID_TABLE_"+DOM.createUniqueId());
 		gridButtonElement = DOM.createDiv();
@@ -1569,7 +1569,7 @@ public abstract class BaseJQGridPanel<DATA> extends SimplePanel{
 		// parameterKeyFromParamOnTag -> ada dalam argument click juga. ini method name na apa. ini akan sama dengan parameter methodName
 		var mthd = function(dataRowId ){
 			var grid =$wnd[gridReferenceMapName][methodName];
-			// panggil saja id.co.sigma.jquery.client.grid.BaseJQGridPanel.triggerCellButtonClickHandler(String, String) biar dia yang solve the problem
+			// panggil saja id.co.gpsc.jquery.client.grid.BaseJQGridPanel.triggerCellButtonClickHandler(String, String) biar dia yang solve the problem
 			grid.@id.co.gpsc.jquery.client.grid.BaseJQGridPanel::triggerCellButtonClickHandler(Ljava/lang/String;Ljava/lang/String;)(dataRowId,methodName);
 		};
 		

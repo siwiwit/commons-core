@@ -2,7 +2,7 @@ package id.co.gpsc.common.client.security.rpc;
 
 import id.co.gpsc.common.client.security.rpc.impl.UserDomainRPCServiceAsyncImpl;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.menu.UserDomain;
 
 import com.google.gwt.core.client.GWT;
@@ -35,5 +35,5 @@ public interface UserDomainRPCServiceAsync {
 	 * @param pageSize
 	 * @param callback
 	 */
-	void getUserDomainFromIIS(SigmaSimpleQueryFilter[] filter, int page, int pageSize, AsyncCallback<PagedResultHolder<UserDomain>> callback);
+	void getUserDomainFromIIS(SimpleQueryFilter[] filter, int page, int pageSize, AsyncCallback<PagedResultHolder<UserDomain>> callback);
 }

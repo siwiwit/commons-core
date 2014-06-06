@@ -31,7 +31,7 @@ import com.google.gwt.user.client.ui.RootPanel;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * @version $Id
  **/
-public abstract class BaseSigmaWithMenuBarEntryPoint<KEY> extends BaseSigmaEntryPoint{
+public abstract class BaseSimpleWithMenuBarEntryPoint<KEY> extends BaseSimpleEntryPoint{
 	
 	
 	

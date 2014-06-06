@@ -91,7 +91,7 @@ public class UserDTO implements  SingleKeyEntityData<BigInteger>, IJSONFriendlyO
 		jsonContainer.put("fullName",getFullName());
 		jsonContainer.put("id",getId());
 		jsonContainer.put("idUser",getIdUser());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		 
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		 
 		  List<id.co.gpsc.common.security.dto.UserGroupDTO> param6 = getUserGroups() ; 
 		 if (  param6 != null && !param6.isEmpty()){ 
 			for ( id.co.gpsc.common.security.dto.UserGroupDTO scn : param6){
@@ -114,7 +114,7 @@ public class UserDTO implements  SingleKeyEntityData<BigInteger>, IJSONFriendlyO
 		retval.setFullName( (String)jsonContainer.get("fullName" ,  String.class.getName()));
 		retval.setId( (BigInteger)jsonContainer.get("id" ,  BigInteger.class.getName()));
 		retval.setIdUser( (BigInteger)jsonContainer.get("idUser" ,  BigInteger.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setUsername( (String)jsonContainer.get("username" ,  String.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setUsername( (String)jsonContainer.get("username" ,  String.class.getName()));
 		return retval; 
 	}
 }

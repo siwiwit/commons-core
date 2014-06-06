@@ -6,7 +6,7 @@ import id.co.gpsc.common.client.control.worklist.PagedSimpleGridPanel;
 import id.co.gpsc.common.client.form.ExtendedButton;
 import id.co.gpsc.common.client.widget.PageChangeHandler;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.util.I18Utilities;
 import id.co.gpsc.jquery.client.container.JQDialog;
 import id.co.gpsc.jquery.client.grid.cols.BaseColumnDefinition;
@@ -144,7 +144,7 @@ public abstract class BaseSimpleLookupDialog<KEY,ENTITY> {
 	 * @param pageSize ukuran page per pembacaan
 	 * @param callback callback untuk worker render data ke dalam grid selector
 	 **/
-	protected abstract void retrieveData(SigmaSimpleQueryFilter[] filters , int page , int pageSize , AsyncCallback<PagedResultHolder<ENTITY>> callback ) ; 
+	protected abstract void retrieveData(SimpleQueryFilter[] filters , int page , int pageSize , AsyncCallback<PagedResultHolder<ENTITY>> callback ) ; 
 	
 	
 	
@@ -419,7 +419,7 @@ public abstract class BaseSimpleLookupDialog<KEY,ENTITY> {
 	/**
 	 * ini method yang akan menggenerate argument search, pergunakan ini kalau anda berniat melakukan override
 	 **/
-	protected SigmaSimpleQueryFilter[] generateDataFilters() {
+	protected SimpleQueryFilter[] generateDataFilters() {
 		return  this.searchComboBox.generateDataFilterArguments() ; 
 	}
 	

@@ -2,7 +2,7 @@ package id.co.gpsc.common.client.security.rpc;
 
 import id.co.gpsc.common.client.security.rpc.impl.BranchRPCServiceAsyncImpl;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.domain.Branch;
 import id.co.gpsc.common.security.dto.BranchDTO;
 
@@ -32,7 +32,7 @@ public interface BranchRPCServiceAsync {
 	 * @param pageSize
 	 * @param callback
 	 */
-	void getDataByParameter(SigmaSimpleQueryFilter[] filter, int page, int pageSize, AsyncCallback<PagedResultHolder<BranchDTO>> callback);
+	void getDataByParameter(SimpleQueryFilter[] filter, int page, int pageSize, AsyncCallback<PagedResultHolder<BranchDTO>> callback);
 	
 	/**
 	 * Save or update data branch

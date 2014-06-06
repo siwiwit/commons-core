@@ -1,6 +1,6 @@
 package id.co.gpsc.common.client.security;
 
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.client.security.function.ApplicationMenuEditorPanel;
 import id.co.gpsc.common.client.security.group.GroupListPanel;
 import id.co.gpsc.common.client.security.rpc.ApplicationRPCServiceAsync;
@@ -11,7 +11,7 @@ import com.google.gwt.user.client.Window;
 
 /**
  * menu security
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Dode</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Dode</a>
  **/
 public   class PanelGeneratorSecurity extends MenuHandlerPanelGeneratorGroup {
 
@@ -31,7 +31,7 @@ public   class PanelGeneratorSecurity extends MenuHandlerPanelGeneratorGroup {
 								
 								
 								
-								getCurrentUserSecurityData(new SigmaAsyncCallback<ApplicationDTO>() {
+								getCurrentUserSecurityData(new SimpleAsyncCallback<ApplicationDTO>() {
 									@Override
 									protected void customFailurehandler(
 											Throwable caught) {
@@ -123,7 +123,7 @@ public   class PanelGeneratorSecurity extends MenuHandlerPanelGeneratorGroup {
 	/**
 	 * aktivitas ini untuk membaca current security data. di bikin async, kalau di perlukan akses ke RPC, taruh di sini
 	 **/
-	protected    void getCurrentUserSecurityData (final SigmaAsyncCallback<ApplicationDTO> callback)  {
+	protected    void getCurrentUserSecurityData (final SimpleAsyncCallback<ApplicationDTO> callback)  {
 		if ( applicationDTO!= null){
 			callback.onSuccess(applicationDTO); 
 			return ; 
@@ -131,7 +131,7 @@ public   class PanelGeneratorSecurity extends MenuHandlerPanelGeneratorGroup {
 		
 		
 		// kirim request ke server
-		ApplicationRPCServiceAsync.Util.getInstance().getCurrentAppApplicationInfo(new SigmaAsyncCallback<ApplicationDTO>() {
+		ApplicationRPCServiceAsync.Util.getInstance().getCurrentAppApplicationInfo(new SimpleAsyncCallback<ApplicationDTO>() {
 			@Override
 			public void onSuccess(ApplicationDTO innerResult) {
 				

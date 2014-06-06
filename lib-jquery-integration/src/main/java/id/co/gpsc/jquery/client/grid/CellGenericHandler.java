@@ -12,7 +12,7 @@ import id.co.gpsc.common.control.DataProcessWorker;
  * <li>{@link CellHyperlinkHandler}</li>
  * 
  * </ol>
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Oct 4, 2013 11:18:11 AM
  * 
  */

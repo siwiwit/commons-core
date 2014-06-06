@@ -10,12 +10,12 @@ import id.co.gpsc.common.client.control.SimpleSearchFilterHandler;
 import id.co.gpsc.common.client.rpc.GeneralPurposeRPCAsync;
 import id.co.gpsc.common.client.widget.PageChangeHandler;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.util.json.IJSONFriendlyObject;
 
 /**
- * grid yang ke bind dengan simple select.Grid request select dengan simple select. cukup dengan array of SigmaSimpleQueryFilter. yang perlu anda lakukan hanya : 
+ * grid yang ke bind dengan simple select.Grid request select dengan simple select. cukup dengan array of SimpleQueryFilter. yang perlu anda lakukan hanya : 
  * 
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
@@ -25,7 +25,7 @@ public abstract class SimpleRPCDrivenPagedSimpleGridPanel<DATA extends IJSONFrie
 	/**
 	 * filters yang di pergunakan saat ini
 	 **/
-	protected  SigmaSimpleQueryFilter[] currentFilters ;
+	protected  SimpleQueryFilter[] currentFilters ;
 	
 	
 	
@@ -33,7 +33,7 @@ public abstract class SimpleRPCDrivenPagedSimpleGridPanel<DATA extends IJSONFrie
 	/**
 	 * argument sort current
 	 **/
-	protected SigmaSimpleSortArgument[] currentSortArguments  ;  
+	protected SimpleSortArgument[] currentSortArguments  ;  
 	
 	
 	
@@ -84,7 +84,7 @@ public abstract class SimpleRPCDrivenPagedSimpleGridPanel<DATA extends IJSONFrie
 	
 	
 	@Override
-	public void applyFilter(SigmaSimpleQueryFilter[] filters) {
+	public void applyFilter(SimpleQueryFilter[] filters) {
 			resetGrid();
 		 this.currentFilters  = filters ; 
 		 reload();
@@ -92,8 +92,8 @@ public abstract class SimpleRPCDrivenPagedSimpleGridPanel<DATA extends IJSONFrie
 	}
 	
 	@Override
-	public void applyFilter(SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sorts) {
+	public void applyFilter(SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sorts) {
 		resetGrid();
 		this.currentFilters = filters ;
 		this.currentSortArguments = sorts ;
@@ -159,9 +159,9 @@ public abstract class SimpleRPCDrivenPagedSimpleGridPanel<DATA extends IJSONFrie
 	
 	
 	/**
-	 * ini request ke RPC.Request ke   {@link GeneralPurposeRPCAsync#getPagedData(String, SigmaSimpleQueryFilter[], SigmaSimpleSortArgument[], int, int, AsyncCallback)}. kalau perlu custom, bisa override method ini
+	 * ini request ke RPC.Request ke   {@link GeneralPurposeRPCAsync#getPagedData(String, SimpleQueryFilter[], SimpleSortArgument[], int, int, AsyncCallback)}. kalau perlu custom, bisa override method ini
 	 **/
-	protected void submitRPCRequest(SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortsArgument , int page, int pageSize  ) {
+	protected void submitRPCRequest(SimpleQueryFilter[] filters , SimpleSortArgument[] sortsArgument , int page, int pageSize  ) {
 		actualSubmitCallbackWorker(filters, sortsArgument, page, pageSize, getDataCallback());
 	}
 	
@@ -169,14 +169,14 @@ public abstract class SimpleRPCDrivenPagedSimpleGridPanel<DATA extends IJSONFrie
 	
 	
 	/**
-	 * actual callback yang di trigger oleh grid. versi lengkap dengan argument callback di banding dengan {@link #submitRPCRequest(SigmaSimpleQueryFilter[], SigmaSimpleSortArgument[], int, int)}
+	 * actual callback yang di trigger oleh grid. versi lengkap dengan argument callback di banding dengan {@link #submitRPCRequest(SimpleQueryFilter[], SimpleSortArgument[], int, int)}
 	 * @param filters filter data
 	 * @param sortsArgument sorting argument
 	 * @param page page di baca
 	 * @param pageSize ukuran page di baca
 	 * @param callback callback data
 	 */
-	protected void actualSubmitCallbackWorker (SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortsArgument , int page, int pageSize  , AsyncCallback<PagedResultHolder<DATA>> callback) {
+	protected void actualSubmitCallbackWorker (SimpleQueryFilter[] filters , SimpleSortArgument[] sortsArgument , int page, int pageSize  , AsyncCallback<PagedResultHolder<DATA>> callback) {
 		this.showHideLoadingBlockerScreen(true);
 		GeneralPurposeRPCAsync.Util.getInstance().getPagedData(getRenderedClass().getName(), filters, sortsArgument, page, pageSize,callback);
 	}

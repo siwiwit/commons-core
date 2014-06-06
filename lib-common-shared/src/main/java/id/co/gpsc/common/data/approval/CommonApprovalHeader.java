@@ -109,7 +109,7 @@ public class CommonApprovalHeader implements Serializable , IJSONFriendlyObject<
 	private Date approvedTime;
 	 
 	/**
-	* ikut enum : id.co.sigma.common.data.approval.SimpleApprovalStatus<br/>
+	* ikut enum : id.co.gpsc.common.data.approval.SimpleApprovalStatus<br/>
 	* column :approval_status
 	**/
 	@Column(name="approval_status", nullable=true)

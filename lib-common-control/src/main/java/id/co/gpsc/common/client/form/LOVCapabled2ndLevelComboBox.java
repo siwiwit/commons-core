@@ -10,7 +10,7 @@ import com.google.gwt.user.client.Window;
 import id.co.gpsc.common.client.control.ILOVCapableControl2ndLevel;
 import id.co.gpsc.common.client.control.IParentLOVEnableControl;
 import id.co.gpsc.common.client.lov.ClientSideLOVManager;
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.data.CustomDataFormatter;
 import id.co.gpsc.common.data.lov.Common2ndLevelLOV;
 import id.co.gpsc.common.data.lov.Common2ndLevelLOVHeader;
@@ -27,7 +27,7 @@ import id.co.gpsc.common.util.I18Utilities;
 public class LOVCapabled2ndLevelComboBox extends ExtendedComboBox implements ILOVCapableControl2ndLevel{
 
 	
-	protected class Level2LovRequestHandler extends SigmaAsyncCallback<Common2ndLevelLOVHeader>{
+	protected class Level2LovRequestHandler extends SimpleAsyncCallback<Common2ndLevelLOVHeader>{
 		
 		
 		private String lookupValueToSelect ; 
@@ -156,7 +156,7 @@ public class LOVCapabled2ndLevelComboBox extends ExtendedComboBox implements ILO
 	public void setValue(final String myValue,final String parentValue,
 			final Command afterSetValueDone) {
 		clear();
-		ClientSideLOVManager.getInstance().requestLOV(parentValue, getLovParameterId(), new SigmaAsyncCallback<Common2ndLevelLOVHeader>() {
+		ClientSideLOVManager.getInstance().requestLOV(parentValue, getLovParameterId(), new SimpleAsyncCallback<Common2ndLevelLOVHeader>() {
 			
 			@Override
 			public void onSuccess(Common2ndLevelLOVHeader result) {
@@ -179,7 +179,7 @@ public class LOVCapabled2ndLevelComboBox extends ExtendedComboBox implements ILO
 
 	@Override
 	public void setValue(String lookupValue , final Command afterSetValueDone) {
-		ClientSideLOVManager.getInstance().requestLOV2ndLevelByCurrentLookupValue(lookupValue, getLovParameterId(), new SigmaAsyncCallback<Common2ndLevelLOVHeader>() {
+		ClientSideLOVManager.getInstance().requestLOV2ndLevelByCurrentLookupValue(lookupValue, getLovParameterId(), new SimpleAsyncCallback<Common2ndLevelLOVHeader>() {
 			
 			@Override
 			public void onSuccess(Common2ndLevelLOVHeader result) {

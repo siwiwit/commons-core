@@ -150,7 +150,7 @@ public class FormElementConfiguration implements Serializable,IsSerializable, IJ
 		jsonContainer.put("formId",getFormId());
 		jsonContainer.put("groupId",getGroupId());
 		jsonContainer.put("hintI18NKey",getHintI18NKey());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("id",getId());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("id",getId());
 		jsonContainer.put("mandatory",getMandatory());
 		jsonContainer.put("maxLength",getMaxLength());
 		jsonContainer.put("maxValue",getMaxValue());
@@ -165,7 +165,7 @@ public class FormElementConfiguration implements Serializable,IsSerializable, IJ
 		retval.setFormId( (String)jsonContainer.get("formId" ,  String.class.getName()));
 		retval.setGroupId( (String)jsonContainer.get("groupId" ,  String.class.getName()));
 		retval.setHintI18NKey( (String)jsonContainer.get("hintI18NKey" ,  String.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setId( (FormElementConfigurationPK)jsonContainer.get("id" ,  FormElementConfigurationPK.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setId( (FormElementConfigurationPK)jsonContainer.get("id" ,  FormElementConfigurationPK.class.getName()));
 		retval.setMandatory( (Boolean)jsonContainer.get("mandatory" ,  Boolean.class.getName()));
 		retval.setMaxLength( (Integer)jsonContainer.get("maxLength" ,  Integer.class.getName()));
 		retval.setMaxValue( (String)jsonContainer.get("maxValue" ,  String.class.getName()));

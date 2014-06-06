@@ -64,6 +64,6 @@ public class UserDomainPaging implements Serializable,IsSerializable, IJSONFrien
 		UserDomainPaging retval = new UserDomainPaging();
 		retval.setPagePosition( (Integer)jsonContainer.get("pagePosition" ,  Integer.class.getName()));
 		retval.setTotalData( (Integer)jsonContainer.get("totalData" ,  Integer.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		return retval; 
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		return retval; 
 	}
 }

@@ -11,9 +11,9 @@ public class UserDomainRPCServiceAsyncImpl extends ManualJSONSerializeRPCService
 		return UserDomainRPCService.class;
 	}
 	
-		public void getUserDomainFromIIS(id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[] param0,int param1,int param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.menu.UserDomain>> callback) {
+		public void getUserDomainFromIIS(id.co.gpsc.common.data.query.SimpleQueryFilter[] param0,int param1,int param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.menu.UserDomain>> callback) {
 		this.submitRPCRequestRaw( "getUserDomainFromIIS", new Class<?>[]{
-			id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[].class,int.class,int.class, 
+			id.co.gpsc.common.data.query.SimpleQueryFilter[].class,int.class,int.class, 
 			
 		}, 
 		new Object[]{

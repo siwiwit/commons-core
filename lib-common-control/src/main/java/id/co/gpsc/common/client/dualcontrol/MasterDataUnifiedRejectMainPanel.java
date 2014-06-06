@@ -3,12 +3,12 @@ package id.co.gpsc.common.client.dualcontrol;
 import id.co.gpsc.common.client.control.MainPanelStackControl;
 import id.co.gpsc.common.client.control.ViewScreenMode;
 import id.co.gpsc.common.client.form.ExtendedButton;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.control.DataProcessWorker;
 import id.co.gpsc.common.data.app.CommonDualControlContainerTable;
 import id.co.gpsc.common.data.app.DualControlApprovalStatusCode;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 
 import com.google.gwt.core.client.GWT;
@@ -26,14 +26,14 @@ import com.google.gwt.user.client.ui.Widget;
  * 
  *@author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
-public class MasterDataUnifiedRejectMainPanel extends BaseSigmaComposite {
+public class MasterDataUnifiedRejectMainPanel extends BaseSimpleComposite {
 	
 	
 	
 	protected static final String MESSAGE_HANDLER_NOT_REGISTERED =
 			"sebagai catatan, editor dual control perlu di register manual, karena keterbatasan dengan proses reflection di GWT\n"
 			+ "Mohon di cek, kemungkinan anda belum meregister handler anda. untuk melakukan ini, anda bisa cek method ini : "
-			+ "id.co.sigma.common.client.dualcontrol.DualControlUtil.registerDualControlHandler(IDualControlEditor<?>) \n"
+			+ "id.co.gpsc.common.client.dualcontrol.DualControlUtil.registerDualControlHandler(IDualControlEditor<?>) \n"
 			+ "register bisa anda lakukan onload dari applikasi anda. semoga berguna "; 
 
 	private static MasterDataUnifiedRejectMainPanelUiBinder uiBinder = GWT
@@ -57,9 +57,9 @@ public class MasterDataUnifiedRejectMainPanel extends BaseSigmaComposite {
 	@UiField ExtendedButton btnCari ;
 	
 	
-	static  SigmaSimpleQueryFilter REJECT_FILTER ;  
+	static  SimpleQueryFilter REJECT_FILTER ;  
 	static {
-		REJECT_FILTER = new SigmaSimpleQueryFilter(); 
+		REJECT_FILTER = new SimpleQueryFilter(); 
 		REJECT_FILTER.setField("approvalStatus");
 		
 		REJECT_FILTER.setOperator(SimpleQueryFilterOperator.fieldIn);
@@ -71,15 +71,15 @@ public class MasterDataUnifiedRejectMainPanel extends BaseSigmaComposite {
 		});
 	}
 	
-	SigmaSimpleQueryFilter [] filters = new SigmaSimpleQueryFilter[]{
-		new SigmaSimpleQueryFilter("approverUserId" , SimpleQueryFilterOperator.equal , getCurrentUserLogin())  , 	
+	SimpleQueryFilter [] filters = new SimpleQueryFilter[]{
+		new SimpleQueryFilter("approverUserId" , SimpleQueryFilterOperator.equal , getCurrentUserLogin())  , 	
 		REJECT_FILTER	
 			
 	}; 
 	
-	SigmaSimpleSortArgument [] sorts = new SigmaSimpleSortArgument[]{
+	SimpleSortArgument [] sorts = new SimpleSortArgument[]{
 			
-			new SigmaSimpleSortArgument("approvedTime" , false) 
+			new SimpleSortArgument("approvedTime" , false) 
 	};
 	
 	

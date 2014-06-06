@@ -128,7 +128,7 @@ public class Common2ndLevelLOVHeader   implements IsSerializable, IJSONFriendlyO
 	public void translateToJSON(ParsedJSONContainer jsonContainer) {
 		jsonContainer.put("cacheable",isCacheable());
 		jsonContainer.put("i18Key",getI18Key());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		 
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		 
 		  List<id.co.gpsc.common.data.lov.Common2ndLevelLOV> param4 = getLookupValues() ; 
 		 if (  param4 != null && !param4.isEmpty()){ 
 			for ( id.co.gpsc.common.data.lov.Common2ndLevelLOV scn : param4){
@@ -153,7 +153,7 @@ public class Common2ndLevelLOVHeader   implements IsSerializable, IJSONFriendlyO
 		Boolean cacheableJson = jsonContainer.get("cacheable" ,  boolean.class.getName());
 		retval.setCacheable(cacheableJson == null ? false : cacheableJson );
 		retval.setI18Key( (String)jsonContainer.get("i18Key" ,  String.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setLovId( (String)jsonContainer.get("lovId" ,  String.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setLovId( (String)jsonContainer.get("lovId" ,  String.class.getName()));
 		retval.setLovRemark( (String)jsonContainer.get("lovRemark" ,  String.class.getName()));
 		retval.setParentLOVValue( (String)jsonContainer.get("parentLOVValue" ,  String.class.getName()));
 		retval.setVersion( (String)jsonContainer.get("version" ,  String.class.getName()));

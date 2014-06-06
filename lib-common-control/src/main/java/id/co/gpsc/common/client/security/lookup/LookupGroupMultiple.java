@@ -4,7 +4,7 @@ import id.co.gpsc.common.client.control.BaseSimpleSearchComboContentLocator;
 import id.co.gpsc.common.client.security.lookup.base.BaseSecurityMultipleResultLookupDialog;
 import id.co.gpsc.common.client.security.rpc.GroupRPCServiceAsync;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.dto.UserGroupDTO;
 import id.co.gpsc.jquery.client.grid.cols.BaseColumnDefinition;
 import id.co.gpsc.jquery.client.grid.cols.StringColumnDefinition;
@@ -50,7 +50,7 @@ public class LookupGroupMultiple extends BaseSecurityMultipleResultLookupDialog<
 	}
 	
 	@Override
-	protected void retrieveData(SigmaSimpleQueryFilter[] filters, int page,int pageSize, AsyncCallback<PagedResultHolder<UserGroupDTO>> callback) {
+	protected void retrieveData(SimpleQueryFilter[] filters, int page,int pageSize, AsyncCallback<PagedResultHolder<UserGroupDTO>> callback) {
 		//FIXME Dein : SigmaSimpleQueryFilter harus di konvert ke object parameter dlu
 		GroupRPCServiceAsync.Util.getInstance().getAllGroup(null, page, pageSize, callback);		
 	}

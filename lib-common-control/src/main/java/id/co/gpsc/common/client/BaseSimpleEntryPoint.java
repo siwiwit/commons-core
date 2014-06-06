@@ -15,7 +15,7 @@ import id.co.gpsc.common.client.util.ClientSideDateTimeParser;
 import id.co.gpsc.common.client.util.ClientSideSimpleDebugerWriterManager;
 import id.co.gpsc.common.client.util.ClientSideWrappedJSONParser;
 import id.co.gpsc.common.client.util.CommonClientControlUtil;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.control.I18TextProvider;
 import id.co.gpsc.common.rpc.ManagedAsyncCallback;
 import id.co.gpsc.common.security.dto.UserDetailDTO;
@@ -35,11 +35,11 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 
 /**
- * sigma version of entry point
+ * Entry point dengan penambahan-penambahan tertentu version of entry point
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * @version $Id
  **/
-public abstract class BaseSigmaEntryPoint implements EntryPoint{
+public abstract class BaseSimpleEntryPoint implements EntryPoint{
 	
 	
 	
@@ -193,7 +193,7 @@ public abstract class BaseSigmaEntryPoint implements EntryPoint{
 			
 			public void onSuccess(UserDetailDTO userData) {
 				userDetailData = userData ; 
-                                BaseSigmaComposite.userDetail = userData ; 
+                                BaseSimpleComposite.userDetail = userData ; 
                                         
 				additionalTaskOnUserDetailDataAccepted(userDetailData); 
 				requestMenuData(); 
@@ -302,7 +302,7 @@ public abstract class BaseSigmaEntryPoint implements EntryPoint{
 	protected native void registerAssignPageBaseUrl (String methodName  )/*-{
 		var thisSwap = this ;
 		$wnd[methodName] = function (baseAppUrl){
-			thisSwap.@id.co.gpsc.common.client.BaseSigmaEntryPoint::assignPageBaseUrl(Ljava/lang/String;)(baseAppUrl);
+			thisSwap.@id.co.gpsc.common.client.BaseSimpleEntryPoint::assignPageBaseUrl(Ljava/lang/String;)(baseAppUrl);
 		}
 	}-*/;
 	/**
@@ -311,7 +311,7 @@ public abstract class BaseSigmaEntryPoint implements EntryPoint{
 	protected native void registerLoadI18AndHideReloaderPanel(String methodName  )/*-{
 		var thisSwap = this ; 
 		$wnd[methodName] = function (langToLoad){
-			thisSwap.@id.co.gpsc.common.client.BaseSigmaEntryPoint::loadI18AndHideReloaderPanel(Ljava/lang/String;)(langToLoad);
+			thisSwap.@id.co.gpsc.common.client.BaseSimpleEntryPoint::loadI18AndHideReloaderPanel(Ljava/lang/String;)(langToLoad);
 		}
 	}-*/; 
 	

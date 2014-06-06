@@ -9,7 +9,7 @@ import id.co.gpsc.common.client.security.group.IRemove;
 import id.co.gpsc.common.client.security.rpc.UserRPCServiceAsync;
 import id.co.gpsc.common.client.widget.PageChangeHandler;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.security.domain.User;
 import id.co.gpsc.common.util.I18Utilities;
@@ -220,17 +220,17 @@ public class UserListPanel extends BaseRootSecurityPanel implements IReloadGridC
 	 * generate query filter untuk searchingnya
 	 * @return
 	 */
-	private SigmaSimpleQueryFilter[] generateQueryFilter() {
+	private SimpleQueryFilter[] generateQueryFilter() {
 		if (txtSearchValue.getText() == null || txtSearchValue.getText().length() == 0)
 			return null;
-		SigmaSimpleQueryFilter filter = new SigmaSimpleQueryFilter();
+		SimpleQueryFilter filter = new SimpleQueryFilter();
 		filter.setField(cbSearchCriteria.getValue());
 		filter.setFilter(txtSearchValue.getValue());
 		if (txtSearchValue.getValue().contains("%"))
 			filter.setOperator(SimpleQueryFilterOperator.likePercentProvided);
 		else
 			filter.setOperator(SimpleQueryFilterOperator.equal);
-		return new SigmaSimpleQueryFilter[] {filter};
+		return new SimpleQueryFilter[] {filter};
 	}
 	
 	/**
@@ -238,7 +238,7 @@ public class UserListPanel extends BaseRootSecurityPanel implements IReloadGridC
 	 */
 	private void getDataUser() {
 		try {
-			SigmaSimpleQueryFilter[] filters = generateQueryFilter();
+			SimpleQueryFilter[] filters = generateQueryFilter();
 			UserRPCServiceAsync.Util.getInstance().getUserByFilter(filters, gridUser.getCurrentPageToRequest(), gridUser.getPageSize(), new AsyncCallback<PagedResultHolder<User>>() {
 				
 				@Override

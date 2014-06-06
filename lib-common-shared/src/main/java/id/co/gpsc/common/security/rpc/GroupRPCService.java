@@ -13,7 +13,6 @@ import java.math.BigInteger;
  * @since Nov 26, 2012, 3:57:26 PM
  * @version $Id
  */
-//@RemoteServiceRelativePath(value="/sigma-rpc/user-sec-group.app-rpc")
 public interface GroupRPCService extends JSONSerializedRemoteService{
 	
 	/**

@@ -242,7 +242,7 @@ public class PagedEnabledGridButtonWidget extends GridButtonWidget{
 		NodeList<Element> els = DOM.getElementById("pg_" + gridButtonElement.getId()).getElementsByTagName("input");
 		if ( els!=null&&els.getLength()>0){
 			txtCurrentPage = els.getItem(0);
-			txtCurrentPage.setId("SIGMA_JQ_PAGING" + DOM.createUniqueId());
+			txtCurrentPage.setId("GPS_JQ_PAGING" + DOM.createUniqueId());
 		}
 		txtCurrentPage.getStyle().setHeight(20, Unit.PX);
 		sinkKeyPressHandler(txtCurrentPage);

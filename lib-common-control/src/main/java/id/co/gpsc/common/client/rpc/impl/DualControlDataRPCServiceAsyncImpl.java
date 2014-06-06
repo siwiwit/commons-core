@@ -26,8 +26,8 @@ import id.co.gpsc.common.data.app.DualControlEnabledData;
 import id.co.gpsc.common.data.app.DualControlEnabledOperation;
 import id.co.gpsc.common.data.app.HeaderDataOnlyCommonDualControlContainerTable;
 import id.co.gpsc.common.data.app.SimpleMasterDataDualControlApprovalResult;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 
 public class DualControlDataRPCServiceAsyncImpl extends ManualJSONSerializeRPCService<DualControlDataRPCService> implements DualControlDataRPCServiceAsync{
 
@@ -98,9 +98,9 @@ public class DualControlDataRPCServiceAsyncImpl extends ManualJSONSerializeRPCSe
 	}
 
 
-	public void getDataRequiredApproval(java.lang.String param0,id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[] param1,id.co.gpsc.common.data.query.SigmaSimpleSortArgument[] param2,int param3,int param4,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.data.app.CommonDualControlContainerTable>> callback) {
+	public void getDataRequiredApproval(java.lang.String param0,id.co.gpsc.common.data.query.SimpleQueryFilter[] param1,id.co.gpsc.common.data.query.SimpleSortArgument[] param2,int param3,int param4,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.data.app.CommonDualControlContainerTable>> callback) {
 		this.submitRPCRequestRaw( "getDataRequiredApproval", new Class<?>[]{
-			java.lang.String.class,id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[].class,id.co.gpsc.common.data.query.SigmaSimpleSortArgument[].class,int.class,int.class, 
+			java.lang.String.class,id.co.gpsc.common.data.query.SimpleQueryFilter[].class,id.co.gpsc.common.data.query.SimpleSortArgument[].class,int.class,int.class, 
 			
 		}, 
 		new Object[]{
@@ -112,15 +112,15 @@ public class DualControlDataRPCServiceAsyncImpl extends ManualJSONSerializeRPCSe
 	@Override
 	public void getDataForEditList(
 			String objectFQCN,
-			SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments,
+			SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments,
 			int pageSize,
 			int page,
 			AsyncCallback<PagedResultHolder<? extends DualControlEnabledData<?, ?>>> callback) {
 		this.submitRPCRequestRaw( "getDataForEditList", new Class<?>[]{
 				String.class , 
-				SigmaSimpleQueryFilter[].class , 
-				SigmaSimpleSortArgument[].class , 
+				SimpleQueryFilter[].class , 
+				SimpleSortArgument[].class , 
 				int.class , 
 				int.class
 				

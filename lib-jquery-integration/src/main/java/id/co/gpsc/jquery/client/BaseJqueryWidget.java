@@ -136,7 +136,7 @@ public abstract class BaseJqueryWidget extends Widget{
 	 * 
 	 **/
 	protected native void putConstructorArgument (String optionName  , Object argValue) /*-{
-		this.@id.co.sigma.jquery.client.BaseJqueryWidget::widgetConstructArgument[optionName]=argValue;
+		this.@id.co.gpsc.jquery.client.BaseJqueryWidget::widgetConstructArgument[optionName]=argValue;
 	
 	}-*/;
 

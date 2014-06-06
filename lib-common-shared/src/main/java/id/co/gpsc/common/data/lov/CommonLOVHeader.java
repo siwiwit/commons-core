@@ -85,7 +85,7 @@ public class CommonLOVHeader implements Serializable , ILookupHeader, IJSONFrien
 		return i18Key;
 	}
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.data.lov.ILookupHeader#getLovId()
+	 * @see id.co.gpsc.common.data.lov.ILookupHeader#getLovId()
 	 */
 	@Override
 	public String getLovId() {
@@ -95,7 +95,7 @@ public class CommonLOVHeader implements Serializable , ILookupHeader, IJSONFrien
 		this.lovId = lovId;
 	}
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.data.lov.ILookupHeader#getLovRemark()
+	 * @see id.co.gpsc.common.data.lov.ILookupHeader#getLovRemark()
 	 */
 	@Override
 	public String getLovRemark() {
@@ -105,7 +105,7 @@ public class CommonLOVHeader implements Serializable , ILookupHeader, IJSONFrien
 		this.lovRemark = lovRemark;
 	}
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.data.lov.ILookupHeader#getVersion()
+	 * @see id.co.gpsc.common.data.lov.ILookupHeader#getVersion()
 	 */
 	@Override
 	public String getVersion() {
@@ -123,7 +123,7 @@ public class CommonLOVHeader implements Serializable , ILookupHeader, IJSONFrien
 	
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.data.lov.ILookupHeader#isCacheable()
+	 * @see id.co.gpsc.common.data.lov.ILookupHeader#isCacheable()
 	 */
 	@Override
 	public boolean isCacheable() {

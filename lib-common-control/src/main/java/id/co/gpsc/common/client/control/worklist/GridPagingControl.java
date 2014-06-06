@@ -2,7 +2,7 @@ package id.co.gpsc.common.client.control.worklist;
 
 import id.co.gpsc.common.client.widget.BasePagingControl;
 import id.co.gpsc.common.client.widget.PageChangeHandler;
-import id.co.sigma.common.util.NativeJsUtilities;
+import id.co.gpsc.jquery.client.util.NativeJsUtilities;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;

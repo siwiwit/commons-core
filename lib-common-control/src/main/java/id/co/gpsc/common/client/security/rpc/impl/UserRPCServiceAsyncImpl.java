@@ -47,9 +47,9 @@ public class UserRPCServiceAsyncImpl extends ManualJSONSerializeRPCService<UserR
 	}
 
 
-	public void getUserByParameter(id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[] param0,int param1,int param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.dto.UserDTO>> callback) {
+	public void getUserByParameter(id.co.gpsc.common.data.query.SimpleQueryFilter[] param0,int param1,int param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.dto.UserDTO>> callback) {
 		this.submitRPCRequestRaw( "getUserByParameter", new Class<?>[]{
-			id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[].class,int.class,int.class, 
+			id.co.gpsc.common.data.query.SimpleQueryFilter[].class,int.class,int.class, 
 			
 		}, 
 		new Object[]{
@@ -59,9 +59,9 @@ public class UserRPCServiceAsyncImpl extends ManualJSONSerializeRPCService<UserR
 	}
 
 
-	public void getUserByParameter(java.math.BigInteger param0,id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[] param1,int param2,int param3,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.dto.UserDTO>> callback) {
+	public void getUserByParameter(java.math.BigInteger param0,id.co.gpsc.common.data.query.SimpleQueryFilter[] param1,int param2,int param3,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.dto.UserDTO>> callback) {
 		this.submitRPCRequestRaw( "getUserByParameter", new Class<?>[]{
-			java.math.BigInteger.class,id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[].class,int.class,int.class, 
+			java.math.BigInteger.class,id.co.gpsc.common.data.query.SimpleQueryFilter[].class,int.class,int.class, 
 			
 		}, 
 		new Object[]{
@@ -71,9 +71,9 @@ public class UserRPCServiceAsyncImpl extends ManualJSONSerializeRPCService<UserR
 	}
 
 
-	public void getUserByFilter(id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[] param0,int param1,int param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.domain.User>> callback) {
+	public void getUserByFilter(id.co.gpsc.common.data.query.SimpleQueryFilter[] param0,int param1,int param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.domain.User>> callback) {
 		this.submitRPCRequestRaw( "getUserByFilter", new Class<?>[]{
-			id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[].class,int.class,int.class, 
+			id.co.gpsc.common.data.query.SimpleQueryFilter[].class,int.class,int.class, 
 			
 		}, 
 		new Object[]{

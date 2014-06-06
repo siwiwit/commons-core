@@ -12,7 +12,7 @@ import id.co.gpsc.common.rpc.ManagedAsyncCallback;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * 
  **/
-public abstract class SigmaAsyncCallback<T> extends ManagedAsyncCallback<T>{
+public abstract class SimpleAsyncCallback<T> extends ManagedAsyncCallback<T>{
 
 	static {
 		ManagedAsyncCallback.LOGIN_EXPIRED_DETECTOR = new ILoginExpiredDetector() {

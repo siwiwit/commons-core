@@ -22,7 +22,7 @@ import com.google.gwt.user.client.DOM;
  * 		</ table>
  * </code>
  * @author <a href='mailto:gede.sutarsa@gmail.com'>Gede Sutarsa</a>
- * @author <a href="gede.mahendra@sigma.co.id">Gede Mahendra</a>
+ * @author <a href="dein.mahendra@gmail.com">Gede Mahendra</a>
  * @version $Id
  * @since 16 aug 2012
  */

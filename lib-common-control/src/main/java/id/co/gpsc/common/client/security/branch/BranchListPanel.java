@@ -7,7 +7,7 @@ import id.co.gpsc.common.client.security.BaseRootSecurityPanel;
 import id.co.gpsc.common.client.security.rpc.BranchRPCServiceAsync;
 import id.co.gpsc.common.control.DataProcessWorker;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.security.dto.BranchDTO;
 import id.co.gpsc.jquery.client.container.JQDialog;
@@ -82,7 +82,7 @@ public class BranchListPanel extends BaseRootSecurityPanel {
 	 * Get data branch
 	 */
 	private void getDataBranch(){
-		SigmaSimpleQueryFilter[] filters = generateQueryFilter();
+		SimpleQueryFilter[] filters = generateQueryFilter();
 		int page = gridBranch.getCurrentPageToRequest();
 		int pageSize = gridBranch.getPageSize();
 		BranchRPCServiceAsync.Util.getInstance().getDataByParameter(filters, page, pageSize, new AsyncCallback<PagedResultHolder<BranchDTO>>() {			
@@ -102,16 +102,16 @@ public class BranchListPanel extends BaseRootSecurityPanel {
 	/**
 	 * Generate query filter
 	 */
-	private SigmaSimpleQueryFilter[] generateQueryFilter(){
+	private SimpleQueryFilter[] generateQueryFilter(){
 		if(txtCriteria.getValue() == "" || txtCriteria.getValue().trim().length() == 0){
 			return null;
 		}
 		
-		SigmaSimpleQueryFilter filter = new SigmaSimpleQueryFilter();
+		SimpleQueryFilter filter = new SimpleQueryFilter();
 		filter.setField(cmbCriteria.getValue());		
 		filter.setFilter(txtCriteria.getValue());
 		filter.setOperator(SimpleQueryFilterOperator.likeBothSide);
-		return new SigmaSimpleQueryFilter[] {filter};
+		return new SimpleQueryFilter[] {filter};
 	}
 	
 	/**

@@ -68,7 +68,7 @@ public class CommonLOV implements Serializable , ILookupDetail , IJSONFriendlyOb
 		this.additionalData2 = additionalData2;
 	}
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.data.lov.ILookupDetail#getAdditionalData2()
+	 * @see id.co.gpsc.common.data.lov.ILookupDetail#getAdditionalData2()
 	 */
 	@Override
 	public String getAdditionalData2() {
@@ -76,7 +76,7 @@ public class CommonLOV implements Serializable , ILookupDetail , IJSONFriendlyOb
 	}
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.data.lov.ILookupDetail#getAdditionalData1()
+	 * @see id.co.gpsc.common.data.lov.ILookupDetail#getAdditionalData1()
 	 */
 	@Override
 	public String getAdditionalData1() {
@@ -89,7 +89,7 @@ public class CommonLOV implements Serializable , ILookupDetail , IJSONFriendlyOb
 		this.additionalData1 = additionalData1;
 	}
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.data.lov.ILookupDetail#getDataValue()
+	 * @see id.co.gpsc.common.data.lov.ILookupDetail#getDataValue()
 	 */
 	@Override
 	public String getDataValue() {
@@ -103,7 +103,7 @@ public class CommonLOV implements Serializable , ILookupDetail , IJSONFriendlyOb
 		this.dataValue = value;
 	}
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.data.lov.ILookupDetail#getLabel()
+	 * @see id.co.gpsc.common.data.lov.ILookupDetail#getLabel()
 	 */
 	@Override
 	public String getLabel() {

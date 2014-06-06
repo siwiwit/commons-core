@@ -1,6 +1,6 @@
 /**
  * File Name : BaseAuditedObject.java
- * Package   : id.co.sigma.arium.security.shared.domain.audit
+ * Package   : id.co.gpsc.arium.security.shared.domain.audit
  * Project   : security-data
  */
 package id.co.gpsc.common.security.domain.audit;
@@ -35,7 +35,7 @@ public class BaseAuditedObject extends BaseCreatedObject implements IModifyAudit
 	private Date modifiedOn;
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.arium.security.shared.domain.audit.IModifyAuditedObject#getModifiedBy()
+	 * @see id.co.gpsc.arium.security.shared.domain.audit.IModifyAuditedObject#getModifiedBy()
 	 */
 	@Override
 	public String getModifiedBy() {
@@ -43,7 +43,7 @@ public class BaseAuditedObject extends BaseCreatedObject implements IModifyAudit
 	}
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.arium.security.shared.domain.audit.IModifyAuditedObject#setModifiedBy(java.lang.String)
+	 * @see id.co.gpsc.arium.security.shared.domain.audit.IModifyAuditedObject#setModifiedBy(java.lang.String)
 	 */
 	@Override
 	public void setModifiedBy(String modifiedBy) {
@@ -51,7 +51,7 @@ public class BaseAuditedObject extends BaseCreatedObject implements IModifyAudit
 	}
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.arium.security.shared.domain.audit.IModifyAuditedObject#getModifiedOn()
+	 * @see id.co.gpsc.arium.security.shared.domain.audit.IModifyAuditedObject#getModifiedOn()
 	 */
 	@Override
 	public Date getModifiedOn() {
@@ -59,7 +59,7 @@ public class BaseAuditedObject extends BaseCreatedObject implements IModifyAudit
 	}
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.arium.security.shared.domain.audit.IModifyAuditedObject#setModifiedOn(java.util.Date)
+	 * @see id.co.gpsc.arium.security.shared.domain.audit.IModifyAuditedObject#setModifiedOn(java.util.Date)
 	 */
 	@Override
 	public void setModifiedOn(Date modifiedOn) {

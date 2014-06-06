@@ -12,7 +12,7 @@ import id.co.gpsc.common.client.security.rpc.ApplicationUserRPCServiceAsync;
 import id.co.gpsc.common.client.security.rpc.UserRPCServiceAsync;
 import id.co.gpsc.common.client.widget.PageChangeHandler;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.dto.UserDTO;
 import id.co.gpsc.common.security.dto.UserGroupAssignmentDTO;
 import id.co.gpsc.common.util.I18Utilities;
@@ -171,8 +171,8 @@ public class ApplicationUserListPanel extends BaseRootSecurityPanel implements I
 		/*Set criteria pencarian*/
 		
 		String filterChoise = cmbCriteria.getValue(cmbCriteria.getSelectedIndex());
-		SigmaSimpleQueryFilter[] filter = new SigmaSimpleQueryFilter[1];
-		SigmaSimpleQueryFilter filterAssign = new SigmaSimpleQueryFilter();		
+		SimpleQueryFilter[] filter = new SimpleQueryFilter[1];
+		SimpleQueryFilter filterAssign = new SimpleQueryFilter();		
 				
 		if(filterChoise.equals(SecurityConstant.FILTER_USERNAME)){			
 			filterAssign.setField(SecurityConstant.FILTER_USERNAME);			

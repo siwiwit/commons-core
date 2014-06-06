@@ -5,7 +5,7 @@ import id.co.gpsc.common.client.app.JSONFriendlyCommonLOVHeader;
 import id.co.gpsc.common.client.cache.ClientObjectCacheWrapper;
 import id.co.gpsc.common.client.control.ILOVCapableControl2ndLevel;
 import id.co.gpsc.common.client.rpc.LOVProviderRPCServiceAsync;
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.data.lov.Common2ndLevelLOVHeader;
 import id.co.gpsc.common.data.lov.CommonLOVHeader;
 import id.co.gpsc.common.data.lov.LOV2ndLevelRequestArgument;
@@ -14,13 +14,14 @@ import id.co.gpsc.common.data.lov.LOVSource;
 import id.co.gpsc.common.data.lov.StrongTyped2ndLevelLOVID;
 import id.co.gpsc.common.data.lov.StrongTypedCustomLOVID;
 import id.co.gpsc.common.util.I18Utilities;
-import id.co.sigma.common.util.NativeJsUtilities;
+import id.co.gpsc.jquery.client.util.NativeJsUtilities;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
+
 
 
 
@@ -126,7 +127,7 @@ public  class ClientSideLOVManager implements IClientSideLOVManager {
 	
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.client.lov.IClientSideLOVManager#registerLOVChangeListener(com.google.gwt.user.client.ui.Widget, id.co.sigma.common.client.lov.LOVCapabledControl)
+	 * @see id.co.gpsc.common.client.lov.IClientSideLOVManager#registerLOVChangeListener(com.google.gwt.user.client.ui.Widget, id.co.gpsc.common.client.lov.LOVCapabledControl)
 	 */
 	@Override
 	public HandlerRegistration registerLOVChangeListener(Widget parent , LOVCapabledControl control){
@@ -134,7 +135,7 @@ public  class ClientSideLOVManager implements IClientSideLOVManager {
 	}
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.client.lov.IClientSideLOVManager#registerLOVChangeListener(com.google.gwt.user.client.ui.Widget, java.lang.String, id.co.sigma.common.data.lov.LOVSource, id.co.sigma.common.client.lov.LOVChangeHandler)
+	 * @see id.co.gpsc.common.client.lov.IClientSideLOVManager#registerLOVChangeListener(com.google.gwt.user.client.ui.Widget, java.lang.String, id.co.gpsc.common.data.lov.LOVSource, id.co.gpsc.common.client.lov.LOVChangeHandler)
 	 */
 	@Override
 	public HandlerRegistration registerLOVChangeListener(Widget parent ,final  String id ,final LOVSource lovSource  ,final  LOVChangeHandler handler) {
@@ -168,7 +169,7 @@ public  class ClientSideLOVManager implements IClientSideLOVManager {
 	
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.client.lov.IClientSideLOVManager#requestLOVUpdate(java.lang.String, com.google.gwt.user.client.ui.Widget, java.util.Collection)
+	 * @see id.co.gpsc.common.client.lov.IClientSideLOVManager#requestLOVUpdate(java.lang.String, com.google.gwt.user.client.ui.Widget, java.util.Collection)
 	 */
 	@Override
 	public void requestLOVUpdate (String localeCode ,  Widget parent , Collection<LOVRequestArgument> lovIdList ){
@@ -188,7 +189,7 @@ public  class ClientSideLOVManager implements IClientSideLOVManager {
 		reqArg.setLookupId(control.getLovParameterId());
 		reqArg.setParentLovValueId(control.getParentLookupValue());
 		
-		LOVProviderRPCServiceAsync.Util.getInstance().getModifiedLOV(I18Utilities.getInstance().getCurrentLocalizationCode(), reqArg, new SigmaAsyncCallback<Common2ndLevelLOVHeader>() {
+		LOVProviderRPCServiceAsync.Util.getInstance().getModifiedLOV(I18Utilities.getInstance().getCurrentLocalizationCode(), reqArg, new SimpleAsyncCallback<Common2ndLevelLOVHeader>() {
 			@Override
 			public void onSuccess(Common2ndLevelLOVHeader result) {
 				control.renderLookupData(result);
@@ -218,7 +219,7 @@ public  class ClientSideLOVManager implements IClientSideLOVManager {
 	 * @param  callback ini handle utnuk menerima data
 	 * 
 	 **/
-	public void  requestLOV(final String parentValue ,@SuppressWarnings("rawtypes") StrongTyped2ndLevelLOVID lovId , SigmaAsyncCallback<Common2ndLevelLOVHeader> callback){
+	public void  requestLOV(final String parentValue ,@SuppressWarnings("rawtypes") StrongTyped2ndLevelLOVID lovId , SimpleAsyncCallback<Common2ndLevelLOVHeader> callback){
 		
 		
 		LOV2ndLevelRequestArgument reqArg = new LOV2ndLevelRequestArgument(); 
@@ -233,7 +234,7 @@ public  class ClientSideLOVManager implements IClientSideLOVManager {
 	/**
 	 * ini membaca 2nd level LOV. yang 1 level di ambil semua, di cari dengan id dari lookup
 	 **/
-	public void requestLOV2ndLevelByCurrentLookupValue (String parentLOVId ,StrongTyped2ndLevelLOVID lookupTypeId ,SigmaAsyncCallback<Common2ndLevelLOVHeader> callback){
+	public void requestLOV2ndLevelByCurrentLookupValue (String parentLOVId ,StrongTyped2ndLevelLOVID lookupTypeId ,SimpleAsyncCallback<Common2ndLevelLOVHeader> callback){
 		//FIXME : baca dari cache di sini. seharusnya ini ada pengecekan ke cache dan ada version nya
 		LOV2ndLevelRequestArgument lovArg = new LOV2ndLevelRequestArgument(); 
 		lovArg.setParentLovValueId(parentLOVId);

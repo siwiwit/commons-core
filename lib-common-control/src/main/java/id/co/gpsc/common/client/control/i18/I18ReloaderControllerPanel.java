@@ -19,6 +19,7 @@ import com.google.gwt.user.client.ui.ListBox;
 import id.co.gpsc.common.client.form.ExtendedButton;
 import id.co.gpsc.common.client.rpc.ApplicationConfigRPCServiceAsync;
 import id.co.gpsc.common.client.util.CommonClientControlUtil;
+import id.co.gpsc.common.data.CommonLibraryConstant;
 import id.co.gpsc.common.data.entity.I18Code;
 import id.co.gpsc.common.util.I18Utilities;
 
@@ -128,8 +129,7 @@ public class I18ReloaderControllerPanel extends Composite {
 	
 	
 	protected void reloadWorker (String localeCode ){
-		String url = CommonClientControlUtil.getInstance().getApplicationBaseUrl()+ "sigma-app-configuration/" +localeCode+ "/i18-groups.json";
-		
+		String url = CommonClientControlUtil.getInstance().getApplicationBaseUrl()+   CommonLibraryConstant.APPLICATION_CONFIG_SERVICE_BASE_URL  +    "/" +localeCode+ "/i18-groups.json";
 		
 		
 		I18Utilities.getInstance().setCurrentLocalizationCode(localeCode);
@@ -143,7 +143,7 @@ public class I18ReloaderControllerPanel extends Composite {
 	 * load language dan hide panel 
 	 **/
 	public void loadLanguageAndHide (String localeCode) {
-		String url = CommonClientControlUtil.getInstance().getApplicationBaseUrl()+ "sigma-app-configuration/" +localeCode+ "/i18-groups.json";
+		String url = CommonClientControlUtil.getInstance().getApplicationBaseUrl()+  CommonLibraryConstant.APPLICATION_CONFIG_SERVICE_BASE_URL  +  "/" +localeCode+ "/i18-groups.json";
 		
 		I18Utilities.getInstance().setCurrentLocalizationCode(localeCode);
 		CommonClientControlUtil.getInstance().setUseDotForThousandSeparator(!".".equals(indexedDecimalSeparator.get(localeCode)));
@@ -164,7 +164,7 @@ public class I18ReloaderControllerPanel extends Composite {
 	 * make it dragable
 	 **/
 	private native void makeDragable()/*-{
-		$wnd.$( "#sigma_i18_reloader_panel" ).draggable();
+		$wnd.$( "#gpsc_i18_reloader_panel" ).draggable();
 	
 	}-*/;
 	

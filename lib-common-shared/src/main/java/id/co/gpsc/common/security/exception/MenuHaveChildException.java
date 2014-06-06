@@ -10,7 +10,7 @@ import id.co.gpsc.common.util.json.ParsedJSONContainer;
 /**
  * exception untuk operasi delete function (delete menu)
  * di throw jika menu memiliki sub menu (child)
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Aug 15, 2013 12:42:30 PM
  */
 public class MenuHaveChildException extends BaseIsSerializableException implements IJSONFriendlyObject<MenuHaveChildException> {

@@ -4,8 +4,8 @@ import id.co.gpsc.common.client.control.BaseSimpleSearchComboContentLocator;
 import id.co.gpsc.common.client.security.lookup.base.SecurityBaseSimpleSingleResultLookupDialog;
 import id.co.gpsc.common.client.security.rpc.FunctionRPCServiceAsync;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.security.dto.PageDefinitionDTO;
 import id.co.gpsc.jquery.client.grid.cols.BaseColumnDefinition;
 import id.co.gpsc.jquery.client.grid.cols.StringColumnDefinition;
@@ -29,8 +29,8 @@ public class PageDefinitionLookup extends SecurityBaseSimpleSingleResultLookupDi
 	
 
 	
-	private static final SigmaSimpleSortArgument SORT_ARGS [] ={
-		new SigmaSimpleSortArgument("pageCode", true)  
+	private static final SimpleSortArgument SORT_ARGS [] ={
+		new SimpleSortArgument("pageCode", true)  
 		
 	};
 
@@ -48,7 +48,7 @@ public class PageDefinitionLookup extends SecurityBaseSimpleSingleResultLookupDi
 	}
 
 	@Override
-	protected void retrieveData(SigmaSimpleQueryFilter[] filters, int page,
+	protected void retrieveData(SimpleQueryFilter[] filters, int page,
 			int pageSize,
 			AsyncCallback<PagedResultHolder<PageDefinitionDTO>> callback) {
 		FunctionRPCServiceAsync.Util.getInstance().getCurrentAppAvailablePages(filters, SORT_ARGS, pageSize, page, callback); 

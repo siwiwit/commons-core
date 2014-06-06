@@ -83,9 +83,9 @@ public class ApplicationConfigRPCServiceAsyncImpl extends ManualJSONSerializeRPC
 	}
 
 
-	public void getI18NTexts(int param0,int param1,id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[] param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.data.entity.I18Text>> callback) {
+	public void getI18NTexts(int param0,int param1,id.co.gpsc.common.data.query.SimpleQueryFilter[] param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.data.entity.I18Text>> callback) {
 		this.submitRPCRequestRaw( "getI18NTexts", new Class<?>[]{
-			int.class,int.class,id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[].class, 
+			int.class,int.class,id.co.gpsc.common.data.query.SimpleQueryFilter[].class, 
 			
 		}, 
 		new Object[]{

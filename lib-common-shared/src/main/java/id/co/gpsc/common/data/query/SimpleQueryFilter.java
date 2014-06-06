@@ -1,6 +1,6 @@
 package id.co.gpsc.common.data.query;
 
-import id.co.gpsc.common.data.TransportSimpleGridDataWrapper;
+
 import id.co.gpsc.common.data.reflection.ClientReflectableClass;
 import id.co.gpsc.common.util.json.CrossDateTimeParser;
 import id.co.gpsc.common.util.json.SharedServerClientLogicManager;
@@ -25,7 +25,7 @@ import id.co.gpsc.common.util.json.ParsedJSONContainer;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  **/
 @ClientReflectableClass
-public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyObject<SigmaSimpleQueryFilter>{
+public class SimpleQueryFilter  implements IsSerializable , IJSONFriendlyObject<SimpleQueryFilter>{
 
 	/**
 	 * 
@@ -69,13 +69,13 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	 */
 	private boolean includeHourOnParam  =false ; 
 	
-	public SigmaSimpleQueryFilter(){
+	public SimpleQueryFilter(){
 		
 	}
 	
 	
 	
-	public SigmaSimpleQueryFilter(String field,
+	public SimpleQueryFilter(String field,
 			SimpleQueryFilterOperator operator, String filter) {
 		super();
 		this.field = field;
@@ -84,7 +84,7 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	}
 	
 	
-	public SigmaSimpleQueryFilter(String field,
+	public SimpleQueryFilter(String field,
 			SimpleQueryFilterOperator operator, Integer filter) {
 		super();
 		this.field = field;
@@ -96,7 +96,7 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	
 	
 	
-	public SigmaSimpleQueryFilter(String field,
+	public SimpleQueryFilter(String field,
 			SimpleQueryFilterOperator operator, BigInteger filter) {
 		super();
 		this.field = field;
@@ -106,7 +106,7 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	
 	
 	
-	public SigmaSimpleQueryFilter(String field,
+	public SimpleQueryFilter(String field,
 			SimpleQueryFilterOperator operator, Long filter) {
 		super();
 		this.field = field;
@@ -117,7 +117,7 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	
 
 
-	public SigmaSimpleQueryFilter(String field,
+	public SimpleQueryFilter(String field,
 			SimpleQueryFilterOperator operator, Boolean filter) {
 		super();
 		this.field = field;
@@ -125,7 +125,7 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 		setFilter(filter); 
 	}
 	
-	public SigmaSimpleQueryFilter(String field,
+	public SimpleQueryFilter(String field,
 			SimpleQueryFilterOperator operator, Date filter) {
 		super();
 		this.field = field;
@@ -137,7 +137,7 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 		this.setOperator( operator);
 		
 	}
-	public SigmaSimpleQueryFilter(String field,String[] inFilters ) {
+	public SimpleQueryFilter(String field,String[] inFilters ) {
 		super(); 
 		this.field = field ; 
 		this.operator = SimpleQueryFilterOperator.fieldIn ; 
@@ -147,14 +147,14 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	}
 	
 	
-	public SigmaSimpleQueryFilter(String field,Integer[] inFilters ) {
+	public SimpleQueryFilter(String field,Integer[] inFilters ) {
 		super(); 
 		this.field = field ; 
 		setFilter(inFilters); 
 	}
 	
 	
-	public SigmaSimpleQueryFilter(String field,BigInteger[] inFilters ) {
+	public SimpleQueryFilter(String field,BigInteger[] inFilters ) {
 		super(); 
 		this.field = field ; 
 		setFilter(inFilters); 
@@ -163,7 +163,7 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	
 	
 	
-	public SigmaSimpleQueryFilter(String field,Long[] inFilters ) {
+	public SimpleQueryFilter(String field,Long[] inFilters ) {
 		super(); 
 		this.field = field ; 
 		setFilter(inFilters); 
@@ -172,7 +172,7 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	
 	
 	
-	public SigmaSimpleQueryFilter(String field, Date dateFrom , Date dateTo ) {
+	public SimpleQueryFilter(String field, Date dateFrom , Date dateTo ) {
 		super() ; 
 		setField(field); 
 		setOperator(SimpleQueryFilterOperator.dateBetween);
@@ -382,9 +382,6 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
 	@Override
 	public String toString() {
 		return  "{\"field\":\""+field+"\" ,  \"operator\":\""+(operator!=null?operator.toString(): null)+"\" , \"filter\":\""+filter+"\" , \"filterTypeClass\":\""+filterTypeClass+"\" }"    ;
-		/* "{\"field\":" + field + ", operator="
-				+ operator + ", filter=" + filter + ", filterTypeClass="
-				+ filterTypeClass + "]";*/
 	}
 
     @Override
@@ -396,8 +393,8 @@ public class SigmaSimpleQueryFilter  implements IsSerializable , IJSONFriendlyOb
     }
 
     @Override
-    public SigmaSimpleQueryFilter instantiateFromJSON(ParsedJSONContainer jsonContainer) {
-        SigmaSimpleQueryFilter retval = new SigmaSimpleQueryFilter() ; 
+    public SimpleQueryFilter instantiateFromJSON(ParsedJSONContainer jsonContainer) {
+        SimpleQueryFilter retval = new SimpleQueryFilter() ; 
         retval.setField(jsonContainer.getAsString("field"));
         retval.setFilter(jsonContainer.getAsString("filter"));
         retval.setFilterTypeClass(jsonContainer.getAsString("filterTypeClass"));

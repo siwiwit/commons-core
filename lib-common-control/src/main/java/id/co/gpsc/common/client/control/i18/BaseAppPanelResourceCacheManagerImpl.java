@@ -143,7 +143,7 @@ public abstract class BaseAppPanelResourceCacheManagerImpl implements
 
 	@Override
 	public String generateKey(String panelId, String localeCode) {
-		return "SIGMA-FORM-CONFIGURATION::" + panelId + "::" + localeCode;
+		return "GPSC-FORM-CONFIGURATION::" + panelId + "::" + localeCode;
 	}
 	
 	

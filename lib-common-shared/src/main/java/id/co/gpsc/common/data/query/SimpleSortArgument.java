@@ -14,7 +14,7 @@ import id.co.gpsc.common.util.json.ParsedJSONContainer;
  * @version $Id
  **/
 @ClientReflectableClass
-public class SigmaSimpleSortArgument implements IsSerializable, IJSONFriendlyObject<SigmaSimpleSortArgument>{
+public class SimpleSortArgument implements IsSerializable, IJSONFriendlyObject<SimpleSortArgument>{
 	/**
 	 * 
 	 */
@@ -36,13 +36,13 @@ public class SigmaSimpleSortArgument implements IsSerializable, IJSONFriendlyObj
 	
 
 	
-	public SigmaSimpleSortArgument(){}
+	public SimpleSortArgument(){}
 	
 	
 	/**
 	 * konstruktor dengan sort field + asc/desc
 	 **/
-	public SigmaSimpleSortArgument(String sortField  ,  boolean ascendingSort ){
+	public SimpleSortArgument(String sortField  ,  boolean ascendingSort ){
 		this.sortField=sortField ; 
 		this.ascendingSort=ascendingSort;
 		
@@ -88,7 +88,7 @@ public class SigmaSimpleSortArgument implements IsSerializable, IJSONFriendlyObj
     }
 
     @Override
-    public SigmaSimpleSortArgument instantiateFromJSON(ParsedJSONContainer jsonContainer) {
-        return  new SigmaSimpleSortArgument(jsonContainer.getAsString("sortField"), jsonContainer.getAsBoolean("ascendingSort"));
+    public SimpleSortArgument instantiateFromJSON(ParsedJSONContainer jsonContainer) {
+        return  new SimpleSortArgument(jsonContainer.getAsString("sortField"), jsonContainer.getAsBoolean("ascendingSort"));
     }
 }

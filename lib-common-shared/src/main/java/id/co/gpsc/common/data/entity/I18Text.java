@@ -154,8 +154,8 @@ public class I18Text extends EntityObject implements IJSONFriendlyObject<I18Text
 	@Override
 	public void translateToJSON(ParsedJSONContainer jsonContainer) {
 		jsonContainer.put("groupCode",getGroupCode());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("groupId",getGroupId());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("id",getId());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("groupId",getGroupId());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("id",getId());
 		jsonContainer.put("label",getLabel());
 		jsonContainer.put("version",getVersion());
 	}
@@ -164,8 +164,8 @@ public class I18Text extends EntityObject implements IJSONFriendlyObject<I18Text
 	public I18Text instantiateFromJSON(ParsedJSONContainer jsonContainer) {
 		I18Text retval = new I18Text();
 		retval.setGroupCode( (String)jsonContainer.get("groupCode" ,  String.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setGroupId( (I18NTextGroup)jsonContainer.get("groupId" ,  I18NTextGroup.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setId( (I18TextPK)jsonContainer.get("id" ,  I18TextPK.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setGroupId( (I18NTextGroup)jsonContainer.get("groupId" ,  I18NTextGroup.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setId( (I18TextPK)jsonContainer.get("id" ,  I18TextPK.class.getName()));
 		retval.setLabel( (String)jsonContainer.get("label" ,  String.class.getName()));
 		retval.setVersion( (Integer)jsonContainer.get("version" ,  Integer.class.getName()));
 		return retval; 

@@ -1,6 +1,6 @@
 /**
  * File Name : FunctionAssignment.java
- * Package   : id.co.sigma.arium.security.shared.domain
+ * Package   : id.co.gpsc.arium.security.shared.domain
  * Project   : security-data
  */
 package id.co.gpsc.common.security.domain;
@@ -213,7 +213,7 @@ public class FunctionAssignment extends BaseCreatedObject implements IJSONFriend
 		}
 		jsonContainer.put("function",getFunction());
 		jsonContainer.put("functionId",getFunctionId());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("group",getGroup());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("group",getGroup());
 		jsonContainer.put("groupId",getGroupId());
 		jsonContainer.put("id",getId());
 	}
@@ -227,7 +227,7 @@ public class FunctionAssignment extends BaseCreatedObject implements IJSONFriend
 		  
 		retval.setFunction( (Function)jsonContainer.get("function" ,  Function.class.getName()));
 		retval.setFunctionId( (BigInteger)jsonContainer.get("functionId" ,  BigInteger.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setGroup( (UserGroup)jsonContainer.get("group" ,  UserGroup.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setGroup( (UserGroup)jsonContainer.get("group" ,  UserGroup.class.getName()));
 		retval.setGroupId( (BigInteger)jsonContainer.get("groupId" ,  BigInteger.class.getName()));
 		retval.setId( (BigInteger)jsonContainer.get("id" ,  BigInteger.class.getName()));
 		return retval; 

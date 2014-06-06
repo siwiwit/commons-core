@@ -4,8 +4,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.app.SimpleDualControlData;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 
 /**
  *
@@ -23,8 +23,8 @@ public interface CommonDualControlRPCAsync   {
 	 * versi ini menerima class dari dual control. ini akan memanfaatkan method 
 	 **/
 	public void getCurrentAvailableData(Class<? extends SimpleDualControlData<?>> objClass,
-			SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArgs, int pageSize, int page,
+			SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArgs, int pageSize, int page,
 			AsyncCallback<PagedResultHolder<SimpleDualControlData<?>>> callback)  ; 
 	
 	/**
@@ -40,7 +40,7 @@ public interface CommonDualControlRPCAsync   {
 	 * @param page page berapa yang perlu di baca
 	 **/
 	public void getCurrentAvailableData (  
-			String objectFQCN ,   SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , 
+			String objectFQCN ,   SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , 
 			int pageSize , int page  ,
 			AsyncCallback<PagedResultHolder<SimpleDualControlData<?>>> callback)  ;
 

@@ -5,7 +5,7 @@ import java.util.Collection;
 import id.co.gpsc.common.client.control.MainPanelStackControl;
 import id.co.gpsc.common.client.control.ViewScreenMode;
 import id.co.gpsc.common.client.form.ExtendedButton;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.control.DataProcessWorker;
 import id.co.gpsc.common.data.app.SimplifiedDualControlContainerTable;
 
@@ -24,14 +24,14 @@ import com.google.gwt.user.client.ui.Widget;
  * panel approval unified, jadi 1 untuk semua nya
  *@author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
-public class UnifiedApprovalMainPanel extends BaseSigmaComposite {
+public class UnifiedApprovalMainPanel extends BaseSimpleComposite {
 
 	
 	
 	protected static final String MESSAGE_HANDLER_NOT_REGISTERED =
 			"sebagai catatan, editor dual control perlu di register manual, karena keterbatasan dengan proses reflection di GWT\n"
 			+ "Mohon di cek, kemungkinan anda belum meregister handler anda. untuk melakukan ini, anda bisa cek method ini : "
-			+ "id.co.sigma.common.client.dualcontrol.DualControlUtil.registerDualControlHandler(IDualControlEditor<?>) \n"
+			+ "id.co.gpsc.common.client.dualcontrol.DualControlUtil.registerDualControlHandler(IDualControlEditor<?>) \n"
 			+ "register bisa anda lakukan onload dari applikasi anda. semoga berguna "; 
 	
 	

@@ -70,7 +70,7 @@ public abstract class BaseSimplePopupEditorPanel<DATA > extends BaseResourceBund
 	
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.client.widget.IEditorPanel#addAndEditNewData(DATA)
+	 * @see id.co.gpsc.common.client.widget.IEditorPanel#addAndEditNewData(DATA)
 	 */
 	@Override
 	public void addAndEditNewData (DATA data) {
@@ -90,7 +90,7 @@ public abstract class BaseSimplePopupEditorPanel<DATA > extends BaseResourceBund
 	
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.client.widget.IEditorPanel#editExistingData(DATA)
+	 * @see id.co.gpsc.common.client.widget.IEditorPanel#editExistingData(DATA)
 	 */
 	@Override
 	public void editExistingData (DATA data) {

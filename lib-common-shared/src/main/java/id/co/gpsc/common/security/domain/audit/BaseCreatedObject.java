@@ -1,6 +1,6 @@
 /**
  * File Name : BaseCreatedObject.java
- * Package   : id.co.sigma.arium.security.shared.domain.audit
+ * Package   : id.co.gpsc.arium.security.shared.domain.audit
  * Project   : security-data
  */
 package id.co.gpsc.common.security.domain.audit;
@@ -36,7 +36,7 @@ public class BaseCreatedObject implements Serializable,IsSerializable, ICreateAu
 	private Date createdOn;
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.arium.security.shared.domain.audit.ICreateAuditedObject#getCreatedBy()
+	 * @see id.co.gpsc.arium.security.shared.domain.audit.ICreateAuditedObject#getCreatedBy()
 	 */
 	@Override
 	public String getCreatedBy() {
@@ -44,7 +44,7 @@ public class BaseCreatedObject implements Serializable,IsSerializable, ICreateAu
 	}
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.arium.security.shared.domain.audit.ICreateAuditedObject#setCreatedBy(java.lang.String)
+	 * @see id.co.gpsc.arium.security.shared.domain.audit.ICreateAuditedObject#setCreatedBy(java.lang.String)
 	 */
 	@Override
 	public void setCreatedBy(String createdBy) {
@@ -52,7 +52,7 @@ public class BaseCreatedObject implements Serializable,IsSerializable, ICreateAu
 	}
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.arium.security.shared.domain.audit.ICreateAuditedObject#getCreatedOn()
+	 * @see id.co.gpsc.arium.security.shared.domain.audit.ICreateAuditedObject#getCreatedOn()
 	 */
 	@Override
 	public Date getCreatedOn() {
@@ -60,7 +60,7 @@ public class BaseCreatedObject implements Serializable,IsSerializable, ICreateAu
 	}
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.arium.security.shared.domain.audit.ICreateAuditedObject#setCreatedOn(java.util.Date)
+	 * @see id.co.gpsc.arium.security.shared.domain.audit.ICreateAuditedObject#setCreatedOn(java.util.Date)
 	 */
 	@Override
 	public void setCreatedOn(Date createdOn) {

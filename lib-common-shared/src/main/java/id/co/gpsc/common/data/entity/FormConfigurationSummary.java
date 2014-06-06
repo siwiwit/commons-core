@@ -124,7 +124,7 @@ public class FormConfigurationSummary implements Serializable, IJSONFriendlyObje
 	
 	@Override
 	public void translateToJSON(ParsedJSONContainer jsonContainer) {
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("id",getId());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("id",getId());
 		jsonContainer.put("labels",getLabels());
 		jsonContainer.put("version",getVersion());
 	}
@@ -132,7 +132,7 @@ public class FormConfigurationSummary implements Serializable, IJSONFriendlyObje
 	@Override
 	public FormConfigurationSummary instantiateFromJSON(ParsedJSONContainer jsonContainer) {
 		FormConfigurationSummary retval = new FormConfigurationSummary();
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setId( (FormConfigurationSummaryPK)jsonContainer.get("id" ,  FormConfigurationSummaryPK.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setId( (FormConfigurationSummaryPK)jsonContainer.get("id" ,  FormConfigurationSummaryPK.class.getName()));
 		retval.setLabels( (String)jsonContainer.get("labels" ,  String.class.getName()));
 		retval.setVersion( (Integer)jsonContainer.get("version" ,  Integer.class.getName()));
 		return retval; 

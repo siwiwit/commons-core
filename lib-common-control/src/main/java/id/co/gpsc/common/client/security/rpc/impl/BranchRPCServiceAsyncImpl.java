@@ -23,9 +23,9 @@ public class BranchRPCServiceAsyncImpl extends ManualJSONSerializeRPCService<Bra
 	}
 
 
-	public void getDataByParameter(id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[] param0,int param1,int param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.dto.BranchDTO>> callback) {
+	public void getDataByParameter(id.co.gpsc.common.data.query.SimpleQueryFilter[] param0,int param1,int param2,com.google.gwt.user.client.rpc.AsyncCallback<id.co.gpsc.common.data.PagedResultHolder<id.co.gpsc.common.security.dto.BranchDTO>> callback) {
 		this.submitRPCRequestRaw( "getDataByParameter", new Class<?>[]{
-			id.co.gpsc.common.data.query.SigmaSimpleQueryFilter[].class,int.class,int.class, 
+			id.co.gpsc.common.data.query.SimpleQueryFilter[].class,int.class,int.class, 
 			
 		}, 
 		new Object[]{

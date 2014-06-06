@@ -9,7 +9,7 @@ import id.co.gpsc.common.client.form.ExtendedButton;
 import id.co.gpsc.common.client.form.advance.TextBoxAreaWithLabel;
 import id.co.gpsc.common.client.rpc.DualControlDataRPCServiceAsync;
 import id.co.gpsc.common.client.util.CommonClientControlUtil;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.data.app.DualControlEnabledData;
 import id.co.gpsc.common.data.app.HeaderDataOnlyCommonDualControlContainerTable;
 import id.co.gpsc.common.exception.BadBulkUploadDataException;
@@ -33,7 +33,7 @@ import com.google.gwt.user.client.ui.Widget;
  * panel untuk upload dual controlled master data
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
-public class UploadDualControlledMasterDataPanel extends BaseSigmaComposite {
+public class UploadDualControlledMasterDataPanel extends BaseSimpleComposite {
 
 	private static UploadDualControlledMasterDataPanelUiBinder uiBinder = GWT
 			.create(UploadDualControlledMasterDataPanelUiBinder.class);

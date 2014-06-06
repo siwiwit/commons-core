@@ -20,7 +20,7 @@
 		<maven.compiler.target>1.7</maven.compiler.target> 
 		<mybatis.version>3.2.7</mybatis.version>
 		<spring.mybatis.version>1.2.2</spring.mybatis.version>
-		<poi.version>3.10.FINAL</poi.version>
+		<poi.version>3.10-FINAL</poi.version>
 		<gson.version>2.2.4</gson.version>	
 		<lib.junit.version>4.11</lib.junit.version>
 		<lib.javax.validation.api>1.1.0.Final</lib.javax.validation.api>
@@ -52,11 +52,12 @@
     </dependencies>
     
   <modules>
+
   	<module>lib-common</module>
 	<module>lib-common-shared</module>
   	<module>lib-jquery-integration</module>
   	<module>lib-common-control</module>
-	<module>lib-base-server</module>
-	
+  <!--	<module>lib-base-server</module>
+	-->
   </modules>
 </project>

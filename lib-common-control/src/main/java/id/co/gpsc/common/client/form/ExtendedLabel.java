@@ -28,7 +28,7 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * wrapper label(form label)
  * @author <a href='mailto:gede.sutarsa@gmail.com'>Gede Sutarsa</a>
- * @author <a href="gede.mahendra@sigma.co.id">Gede Mahendra</a>
+ * @author <a href="dein.mahendra@gmail.com">Gede Mahendra</a>
  * @version $Id
  * @since 6 aug 2012
  * 

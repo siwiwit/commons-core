@@ -1,7 +1,7 @@
 package id.co.gpsc.common.client.util;
 
 import id.co.gpsc.common.util.SimpleDebugerWriter;
-import id.co.sigma.common.util.NativeJsUtilities;
+import id.co.gpsc.jquery.client.util.NativeJsUtilities;
 
 public class ClientSideSimpleDebugerWriter implements SimpleDebugerWriter{
 

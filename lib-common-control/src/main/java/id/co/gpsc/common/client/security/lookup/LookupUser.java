@@ -4,7 +4,7 @@ import id.co.gpsc.common.client.control.BaseSimpleSearchComboContentLocator;
 import id.co.gpsc.common.client.security.lookup.base.SecurityBaseSimpleSingleResultLookupDialog;
 import id.co.gpsc.common.client.security.rpc.UserRPCServiceAsync;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.dto.UserDTO;
 import id.co.gpsc.jquery.client.grid.cols.BaseColumnDefinition;
 import id.co.gpsc.jquery.client.grid.cols.StringColumnDefinition;
@@ -67,7 +67,7 @@ public class LookupUser extends SecurityBaseSimpleSingleResultLookupDialog<BigIn
 	}
 
 	@Override
-	protected void retrieveData(SigmaSimpleQueryFilter[] filters, int page,int pageSize, AsyncCallback<PagedResultHolder<UserDTO>> callback) {		
+	protected void retrieveData(SimpleQueryFilter[] filters, int page,int pageSize, AsyncCallback<PagedResultHolder<UserDTO>> callback) {		
 		UserRPCServiceAsync.Util.getInstance().getUserByParameter(filters, page, pageSize, callback);		
 	}
 

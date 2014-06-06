@@ -26,7 +26,7 @@ import id.co.gpsc.common.client.form.ExtendedButton;
 import id.co.gpsc.common.client.form.advance.TextBoxAreaWithLabel;
 import id.co.gpsc.common.client.form.exception.CommonFormValidationException;
 import id.co.gpsc.common.client.rpc.DualControlDataRPCServiceAsync;
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.client.widget.BaseEditorPanel;
 import id.co.gpsc.common.client.widget.EditorState;
 import id.co.gpsc.common.data.app.CommonDualControlContainerTable;
@@ -509,7 +509,7 @@ public abstract class BaseDualControlDataEditor<KEY extends Serializable ,  DATA
 	 * @param makeReadonly editor di jadikan readonly atau editable
 	 **/
 	public void openDataByDualControlId (final BigInteger dualControlDataId,final Command commandAfterLoadComplete ) {
-		DualControlDataRPCServiceAsync.Util.getInstance().getDataById(dualControlDataId, new SigmaAsyncCallback<CommonDualControlContainerTable>() {
+		DualControlDataRPCServiceAsync.Util.getInstance().getDataById(dualControlDataId, new SimpleAsyncCallback<CommonDualControlContainerTable>() {
 			@Override
 			public void onSuccess(CommonDualControlContainerTable response) {
 				currentCommonDualControlContainerData = response ;
@@ -595,7 +595,7 @@ public abstract class BaseDualControlDataEditor<KEY extends Serializable ,  DATA
 	 */
 	protected void sendRPCRequestFOrSaveForApproval (final DATA editedData) {
 		JQueryUtils.getInstance().blockEntirePage("mengirim data. mohon menunggu");
-		DualControlUtil.getInstance().submitDataForApproval(dualControlEnabledOperation,remark.getValue() ,  editedData, new SigmaAsyncCallback<SimpleMasterDataDualControlApprovalResult>() {
+		DualControlUtil.getInstance().submitDataForApproval(dualControlEnabledOperation,remark.getValue() ,  editedData, new SimpleAsyncCallback<SimpleMasterDataDualControlApprovalResult>() {
 			@Override
 			public void onSuccess(SimpleMasterDataDualControlApprovalResult result) {
 				JQueryUtils.getInstance().unblockEntirePage();
@@ -681,7 +681,7 @@ public abstract class BaseDualControlDataEditor<KEY extends Serializable ,  DATA
 	@Override
 	public void editExistingData(DATA data) {
 		//FIXME: 1. ini musti di pastikan sudah ada dalam database
-		//FIXME: 2. ini musti di pastikan tidak dalam state edit. kalau ada , maka operator yang di pergunakan adalah id.co.sigma.common.client.dualcontrol.BaseDualControlDataEditor.openDataByDualControlId(BigInteger)
+		//FIXME: 2. ini musti di pastikan tidak dalam state edit. kalau ada , maka operator yang di pergunakan adalah id.co.gpsc.common.client.dualcontrol.BaseDualControlDataEditor.openDataByDualControlId(BigInteger)
 		super.editExistingData(data);
 		remark.setVisible(true); 
 		remark.restoreControl();
@@ -830,7 +830,7 @@ public abstract class BaseDualControlDataEditor<KEY extends Serializable ,  DATA
 			return ;
 		String messsage = approvalRemark.getValue();
 		final DATA editedData =  getCurrentData() ;
-		DualControlDataRPCServiceAsync.Util.getInstance().rejectData(currentCommonDualControlContainerData.getId(), messsage, new SigmaAsyncCallback<Void>() {
+		DualControlDataRPCServiceAsync.Util.getInstance().rejectData(currentCommonDualControlContainerData.getId(), messsage, new SimpleAsyncCallback<Void>() {
 			@Override
 			protected void customFailurehandler(Throwable caught) {
 				Window.alert("gagal reject data, error message :" + caught.getMessage());
@@ -865,7 +865,7 @@ public abstract class BaseDualControlDataEditor<KEY extends Serializable ,  DATA
 		currentCommonDualControlContainerData.setJsonData(editedData.generateJSONString());
 		currentCommonDualControlContainerData.setApprovalRemark(approvalRemark.getValue());
 		
-		DualControlUtil.getInstance().approveData(dualControlEnabledOperation, currentCommonDualControlContainerData, new SigmaAsyncCallback<Void>() {
+		DualControlUtil.getInstance().approveData(dualControlEnabledOperation, currentCommonDualControlContainerData, new SimpleAsyncCallback<Void>() {
 			@Override
 			protected void customFailurehandler(Throwable caught) {
 				Window.alert(getMessageOnApproveDataFailure(currentCommonDualControlContainerData.getId(), caught)) ; 

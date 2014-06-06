@@ -1,7 +1,7 @@
 package id.co.gpsc.common.security.rpc;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.rpc.JSONSerializedRemoteService;
 import id.co.gpsc.common.security.menu.UserDomain;
 
@@ -11,7 +11,6 @@ import id.co.gpsc.common.security.menu.UserDomain;
  * @since Nov 29, 2012, 5:46:36 PM
  * @version $Id
  */
-//@RemoteServiceRelativePath(value="/sigma-rpc/user-domain.app-rpc")
 public interface UserDomainRPCService extends JSONSerializedRemoteService{
 	
 	/**
@@ -21,5 +20,5 @@ public interface UserDomainRPCService extends JSONSerializedRemoteService{
 	 * @param pageSize
 	 * @return
 	 */
-	public PagedResultHolder<UserDomain> getUserDomainFromIIS(SigmaSimpleQueryFilter[] filter, int page, int pageSize);
+	public PagedResultHolder<UserDomain> getUserDomainFromIIS(SimpleQueryFilter[] filter, int page, int pageSize);
 }

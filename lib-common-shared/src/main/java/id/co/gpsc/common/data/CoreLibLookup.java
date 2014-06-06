@@ -32,7 +32,7 @@ public enum CoreLibLookup implements StrongTypedCustomLOVID<CoreLibLookup>{
 
 	@Override
 	public String getModulGroupId() {
-		return "SIGMA-global";
+		return "GPSC-core-global";
 	}
 	
 	

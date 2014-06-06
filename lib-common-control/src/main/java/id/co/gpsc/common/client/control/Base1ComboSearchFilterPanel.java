@@ -14,8 +14,8 @@ import id.co.gpsc.common.client.form.ExtendedComboBox;
 import id.co.gpsc.common.client.form.ExtendedTextBox;
 import id.co.gpsc.common.client.form.FloatTextBox;
 import id.co.gpsc.common.client.form.IntegerTextBox;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.util.I18Utilities;
 import id.co.gpsc.jquery.client.form.JQDatePicker;
@@ -27,7 +27,7 @@ import id.co.gpsc.jquery.client.form.JQDatePicker;
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * @version $Id
  **/
-public abstract class Base1ComboSearchFilterPanel extends BaseSigmaComposite{
+public abstract class Base1ComboSearchFilterPanel extends BaseSimpleComposite{
 
 	/**
 	 * table untuk form search, tambahkan di sini kalau perlu tambahan fields
@@ -73,7 +73,7 @@ public abstract class Base1ComboSearchFilterPanel extends BaseSigmaComposite{
 	/**
 	 * produce filter dari selection saat ini
 	 **/
-	public SigmaSimpleQueryFilter[] generateDataFilterArguments() {
+	public SimpleQueryFilter[] generateDataFilterArguments() {
 		if ( currentEntry==null)
 			return null ; 
 		Object val = currentEntry.getValue() ; 
@@ -83,7 +83,7 @@ public abstract class Base1ComboSearchFilterPanel extends BaseSigmaComposite{
 				
 				//SimpleSearchComboContentLocator searchContent =  indexedLocator.get(this.searchFilterComboBox.getValue()); 
 				
-				SigmaSimpleQueryFilter  v = new SigmaSimpleQueryFilter(); 
+				SimpleQueryFilter  v = new SimpleQueryFilter(); 
 				v.setField( indexedLocator.get(this.searchFilterComboBox.getValue()).getQueryFilter());
 				v.assignFilterWorker(val);
 				if ( currentEntry.equals(this.searchFilterTextBox)){
@@ -124,7 +124,7 @@ public abstract class Base1ComboSearchFilterPanel extends BaseSigmaComposite{
 					}
 				}
 				
-				return new SigmaSimpleQueryFilter[]{
+				return new SimpleQueryFilter[]{
 					v 	
 				};
 			}

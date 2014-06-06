@@ -19,6 +19,11 @@ public final class CommonLibraryConstant {
 	/**
 	 * ini adalah url untuk upload dengan IFRAME
 	 */
-	public static final String COMMON_UPLOAD_CONTROLLER_URL_WITH_IFRAME = "common/upload-with-messaging-file.jsp" ; 
+	public static final String COMMON_UPLOAD_CONTROLLER_URL_WITH_IFRAME = "common/upload-with-messaging-file.jsp" ;
+
+	/**
+	 * base url di mana konfigurasi aplikasi di baca. ini di jadikan base untuk mencari JSOn yang terkait dengan konfigurasi aplikasi. misal i18n , group of i18n dll
+	 */
+	public static final String APPLICATION_CONFIG_SERVICE_BASE_URL="app-configuration";
 
 }

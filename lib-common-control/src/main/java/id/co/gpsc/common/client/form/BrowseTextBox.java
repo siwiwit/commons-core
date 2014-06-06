@@ -23,7 +23,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 /**
  * base class untuk class text box dengan tombol browse + tombol reset. handler untuk tombol browse + reset tidak di define di sini
- * @author <a href="mailto:ashadi.pratama@sigma.co.id">Ashadi Pratama</a>
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  * @version $Id
  * 

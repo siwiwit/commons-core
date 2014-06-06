@@ -1,8 +1,8 @@
 package id.co.gpsc.common.client.security;
 
-import id.co.gpsc.common.client.BaseSigmaEntryPoint;
+import id.co.gpsc.common.client.BaseSimpleEntryPoint;
 import id.co.gpsc.common.client.common.CommonRunAsynCallback;
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.client.security.rpc.ApplicationUserRPCServiceAsync;
 import id.co.gpsc.common.security.domain.Signon;
 import id.co.gpsc.common.security.dto.UserDetailDTO;
@@ -22,7 +22,7 @@ import com.google.gwt.user.client.Window;
  * base class entry point untuk entry point dengan menu
  * @author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  **/
-public abstract class BaseEntryPointWithBasicMenu extends BaseSigmaEntryPoint{
+public abstract class BaseEntryPointWithBasicMenu extends BaseSimpleEntryPoint{
 
 	/**
 	 * cache menu, di index dengan id dari menu(big integer)
@@ -70,7 +70,7 @@ public abstract class BaseEntryPointWithBasicMenu extends BaseSigmaEntryPoint{
 		};
 		
 		
-		ApplicationUserRPCServiceAsync.Util.getInstance().getApplicationMenu(parameter, new SigmaAsyncCallback<List<ApplicationMenuSecurity>>() {
+		ApplicationUserRPCServiceAsync.Util.getInstance().getApplicationMenu(parameter, new SimpleAsyncCallback<List<ApplicationMenuSecurity>>() {
 			@Override
 			protected void customFailurehandler(Throwable caught) {
 				//FIXME : masukan message yang lebih bersahabat

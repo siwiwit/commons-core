@@ -2,7 +2,7 @@ package id.co.gpsc.common.client.security.rpc;
 
 import id.co.gpsc.common.client.security.rpc.impl.UserRPCServiceAsyncImpl;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.security.domain.User;
 import id.co.gpsc.common.security.dto.UserDTO;
 import id.co.gpsc.common.security.dto.UserDetailDTO;
@@ -40,7 +40,7 @@ public interface UserRPCServiceAsync {
 	 * @param pageSize
 	 * @param callback
 	 */
-	void getUserByParameter(SigmaSimpleQueryFilter[] filter, int page, int pageSize, AsyncCallback<PagedResultHolder<UserDTO>> callback);
+	void getUserByParameter(SimpleQueryFilter[] filter, int page, int pageSize, AsyncCallback<PagedResultHolder<UserDTO>> callback);
 	
 	/**
 	 * Get user by parameter
@@ -50,7 +50,7 @@ public interface UserRPCServiceAsync {
 	 * @param pageSize
 	 * @param callback
 	 */
-	void getUserByParameter(BigInteger applicationId, SigmaSimpleQueryFilter[] filter, int page, int pageSize, AsyncCallback<PagedResultHolder<UserDTO>> callback);
+	void getUserByParameter(BigInteger applicationId, SimpleQueryFilter[] filter, int page, int pageSize, AsyncCallback<PagedResultHolder<UserDTO>> callback);
 	
 	/**
 	 * get user by filter
@@ -60,7 +60,7 @@ public interface UserRPCServiceAsync {
 	 * @return data user
 	 * @throws Exception
 	 */
-	void getUserByFilter(SigmaSimpleQueryFilter[] filters, int pagePosition, int pageSize, AsyncCallback<PagedResultHolder<User>> callback) throws Exception;
+	void getUserByFilter(SimpleQueryFilter[] filters, int pagePosition, int pageSize, AsyncCallback<PagedResultHolder<User>> callback) throws Exception;
 	
 	/**
 	 * insert data user

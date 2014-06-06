@@ -3,8 +3,8 @@ package id.co.gpsc.common.rpc.common;
 import java.math.BigInteger;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.rpc.JSONSerializedRemoteService;
 import id.co.gpsc.common.util.json.IJSONFriendlyObject;
 
@@ -24,7 +24,7 @@ public interface GeneralPurposeRPC extends JSONSerializedRemoteService{
 	 * </ol>
 	 * 
 	 **/
-	public PagedResultHolder<IJSONFriendlyObject<?>> getPagedData (String objectFQCN , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sorts , int page , int pageSize) throws Exception ;
+	public PagedResultHolder<IJSONFriendlyObject<?>> getPagedData (String objectFQCN , SimpleQueryFilter[] filters , SimpleSortArgument[] sorts , int page , int pageSize) throws Exception ;
 	
 	
 	

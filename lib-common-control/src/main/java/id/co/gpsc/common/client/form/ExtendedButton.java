@@ -3,8 +3,8 @@ package id.co.gpsc.common.client.form;
 import id.co.gpsc.common.client.CommonClientControlConstant;
 import id.co.gpsc.common.control.ResourceBundleConfigurableControl;
 import id.co.gpsc.common.util.I18Utilities;
-import id.co.sigma.common.util.NativeJsUtilities;
 import id.co.gpsc.jquery.client.util.JQueryUtils;
+import id.co.gpsc.jquery.client.util.NativeJsUtilities;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -32,7 +32,7 @@ public class ExtendedButton extends Button implements ResourceBundleConfigurable
 	/**
 	 * prefix ID tombol. ini untuk jqurey thing
 	 **/
-	protected static String BUTTON_ID_PREFIX="SIGMA_BUTTON";
+	protected static String BUTTON_ID_PREFIX="GPSC_BUTTON";
 	
 	
 	

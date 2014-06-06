@@ -11,7 +11,7 @@ import com.google.gwt.uibinder.client.UiField;
 import id.co.gpsc.common.client.form.ExtendedButton;
 import id.co.gpsc.common.client.form.advance.TextBoxAreaWithLabel;
 import id.co.gpsc.common.client.form.advance.TextBoxWithLabel;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.data.app.DualControlEnabledData;
 
 import com.google.gwt.user.client.ui.SimplePanel;
@@ -23,7 +23,7 @@ import com.google.gwt.user.client.ui.HTML;
  * @deprecated class ini blm siap untuk di pergunakan
  */
 @Deprecated 
-public class SimpleMultipleItemApprovalEditor<DATA extends DualControlEnabledData<?,?>> extends BaseSigmaComposite implements IDualControlMultipleDataEditor<DATA>{
+public class SimpleMultipleItemApprovalEditor<DATA extends DualControlEnabledData<?,?>> extends BaseSimpleComposite implements IDualControlMultipleDataEditor<DATA>{
 
 	private static SimpleMultipleItemApprovalEditorUiBinder uiBinder = GWT
 			.create(SimpleMultipleItemApprovalEditorUiBinder.class);

@@ -4,8 +4,8 @@ package id.co.gpsc.common.data.app;
 import id.co.gpsc.common.data.AppConfigurationDrivenDetaiResultHolder;
 import id.co.gpsc.common.data.PagedResultHolder;
 import id.co.gpsc.common.data.SystemParamDrivenClass;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.exception.InvalidExcelFileException;
 import id.co.gpsc.common.rpc.JSONSerializedRemoteService;
 
@@ -107,7 +107,7 @@ public interface DualControlDataRPCService extends JSONSerializedRemoteService{
 	 * @param filters query filters. dalam kasus ini, yang di pakai adalah key 1 dan key2 
 	 * @param sortArguments argument untuk proses sorting data
 	 **/
-	public PagedResultHolder<CommonDualControlContainerTable> getDataRequiredApproval(String objectFQCN , SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArguments , int pageSize , int page )throws Exception;
+	public PagedResultHolder<CommonDualControlContainerTable> getDataRequiredApproval(String objectFQCN , SimpleQueryFilter[] filters , SimpleSortArgument[] sortArguments , int pageSize , int page )throws Exception;
 	
 	
 	
@@ -115,8 +115,8 @@ public interface DualControlDataRPCService extends JSONSerializedRemoteService{
 	 * get data untuk proses update
 	 **/
 	public PagedResultHolder<? extends DualControlEnabledData<?, ?>> getDataForEditList(
-			String objectFQCN, SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sortArguments, int pageSize, int page   ) throws Exception ;
+			String objectFQCN, SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sortArguments, int pageSize, int page   ) throws Exception ;
 	
 	
 	/**

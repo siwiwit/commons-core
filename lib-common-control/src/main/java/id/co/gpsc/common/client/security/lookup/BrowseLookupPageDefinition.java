@@ -11,7 +11,7 @@ import java.math.BigInteger;
 
 /**
  * 
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Aug 15, 2013 2:24:11 PM
  */
 public class BrowseLookupPageDefinition extends BaseSecurityLookupBrowseText<BigInteger , PageDefinitionDTO> {

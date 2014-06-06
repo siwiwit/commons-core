@@ -4,7 +4,10 @@ package id.co.gpsc.common.client.app;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-import id.co.sigma.common.util.NativeJsUtilities;
+
+
+
+import id.co.gpsc.jquery.client.util.NativeJsUtilities;
 
 import java.util.HashMap;
 
@@ -97,7 +100,7 @@ public abstract class BaseSimpleRootPlacedWidgetProvider implements  IRootPlaced
 	*&nbsp;&nbsp;GWT.runAsync(new RunAsyncCallback() {<br/><br/>
 	*&nbsp;&nbsp;&nbsp;
 	*&nbsp;&nbsp;&nbsp;public void onSuccess() {<br/>
-	*&nbsp;&nbsp;&nbsp;&nbsp;id.co.sigma.cam.client.generator.MDADataGenerator a = new id.co.sigma.cam.client.generator.MDADataGenerator();<br/> 
+	*&nbsp;&nbsp;&nbsp;&nbsp;id.co.gpsc.cam.client.generator.MDADataGenerator a = new id.co.gpsc.cam.client.generator.MDADataGenerator();<br/> 
 	*&nbsp;&nbsp;&nbsp;&nbsp;callback.onSuccess(a);<br/>
 	*&nbsp;&nbsp;&nbsp;}<br/><br/>
 	*&nbsp;&nbsp;&nbsp;

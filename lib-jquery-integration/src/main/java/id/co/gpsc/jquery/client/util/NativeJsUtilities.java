@@ -13,13 +13,13 @@ public final class NativeJsUtilities {
 	/**
 	 * nama method untuk put object. ini method yang shared usage bersama lain nya
 	 **/
-	public final  static String SHARED_PUT_OBJECT_METHOD_NAME="sigma_put_object_js_worker";
+	public final  static String SHARED_PUT_OBJECT_METHOD_NAME="gpsc_put_object_js_worker";
 	
 	
 	/**
 	 * method untuk get object
 	 **/
-	public final  static String SHARED_GET_OBJECT_METHOD_NAME="sigma_get_object_js_worker";
+	public final  static String SHARED_GET_OBJECT_METHOD_NAME="gpsc_get_object_js_worker";
 	private static NativeJsUtilities instance ;
 	
 	private NativeJsUtilities(){
@@ -77,7 +77,7 @@ public final class NativeJsUtilities {
 	/**
 	 * put object. pls pergunakan hanya dengan argument javascript object
 	 * @param value sebaiknya hanya javascript
-	 * @param key key dari object. bisa simple(misal <i>alamat</i>) atau nested object(misal : <i>id.co.sigma.office</i>)
+	 * @param key key dari object. bisa simple(misal <i>alamat</i>) atau nested object(misal : <i>id.co.gpsc.office</i>)
 	 * @param target ke mana data akan di taruh
 	 **/
 	public native void putObjectRawType (JavaScriptObject target , String key , Object value)/*-{
@@ -88,7 +88,7 @@ public final class NativeJsUtilities {
 	
 	/**
 	 * put POJO object.<span style="color:red"><strong>use it carefully</strong></span>. kalau native di lewakan di sini akan di boxing !!
-	 * @param key key dari object. bisa simple(misal <i>alamat</i>) atau nested object(misal : <i>id.co.sigma.office</i>)
+	 * @param key key dari object. bisa simple(misal <i>alamat</i>) atau nested object(misal : <i>id.co.gpsc.office</i>)
 	 **/
 	public native void putPOJOObject (JavaScriptObject target , String key , Object value)/*-{
 		$wnd[@id.co.gpsc.jquery.client.util.NativeJsUtilities::SHARED_PUT_OBJECT_METHOD_NAME](target, key, value);
@@ -96,7 +96,7 @@ public final class NativeJsUtilities {
 	/**
 	 * worker untuk menaruh object dalam javascript object.object dalam bentuk String
 	 * @param target js di mana data akan di taruh
-	 * @param key key dari object. bisa simple(misal <i>alamat</i>) atau nested object(misal : <i>id.co.sigma.office</i>)
+	 * @param key key dari object. bisa simple(misal <i>alamat</i>) atau nested object(misal : <i>id.co.gpsc.office</i>)
 	 * @param value value yang akan di taruh dalam js object
 	 **/
 	public native void putObject (JavaScriptObject target , String key , String value)/*-{

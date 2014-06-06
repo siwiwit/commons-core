@@ -1,6 +1,6 @@
 /**
  * File Name : User.java
- * Package   : id.co.sigma.arium.security.shared.domain
+ * Package   : id.co.gpsc.arium.security.shared.domain
  * Project   : security-data
  */
 package id.co.gpsc.common.security.domain;

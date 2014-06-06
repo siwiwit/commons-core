@@ -14,7 +14,6 @@ public interface ApplicationSecurityRelatedServiceAsync {
 		public static ApplicationSecurityRelatedServiceAsync getInstance() {
 			if( instance==null){
 				instance = GWT.create(ApplicationSecurityRelatedServiceAsyncImpl.class);
-//				CommonGlobalVariableHolder.getInstance().fixTargetUrl((ServiceDefTarget)instance);
 			}
 			return instance;
 		}
@@ -22,6 +21,8 @@ public interface ApplicationSecurityRelatedServiceAsync {
 
 	/**
 	 * membaca current user security data
+	 * @deprecated implementasi server belum siap
 	 **/
+	@Deprecated
 	public void getCurrentUserSecurityData ( AsyncCallback<ClientSecurityData> callback) ; 
 }

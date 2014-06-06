@@ -36,7 +36,7 @@ import id.co.gpsc.common.control.ResourceBundleConfigurableControl;
  * 
  * @category composite
  **/
-public abstract class BaseResourceBundleFriendlyComposite extends BaseSigmaComposite implements ResourceBundleEnableContainer, IMandatoryEnabledContainer{
+public abstract class BaseResourceBundleFriendlyComposite extends BaseSimpleComposite implements ResourceBundleEnableContainer, IMandatoryEnabledContainer{
 
 	/**
 	 * tag yang di periksa. di curigai elemen ini yang mandatory enabled
@@ -126,7 +126,7 @@ public abstract class BaseResourceBundleFriendlyComposite extends BaseSigmaCompo
 	
 	
 	/* (non-Javadoc)
-	 * @see id.co.sigma.common.client.widget.IMandatoryEnabledContainer#validateMandatory()
+	 * @see id.co.gpsc.common.client.widget.IMandatoryEnabledContainer#validateMandatory()
 	 */
 	//@Override
 	private void validateMandatoryOld () throws MandatoryValidationFailureException {

@@ -12,7 +12,7 @@ import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.Tree;
 
 import id.co.gpsc.common.client.control.ITransformableToReadonlyLabel;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.data.app.security.MenuEditingData;
 import id.co.gpsc.common.security.domain.Function;
 import id.co.gpsc.jquery.client.util.JQueryUtils;
@@ -23,7 +23,7 @@ import id.co.gpsc.jquery.client.util.JQueryUtils;
  * 
  *@author <a href="mailto:gede.sutarsa@gmail.com">Gede Sutarsa</a>
  */
-public class MenuSelectorPanel extends BaseSigmaComposite implements ITransformableToReadonlyLabel{
+public class MenuSelectorPanel extends BaseSimpleComposite implements ITransformableToReadonlyLabel{
 	
 	
 	private Tree menuTree ; 

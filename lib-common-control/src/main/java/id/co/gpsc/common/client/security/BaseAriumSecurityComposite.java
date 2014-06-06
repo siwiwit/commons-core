@@ -1,6 +1,6 @@
 package id.co.gpsc.common.client.security;
 
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.security.dto.ApplicationDTO;
 import id.co.gpsc.common.security.dto.UserDetailDTO;
 
@@ -16,7 +16,7 @@ import com.google.gwt.i18n.client.DateTimeFormat.PredefinedFormat;
  * @since Dec 13, 2012, 12:05:27 PM
  * @version $Id
  */
-public class BaseAriumSecurityComposite extends BaseSigmaComposite{
+public class BaseAriumSecurityComposite extends BaseSimpleComposite{
 	
 	
 	

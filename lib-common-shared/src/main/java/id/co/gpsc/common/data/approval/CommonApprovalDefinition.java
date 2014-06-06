@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 /**
  * POJO untuk common approval definition 
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Sep 24, 2013 1:26:34 PM
  */
 @Entity

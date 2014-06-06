@@ -37,7 +37,7 @@ public abstract class BaseGridDataProviderNativeSql {
      * @param sortArguments argument untuk men-sort data. sort by field apa
      * 
      */
-    public abstract  String generateDataSql(  String dataIdAsStingStringSelectColumnName ,   String[] fetchedFieldNames , int fetchSize , int firstRowPositionToFetch , SigmaSimpleQueryFilter[] queryFilters , SigmaSimpleSortArgument[] sortArguments); 
+    public abstract  String generateDataSql(  String dataIdAsStingStringSelectColumnName ,   String[] fetchedFieldNames , int fetchSize , int firstRowPositionToFetch , SimpleQueryFilter[] queryFilters , SimpleSortArgument[] sortArguments); 
     
     /**
      * generate count sql statement
@@ -49,7 +49,7 @@ public abstract class BaseGridDataProviderNativeSql {
      * 
      * </code>
      */
-    public abstract String generateCountSql( SigmaSimpleQueryFilter[] queryFilters , String aliasForCountColumnName);
+    public abstract String generateCountSql( SimpleQueryFilter[] queryFilters , String aliasForCountColumnName);
     
     
     

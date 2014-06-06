@@ -9,7 +9,7 @@ import id.co.gpsc.common.data.entity.FormElementConfiguration;
 import id.co.gpsc.common.data.entity.I18Code;
 import id.co.gpsc.common.data.entity.I18NTextGroup;
 import id.co.gpsc.common.data.entity.I18Text;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.rpc.JSONSerializedRemoteService;
 
 
@@ -113,7 +113,7 @@ public interface ApplicationConfigRPCService extends JSONSerializedRemoteService
 	 * @param pagePosition posisi page yang hendak di baca
 	 *  
 	 **/
-	public PagedResultHolder<I18Text> getI18NTexts(int pageSize , int pagePosition , SigmaSimpleQueryFilter [] filters ) throws Exception; 
+	public PagedResultHolder<I18Text> getI18NTexts(int pageSize , int pagePosition , SimpleQueryFilter [] filters ) throws Exception; 
 	
 	
 	

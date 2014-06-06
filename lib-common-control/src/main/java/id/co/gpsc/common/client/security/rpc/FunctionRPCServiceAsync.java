@@ -5,8 +5,8 @@ package id.co.gpsc.common.client.security.rpc;
 
 import id.co.gpsc.common.client.security.rpc.impl.FunctionRPCServiceAsyncImpl;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.security.domain.Function;
 import id.co.gpsc.common.security.domain.PageDefinition;
 import id.co.gpsc.common.security.dto.ApplicationMenuDTO;
@@ -58,7 +58,7 @@ public interface FunctionRPCServiceAsync {
 	 * halaman yang tersedia dalam aplikasi saat ini
 	 * 
 	 **/
-	public void getCurrentAppAvailablePages ( SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page, AsyncCallback<PagedResultHolder<PageDefinitionDTO>> callback) ;
+	public void getCurrentAppAvailablePages ( SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page, AsyncCallback<PagedResultHolder<PageDefinitionDTO>> callback) ;
 	
 	
 	/**

@@ -4,7 +4,7 @@ import id.co.gpsc.common.client.control.BaseSimpleSearchComboContentLocator;
 import id.co.gpsc.common.client.security.lookup.base.SecurityBaseSimpleSingleResultLookupDialog;
 import id.co.gpsc.common.client.security.rpc.UserDomainRPCServiceAsync;
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.security.menu.UserDomain;
 import id.co.gpsc.jquery.client.grid.cols.BaseColumnDefinition;
@@ -66,7 +66,7 @@ public class LookupUserDomain extends SecurityBaseSimpleSingleResultLookupDialog
 	}
 
 	@Override
-	protected void retrieveData(SigmaSimpleQueryFilter[] filters, int page,int pageSize,AsyncCallback<PagedResultHolder<UserDomain>> callback) {
+	protected void retrieveData(SimpleQueryFilter[] filters, int page,int pageSize,AsyncCallback<PagedResultHolder<UserDomain>> callback) {
 		UserDomainRPCServiceAsync.Util.getInstance().getUserDomainFromIIS(filters, page, pageSize, callback);
 	}
 

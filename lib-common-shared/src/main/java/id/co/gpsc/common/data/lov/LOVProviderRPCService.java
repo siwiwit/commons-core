@@ -14,7 +14,6 @@ import java.util.List;
  * provider LOV Data
  * @author <a href='mailto:gede.sutarsa@gmail.com'>Gede Sutarsa</a>
  **/
-//@RemoteServiceRelativePath(value="/corelib-rpc/lov-data.app-rpc")
 public interface LOVProviderRPCService  extends JSONSerializedRemoteService{
 	
 	/**

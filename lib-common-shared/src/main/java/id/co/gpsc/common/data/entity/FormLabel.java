@@ -115,7 +115,7 @@ public class FormLabel extends EntityObject implements IJSONFriendlyObject<FormL
 	@Override
 	public void translateToJSON(ParsedJSONContainer jsonContainer) {
 		jsonContainer.put("formId",getFormId());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("id",getId());
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		jsonContainer.put("id",getId());
 		jsonContainer.put("labelKey",getLabelKey());
 		jsonContainer.put("version",getVersion());
 	}
@@ -124,7 +124,7 @@ public class FormLabel extends EntityObject implements IJSONFriendlyObject<FormL
 	public FormLabel instantiateFromJSON(ParsedJSONContainer jsonContainer) {
 		FormLabel retval = new FormLabel();
 		retval.setFormId( (String)jsonContainer.get("formId" ,  String.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setId( (FormLabelPK)jsonContainer.get("id" ,  FormLabelPK.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setId( (FormLabelPK)jsonContainer.get("id" ,  FormLabelPK.class.getName()));
 		retval.setLabelKey( (String)jsonContainer.get("labelKey" ,  String.class.getName()));
 		retval.setVersion( (Integer)jsonContainer.get("version" ,  Integer.class.getName()));
 		return retval; 

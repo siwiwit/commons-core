@@ -235,7 +235,7 @@ public class LookupHeader implements Serializable , ILookupHeader, IJSONFriendly
 	public void translateToJSON(ParsedJSONContainer jsonContainer) {
 		jsonContainer.put("cacheable",isCacheable());
 		jsonContainer.put("cacheableFlag",getCacheableFlag());
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		 
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		 
 		  List<id.co.gpsc.common.security.domain.lov.LookupDetail> param4 = getDetails() ; 
 		 if (  param4 != null && !param4.isEmpty()){ 
 			for ( id.co.gpsc.common.security.domain.lov.LookupDetail scn : param4){
@@ -260,7 +260,7 @@ public class LookupHeader implements Serializable , ILookupHeader, IJSONFriendly
 		retval.setCacheable( tmp!=null ? tmp.booleanValue() : false);
 		
 		retval.setCacheableFlag( (String)jsonContainer.get("cacheableFlag" ,  String.class.getName()));
-		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.sigma.common.util.json.IJSONFriendlyObject*/		retval.setId( (String)jsonContainer.get("id" ,  String.class.getName()));
+		/*hati hati dengan variable ini. ini bukan tipe simple dan bukan tipe id.co.gpsc.common.util.json.IJSONFriendlyObject*/		retval.setId( (String)jsonContainer.get("id" ,  String.class.getName()));
 		retval.setRemark( (String)jsonContainer.get("remark" ,  String.class.getName()));
 		retval.setVersion( (String)jsonContainer.get("version" ,  String.class.getName()));
 		return retval; 

@@ -7,8 +7,8 @@ import id.co.gpsc.common.client.control.worklist.SimpleRPCDrivenPagedSimpleGridP
 import id.co.gpsc.common.control.DataProcessWorker;
 import id.co.gpsc.common.data.approval.CommonApprovalHeader;
 import id.co.gpsc.common.data.approval.SimpleApprovalStatus;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.data.query.SimpleQueryFilterOperator;
 import id.co.gpsc.common.util.json.SharedServerClientLogicManager;
 import id.co.gpsc.jquery.client.grid.CellButtonHandler;
@@ -19,7 +19,7 @@ import com.google.gwt.core.client.GWT;
 
 /**
  * grid untuk dual control
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Sep 24, 2013 1:42:22 PM
  */
 public class SimpleApprovalGrid extends SimpleRPCDrivenPagedSimpleGridPanel<CommonApprovalHeader> {
@@ -142,15 +142,15 @@ public class SimpleApprovalGrid extends SimpleRPCDrivenPagedSimpleGridPanel<Comm
 	 * @param currentFilters filter dari list panel
 	 * @return filter yang baru
 	 */
-	private SigmaSimpleQueryFilter[] addWaitingApprovalToFilter(SigmaSimpleQueryFilter[] currentFilters) {
-		SigmaSimpleQueryFilter waitingApprovalFilter = new SigmaSimpleQueryFilter();
+	private SimpleQueryFilter[] addWaitingApprovalToFilter(SimpleQueryFilter[] currentFilters) {
+		SimpleQueryFilter waitingApprovalFilter = new SimpleQueryFilter();
 		waitingApprovalFilter.setField("approvalStatusCode");
 		waitingApprovalFilter.setOperator(SimpleQueryFilterOperator.equal);
 		waitingApprovalFilter.setFilter(SimpleApprovalStatus.WAITING_APPROVAL.toString());
 		if (currentFilters == null) {
-			return new SigmaSimpleQueryFilter[] {waitingApprovalFilter};
+			return new SimpleQueryFilter[] {waitingApprovalFilter};
 		}
-		SigmaSimpleQueryFilter[] newFilters = new SigmaSimpleQueryFilter[currentFilters.length + 1];
+		SimpleQueryFilter[] newFilters = new SimpleQueryFilter[currentFilters.length + 1];
 		//add new filter to array filter
 		for (int i = 0; i < currentFilters.length; i++) {
 			newFilters[i] = currentFilters[i];
@@ -160,15 +160,15 @@ public class SimpleApprovalGrid extends SimpleRPCDrivenPagedSimpleGridPanel<Comm
 	}
 	
 	@Override
-	public void applyFilter(SigmaSimpleQueryFilter[] filters) {
-		SigmaSimpleQueryFilter[] newFilters = addWaitingApprovalToFilter(filters);
+	public void applyFilter(SimpleQueryFilter[] filters) {
+		SimpleQueryFilter[] newFilters = addWaitingApprovalToFilter(filters);
 		super.applyFilter(newFilters);
 	}
 	
 	@Override
-	public void applyFilter(SigmaSimpleQueryFilter[] filters,
-			SigmaSimpleSortArgument[] sorts) {
-		SigmaSimpleQueryFilter[] newFilters = addWaitingApprovalToFilter(filters);
+	public void applyFilter(SimpleQueryFilter[] filters,
+			SimpleSortArgument[] sorts) {
+		SimpleQueryFilter[] newFilters = addWaitingApprovalToFilter(filters);
 		super.applyFilter(newFilters, sorts);
 	}
 }

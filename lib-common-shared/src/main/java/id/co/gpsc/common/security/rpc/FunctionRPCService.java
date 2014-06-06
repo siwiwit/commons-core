@@ -4,8 +4,8 @@
 package id.co.gpsc.common.security.rpc;
 
 import id.co.gpsc.common.data.PagedResultHolder;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.exception.DataNotFoundException;
 import id.co.gpsc.common.rpc.JSONSerializedRemoteService;
 import id.co.gpsc.common.security.domain.Function;
@@ -22,7 +22,6 @@ import java.util.List;
  * @version $Id
  * @since Jan 7, 2013, 10:19:50 AM
  */
-//@RemoteServiceRelativePath(value="/sigma-rpc/function.app-rpc")
 public interface FunctionRPCService extends JSONSerializedRemoteService {
 	
 	/**
@@ -61,7 +60,7 @@ public interface FunctionRPCService extends JSONSerializedRemoteService {
 	/**
 	 * halaman yang tersedia dalam aplikasi saat ini
 	 **/
-	public PagedResultHolder<PageDefinitionDTO> getCurrentAppAvailablePages (SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sortArgs , int pageSize , int page)throws Exception ; 
+	public PagedResultHolder<PageDefinitionDTO> getCurrentAppAvailablePages (SimpleQueryFilter[] filters , SimpleSortArgument[] sortArgs , int pageSize , int page)throws Exception ; 
 	
 	
 	

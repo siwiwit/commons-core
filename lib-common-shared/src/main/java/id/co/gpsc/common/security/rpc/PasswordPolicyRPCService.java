@@ -15,7 +15,6 @@ import java.math.BigInteger;
  * @version $Id
  * @since Jan 30, 2013, 3:34:34 PM
  */
-//@RemoteServiceRelativePath(value="/sigma-rpc/password-policy.app-rpc")
 public interface PasswordPolicyRPCService extends JSONSerializedRemoteService {
 	
 	/**

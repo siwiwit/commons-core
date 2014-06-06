@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import id.co.gpsc.common.client.rpc.DualControlDataRPCServiceAsync;
-import id.co.gpsc.common.client.rpc.SigmaAsyncCallback;
+import id.co.gpsc.common.client.rpc.SimpleAsyncCallback;
 import id.co.gpsc.common.data.app.CommonDualControlContainerTable;
 import id.co.gpsc.common.data.app.DualControlApprovalStatusCode;
 import id.co.gpsc.common.data.app.DualControlEnabledData;
@@ -55,7 +55,7 @@ public final class DualControlUtil implements IDualControlEditorManager{
 	/**
 	 * Submit data untuk di approve
 	 **/
-	public void submitDataForApproval (DualControlEnabledOperation operation , String remarkOnData , DualControlEnabledData< ?, ?> data , SigmaAsyncCallback<SimpleMasterDataDualControlApprovalResult> callback) {
+	public void submitDataForApproval (DualControlEnabledOperation operation , String remarkOnData , DualControlEnabledData< ?, ?> data , SimpleAsyncCallback<SimpleMasterDataDualControlApprovalResult> callback) {
 		String jsonString = data.generateJSONString(); 
 		CommonDualControlContainerTable data4RPC = new CommonDualControlContainerTable();
 		data4RPC.setTargetObjectFQCN(data.getClass().getName());
@@ -96,7 +96,7 @@ public final class DualControlUtil implements IDualControlEditorManager{
 	 * @param data data yang perlu di approve
 	 * @param callback callbak kalau proses ini selesai
 	 **/
-	public void approveData (DualControlEnabledOperation operation ,  CommonDualControlContainerTable data , SigmaAsyncCallback<Void> callback) {
+	public void approveData (DualControlEnabledOperation operation ,  CommonDualControlContainerTable data , SimpleAsyncCallback<Void> callback) {
 		DualControlDataRPCServiceAsync.Util.getInstance().approveAndApplyData(data, callback);
 	}
 	

@@ -21,7 +21,7 @@ import com.google.gwt.user.client.ui.Widget;
 
 /**
  * panel editro untuk function
- * @author <a href="mailto:gede.wibawa@sigma.co.id">Agus Gede Adipartha Wibawa</a>
+ * @author <a href="mailto:agus.adiparth@gmail.com">Agus Gede Adipartha Wibawa</a>
  * @since Aug 15, 2013 12:59:27 PM
  */
 public class MenuItemEditorPanel extends BaseAriumSecurityComposite {

@@ -1,7 +1,7 @@
 package id.co.gpsc.common.client.control;
 
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 
 /**
  *
@@ -17,7 +17,7 @@ public interface SimpleSearchFilterHandler {
 	 * @param filters filters untuk data
 	 * @param sorts argument untuk proses sorting
 	 **/
-	public void applyFilter (SigmaSimpleQueryFilter[] filters , SigmaSimpleSortArgument[] sorts) ; 
+	public void applyFilter (SimpleQueryFilter[] filters , SimpleSortArgument[] sorts) ; 
 	
 	
 	/**
@@ -25,7 +25,7 @@ public interface SimpleSearchFilterHandler {
 	 * @param filters filters untuk data
 	 * @param sorts argument untuk proses sorting
 	 **/
-	public void applyFilter (SigmaSimpleQueryFilter[] filters  ) ; 
+	public void applyFilter (SimpleQueryFilter[] filters  ) ; 
 	
 	/**
 	 * ini kalau di request reset

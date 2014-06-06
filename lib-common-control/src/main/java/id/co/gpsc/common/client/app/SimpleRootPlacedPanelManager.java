@@ -16,7 +16,7 @@ import com.google.gwt.user.client.ui.Widget;
 
 import id.co.gpsc.common.client.style.CommonResourceBundle;
 import id.co.gpsc.common.util.I18Utilities;
-import id.co.sigma.common.util.NativeJsUtilities;
+import id.co.gpsc.jquery.client.util.NativeJsUtilities;
 
 import java.util.ArrayList;
 

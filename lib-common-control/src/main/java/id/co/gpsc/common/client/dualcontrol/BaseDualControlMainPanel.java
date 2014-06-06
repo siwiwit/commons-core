@@ -17,12 +17,12 @@ import id.co.gpsc.common.client.control.IPanelGenerator;
 import id.co.gpsc.common.client.control.MainPanelStackControl;
 import id.co.gpsc.common.client.control.SimpleSearchFilterHandler;
 import id.co.gpsc.common.client.control.ViewScreenMode;
-import id.co.gpsc.common.client.widget.BaseSigmaComposite;
+import id.co.gpsc.common.client.widget.BaseSimpleComposite;
 import id.co.gpsc.common.client.widget.EditorState;
 import id.co.gpsc.common.control.DataProcessWorker;
 import id.co.gpsc.common.data.app.DualControlEnabledData;
-import id.co.gpsc.common.data.query.SigmaSimpleQueryFilter;
-import id.co.gpsc.common.data.query.SigmaSimpleSortArgument;
+import id.co.gpsc.common.data.query.SimpleQueryFilter;
+import id.co.gpsc.common.data.query.SimpleSortArgument;
 import id.co.gpsc.common.util.I18Utilities;
 
 /**
@@ -101,7 +101,7 @@ import id.co.gpsc.common.util.I18Utilities;
  *Grid untuk menampilkan data + search criteria
  * @author <a href='mailto:gede.sutarsa@gmail.com'><i>Gede Sutarsa</i> - gede[dot]sutarsa[at]gmail[dot]com </a>
  */
-public abstract class BaseDualControlMainPanel<PK extends Serializable, DATA extends DualControlEnabledData<DATA, PK>> extends BaseSigmaComposite {
+public abstract class BaseDualControlMainPanel<PK extends Serializable, DATA extends DualControlEnabledData<DATA, PK>> extends BaseSimpleComposite {
 	
 	
 	
@@ -205,14 +205,14 @@ public abstract class BaseDualControlMainPanel<PK extends Serializable, DATA ext
 				}
 				
 				@Override
-				public void applyFilter(SigmaSimpleQueryFilter[] filters) {
+				public void applyFilter(SimpleQueryFilter[] filters) {
 					dataGrid.applyFilter(filters);
 					
 				}
 				
 				@Override
-				public void applyFilter(SigmaSimpleQueryFilter[] filters,
-						SigmaSimpleSortArgument[] sorts) {
+				public void applyFilter(SimpleQueryFilter[] filters,
+						SimpleSortArgument[] sorts) {
 					dataGrid.applyFilter(filters , sorts);
 				}
 			});
